@@ -22,6 +22,8 @@
 		A315223D11D23CED007F2123 /* libBromine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A315223C11D23CE0007F2123 /* libBromine.a */; };
 		A315247711D2693C007F2123 /* libCedar-StaticLib-iphonesimulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A315247211D2692C007F2123 /* libCedar-StaticLib-iphonesimulator.a */; };
 		A31524AE11D26C30007F2123 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A31524AD11D26C30007F2123 /* libxml2.dylib */; };
+		A31524EC11D26EE0007F2123 /* SkeletonTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A31524EB11D26EE0007F2123 /* SkeletonTest.m */; };
+		A315257C11D2737E007F2123 /* libOCHamcrest-StaticLib-iphonesimulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A315257911D27372007F2123 /* libOCHamcrest-StaticLib-iphonesimulator.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,27 @@
 			remoteGlobalIDString = AE0CDEB911C84CBE00EF2275 /* Cedar-iPhone */;
 			remoteInfo = "Cedar-iPhone";
 		};
+		A315257611D27372007F2123 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A315256F11D27372007F2123 /* OCHamcrest.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216 /* OCHamcrest.framework */;
+			remoteInfo = OCHamcrest;
+		};
+		A315257811D27372007F2123 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A315256F11D27372007F2123 /* OCHamcrest.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 50066DAD1191DDE700A7A86D /* libOCHamcrest-StaticLib-iphonesimulator.a */;
+			remoteInfo = "OCHamcrest-StaticLib";
+		};
+		A315257A11D27372007F2123 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A315256F11D27372007F2123 /* OCHamcrest.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0F2A4B1F0D8B68B400051BCF /* UnitTests.octest */;
+			remoteInfo = UnitTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +117,8 @@
 		A315223711D23CE0007F2123 /* Bromine.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Bromine.xcodeproj; path = ../../../mine/bromine/Bromine.xcodeproj; sourceTree = SOURCE_ROOT; };
 		A315245A11D2692C007F2123 /* Cedar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cedar.xcodeproj; path = ../../../mine/cedar/Cedar.xcodeproj; sourceTree = SOURCE_ROOT; };
 		A31524AD11D26C30007F2123 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		A31524EB11D26EE0007F2123 /* SkeletonTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkeletonTest.m; sourceTree = "<group>"; };
+		A315256F11D27372007F2123 /* OCHamcrest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OCHamcrest.xcodeproj; path = ../../../mine/cedar/External/OCHamcrest/Source/OCHamcrest.xcodeproj; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A315257C11D2737E007F2123 /* libOCHamcrest-StaticLib-iphonesimulator.a in Frameworks */,
 				A315247711D2693C007F2123 /* libCedar-StaticLib-iphonesimulator.a in Frameworks */,
 				A315223D11D23CED007F2123 /* libBromine.a in Frameworks */,
 				A31521AB11D238D3007F2123 /* Foundation.framework in Frameworks */,
@@ -205,7 +231,8 @@
 		A31520B011D236DA007F2123 /* Acceptance */ = {
 			isa = PBXGroup;
 			children = (
-				A315219D11D238AB007F2123 /* main.m */,
+				A31524BB11D26D4D007F2123 /* Support */,
+				A31524EB11D26EE0007F2123 /* SkeletonTest.m */,
 			);
 			path = Acceptance;
 			sourceTree = "<group>";
@@ -221,6 +248,7 @@
 		A315223311D23CD6007F2123 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				A315256F11D27372007F2123 /* OCHamcrest.xcodeproj */,
 				A315245A11D2692C007F2123 /* Cedar.xcodeproj */,
 				A315223711D23CE0007F2123 /* Bromine.xcodeproj */,
 			);
@@ -242,6 +270,24 @@
 				A315247011D2692C007F2123 /* Test */,
 				A315247211D2692C007F2123 /* libCedar-StaticLib-iphonesimulator.a */,
 				A315247411D2692C007F2123 /* iPhoneSpecs.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A31524BB11D26D4D007F2123 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				A315219D11D238AB007F2123 /* main.m */,
+			);
+			name = Support;
+			sourceTree = "<group>";
+		};
+		A315257011D27372007F2123 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A315257711D27372007F2123 /* OCHamcrest.framework */,
+				A315257911D27372007F2123 /* libOCHamcrest-StaticLib-iphonesimulator.a */,
+				A315257B11D27372007F2123 /* UnitTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -304,6 +350,10 @@
 					ProductGroup = A315245B11D2692C007F2123 /* Products */;
 					ProjectRef = A315245A11D2692C007F2123 /* Cedar.xcodeproj */;
 				},
+				{
+					ProductGroup = A315257011D27372007F2123 /* Products */;
+					ProjectRef = A315256F11D27372007F2123 /* OCHamcrest.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -349,6 +399,27 @@
 			remoteRef = A315247311D2692C007F2123 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		A315257711D27372007F2123 /* OCHamcrest.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OCHamcrest.framework;
+			remoteRef = A315257611D27372007F2123 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A315257911D27372007F2123 /* libOCHamcrest-StaticLib-iphonesimulator.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libOCHamcrest-StaticLib-iphonesimulator.a";
+			remoteRef = A315257811D27372007F2123 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A315257B11D27372007F2123 /* UnitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = UnitTests.octest;
+			remoteRef = A315257A11D27372007F2123 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -386,6 +457,7 @@
 			files = (
 				A31521B411D238E2007F2123 /* main.m in Sources */,
 				A31521A911D238D3007F2123 /* AuctionSniperAppDelegate.m in Sources */,
+				A31524EC11D26EE0007F2123 /* SkeletonTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,15 +509,21 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = "~/Code/mine/cedar/build/${CONFIGURATION}-iphoneuniversal";
+				FRAMEWORK_SEARCH_PATHS = (
+					"~/Code/mine/cedar/build/${CONFIGURATION}-iphoneuniversal",
+					"~/Code/mine/cedar/External/OCHamcrest/Source/build/${CONFIGURATION}",
+					"~/Code/mine/cedar/External/OCMock/Source/build/${CONFIGURATION}",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = AuctionSniper_Prefix.pch;
+				GCC_VERSION = 4.2;
 				INFOPLIST_FILE = "AuctionSniper-Info copy.plist";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
+					"-lstdc++",
 				);
 				PRODUCT_NAME = AuctionSniper;
 			};
@@ -459,10 +537,12 @@
 				FRAMEWORK_SEARCH_PATHS = "~/Code/mine/cedar/build/${CONFIGURATION}-iphoneuniversal";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = AuctionSniper_Prefix.pch;
+				GCC_VERSION = 4.2;
 				INFOPLIST_FILE = "AuctionSniper-Info copy.plist";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
+					"-lstdc++",
 				);
 				PRODUCT_NAME = AuctionSniper;
 				VALIDATE_PRODUCT = YES;
