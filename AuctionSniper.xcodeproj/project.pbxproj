@@ -20,6 +20,7 @@
 		A31521AD11D238D3007F2123 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		A31521B411D238E2007F2123 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A315219D11D238AB007F2123 /* main.m */; };
 		A315223D11D23CED007F2123 /* libBromine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A315223C11D23CE0007F2123 /* libBromine.a */; };
+		A315247711D2693C007F2123 /* libCedar-StaticLib-iphonesimulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A315247211D2692C007F2123 /* libCedar-StaticLib-iphonesimulator.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,41 @@
 			proxyType = 1;
 			remoteGlobalIDString = D2AAC07D0554694100DB518D /* Bromine */;
 			remoteInfo = Bromine;
+		};
+		A315246D11D2692C007F2123 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A315245A11D2692C007F2123 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216 /* Cedar.framework */;
+			remoteInfo = Cedar;
+		};
+		A315246F11D2692C007F2123 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A315245A11D2692C007F2123 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AE603D65118CCB2100D312FC /* Test */;
+			remoteInfo = Specs;
+		};
+		A315247111D2692C007F2123 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A315245A11D2692C007F2123 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AED41F2C11B869D0006DBB00 /* libCedar-StaticLib-iphonesimulator.a */;
+			remoteInfo = "Cedar-StaticLib";
+		};
+		A315247311D2692C007F2123 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A315245A11D2692C007F2123 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AE12B63211D0191000C236FF /* iPhoneSpecs.app */;
+			remoteInfo = iPhoneSpecs;
+		};
+		A315247511D26937007F2123 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A315245A11D2692C007F2123 /* Cedar.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = AE0CDEB911C84CBE00EF2275 /* Cedar-iPhone */;
+			remoteInfo = "Cedar-iPhone";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -55,6 +91,7 @@
 		A31521B111D238D3007F2123 /* AuctionSniper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuctionSniper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A31521B311D238D3007F2123 /* AuctionSniper-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AuctionSniper-Info copy.plist"; sourceTree = "<group>"; };
 		A315223711D23CE0007F2123 /* Bromine.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Bromine.xcodeproj; path = ../../../mine/bromine/Bromine.xcodeproj; sourceTree = SOURCE_ROOT; };
+		A315245A11D2692C007F2123 /* Cedar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cedar.xcodeproj; path = ../../../mine/cedar/Cedar.xcodeproj; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A315247711D2693C007F2123 /* libCedar-StaticLib-iphonesimulator.a in Frameworks */,
 				A315223D11D23CED007F2123 /* libBromine.a in Frameworks */,
 				A31521AB11D238D3007F2123 /* Foundation.framework in Frameworks */,
 				A31521AC11D238D3007F2123 /* UIKit.framework in Frameworks */,
@@ -179,6 +217,7 @@
 		A315223311D23CD6007F2123 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				A315245A11D2692C007F2123 /* Cedar.xcodeproj */,
 				A315223711D23CE0007F2123 /* Bromine.xcodeproj */,
 			);
 			name = External;
@@ -188,6 +227,17 @@
 			isa = PBXGroup;
 			children = (
 				A315223C11D23CE0007F2123 /* libBromine.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A315245B11D2692C007F2123 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A315246E11D2692C007F2123 /* Cedar.framework */,
+				A315247011D2692C007F2123 /* Test */,
+				A315247211D2692C007F2123 /* libCedar-StaticLib-iphonesimulator.a */,
+				A315247411D2692C007F2123 /* iPhoneSpecs.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -224,6 +274,7 @@
 			);
 			dependencies = (
 				A315223F11D23CF4007F2123 /* PBXTargetDependency */,
+				A315247611D26937007F2123 /* PBXTargetDependency */,
 			);
 			name = "Acceptance Tests";
 			productName = AuctionSniper;
@@ -245,6 +296,10 @@
 					ProductGroup = A315223811D23CE0007F2123 /* Products */;
 					ProjectRef = A315223711D23CE0007F2123 /* Bromine.xcodeproj */;
 				},
+				{
+					ProductGroup = A315245B11D2692C007F2123 /* Products */;
+					ProjectRef = A315245A11D2692C007F2123 /* Cedar.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -260,6 +315,34 @@
 			fileType = archive.ar;
 			path = libBromine.a;
 			remoteRef = A315223B11D23CE0007F2123 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A315246E11D2692C007F2123 /* Cedar.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Cedar.framework;
+			remoteRef = A315246D11D2692C007F2123 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A315247011D2692C007F2123 /* Test */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = Test;
+			remoteRef = A315246F11D2692C007F2123 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A315247211D2692C007F2123 /* libCedar-StaticLib-iphonesimulator.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libCedar-StaticLib-iphonesimulator.a";
+			remoteRef = A315247111D2692C007F2123 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A315247411D2692C007F2123 /* iPhoneSpecs.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = iPhoneSpecs.app;
+			remoteRef = A315247311D2692C007F2123 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -310,6 +393,11 @@
 			name = Bromine;
 			targetProxy = A315223E11D23CF4007F2123 /* PBXContainerItemProxy */;
 		};
+		A315247611D26937007F2123 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Cedar-iPhone";
+			targetProxy = A315247511D26937007F2123 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -345,11 +433,16 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "~/Code/mine/cedar/build/${CONFIGURATION}-iphoneuniversal";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = AuctionSniper_Prefix.pch;
 				INFOPLIST_FILE = "AuctionSniper-Info copy.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = AuctionSniper;
 			};
 			name = Debug;
@@ -359,9 +452,14 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = "~/Code/mine/cedar/build/${CONFIGURATION}-iphoneuniversal";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = AuctionSniper_Prefix.pch;
 				INFOPLIST_FILE = "AuctionSniper-Info copy.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = AuctionSniper;
 				VALIDATE_PRODUCT = YES;
 			};

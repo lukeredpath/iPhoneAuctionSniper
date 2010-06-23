@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Cedar-iPhone/Cedar.h>
 
 int main(int argc, char *argv[]) {
   
