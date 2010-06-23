@@ -19,7 +19,25 @@
 		A31521AC11D238D3007F2123 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		A31521AD11D238D3007F2123 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		A31521B411D238E2007F2123 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A315219D11D238AB007F2123 /* main.m */; };
+		A315223D11D23CED007F2123 /* libBromine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A315223C11D23CE0007F2123 /* libBromine.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A315223B11D23CE0007F2123 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A315223711D23CE0007F2123 /* Bromine.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D /* libBromine.a */;
+			remoteInfo = Bromine;
+		};
+		A315223E11D23CF4007F2123 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A315223711D23CE0007F2123 /* Bromine.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D /* Bromine */;
+			remoteInfo = Bromine;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -36,6 +54,7 @@
 		A315219D11D238AB007F2123 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A31521B111D238D3007F2123 /* AuctionSniper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuctionSniper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A31521B311D238D3007F2123 /* AuctionSniper-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AuctionSniper-Info copy.plist"; sourceTree = "<group>"; };
+		A315223711D23CE0007F2123 /* Bromine.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Bromine.xcodeproj; path = ../../../mine/bromine/Bromine.xcodeproj; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A315223D11D23CED007F2123 /* libBromine.a in Frameworks */,
 				A31521AB11D238D3007F2123 /* Foundation.framework in Frameworks */,
 				A31521AC11D238D3007F2123 /* UIKit.framework in Frameworks */,
 				A31521AD11D238D3007F2123 /* CoreGraphics.framework in Frameworks */,
@@ -83,6 +103,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				A315223311D23CD6007F2123 /* External */,
 				A31520AC11D236CA007F2123 /* Tests */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -155,6 +176,22 @@
 			path = Nibs;
 			sourceTree = "<group>";
 		};
+		A315223311D23CD6007F2123 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				A315223711D23CE0007F2123 /* Bromine.xcodeproj */,
+			);
+			name = External;
+			sourceTree = "<group>";
+		};
+		A315223811D23CE0007F2123 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A315223C11D23CE0007F2123 /* libBromine.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -186,6 +223,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				A315223F11D23CF4007F2123 /* PBXTargetDependency */,
 			);
 			name = "Acceptance Tests";
 			productName = AuctionSniper;
@@ -202,6 +240,12 @@
 			hasScannedForEncodings = 1;
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A315223811D23CE0007F2123 /* Products */;
+					ProjectRef = A315223711D23CE0007F2123 /* Bromine.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* AuctionSniper */,
@@ -209,6 +253,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		A315223C11D23CE0007F2123 /* libBromine.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libBromine.a;
+			remoteRef = A315223B11D23CE0007F2123 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1D60588D0D05DD3D006BFB54 /* Resources */ = {
@@ -249,6 +303,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A315223F11D23CF4007F2123 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Bromine;
+			targetProxy = A315223E11D23CF4007F2123 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
