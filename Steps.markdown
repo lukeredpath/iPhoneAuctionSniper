@@ -1,4 +1,7 @@
+# BOILERPLATE
+
 * Created blank Xcode project using Window app template
 * Created some groups for the tests and verified the build
 * Cleaned up root of the project folder
 * Initialised git repository 
+
