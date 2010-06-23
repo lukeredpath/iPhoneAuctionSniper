@@ -21,6 +21,7 @@
 		A31521B411D238E2007F2123 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A315219D11D238AB007F2123 /* main.m */; };
 		A315223D11D23CED007F2123 /* libBromine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A315223C11D23CE0007F2123 /* libBromine.a */; };
 		A315247711D2693C007F2123 /* libCedar-StaticLib-iphonesimulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A315247211D2692C007F2123 /* libCedar-StaticLib-iphonesimulator.a */; };
+		A31524AE11D26C30007F2123 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A31524AD11D26C30007F2123 /* libxml2.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		A31521B311D238D3007F2123 /* AuctionSniper-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AuctionSniper-Info copy.plist"; sourceTree = "<group>"; };
 		A315223711D23CE0007F2123 /* Bromine.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Bromine.xcodeproj; path = ../../../mine/bromine/Bromine.xcodeproj; sourceTree = SOURCE_ROOT; };
 		A315245A11D2692C007F2123 /* Cedar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cedar.xcodeproj; path = ../../../mine/cedar/Cedar.xcodeproj; sourceTree = SOURCE_ROOT; };
+		A31524AD11D26C30007F2123 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				A31521AB11D238D3007F2123 /* Foundation.framework in Frameworks */,
 				A31521AC11D238D3007F2123 /* UIKit.framework in Frameworks */,
 				A31521AD11D238D3007F2123 /* CoreGraphics.framework in Frameworks */,
+				A31524AE11D26C30007F2123 /* libxml2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +181,7 @@
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
+				A31524AD11D26C30007F2123 /* libxml2.dylib */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
