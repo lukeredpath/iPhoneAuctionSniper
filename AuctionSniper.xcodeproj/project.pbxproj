@@ -13,6 +13,12 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		A31521A611D238D3007F2123 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		A31521A911D238D3007F2123 /* AuctionSniperAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AuctionSniperAppDelegate.m */; };
+		A31521AB11D238D3007F2123 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		A31521AC11D238D3007F2123 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		A31521AD11D238D3007F2123 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		A31521B411D238E2007F2123 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A315219D11D238AB007F2123 /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +32,10 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* AuctionSniper_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuctionSniper_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* AuctionSniper-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AuctionSniper-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		A31520D011D237FE007F2123 /* Acceptance-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Acceptance-Info.plist"; sourceTree = "<group>"; };
+		A315219D11D238AB007F2123 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A31521B111D238D3007F2123 /* AuctionSniper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuctionSniper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A31521B311D238D3007F2123 /* AuctionSniper-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AuctionSniper-Info copy.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +46,16 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A31521AA11D238D3007F2123 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A31521AB11D238D3007F2123 /* Foundation.framework in Frameworks */,
+				A31521AC11D238D3007F2123 /* UIKit.framework in Frameworks */,
+				A31521AD11D238D3007F2123 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				1D6058910D05DD3D006BFB54 /* AuctionSniper.app */,
+				A31521B111D238D3007F2123 /* AuctionSniper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -68,6 +89,7 @@
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				A31520D011D237FE007F2123 /* Acceptance-Info.plist */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -78,6 +100,7 @@
 				32CA4F630368D1EE00C91783 /* AuctionSniper_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 				8D1107310486CEB800E47090 /* AuctionSniper-Info.plist */,
+				A31521B311D238D3007F2123 /* AuctionSniper-Info copy.plist */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -104,23 +127,24 @@
 			isa = PBXGroup;
 			children = (
 				A31520B011D236DA007F2123 /* Acceptance */,
-				A31520AF11D236D3007F2123 /* Unit Tests */,
+				A31520AF11D236D3007F2123 /* Unit */,
 			);
-			name = Tests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
-		A31520AF11D236D3007F2123 /* Unit Tests */ = {
+		A31520AF11D236D3007F2123 /* Unit */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = "Unit Tests";
+			path = Unit;
 			sourceTree = "<group>";
 		};
 		A31520B011D236DA007F2123 /* Acceptance */ = {
 			isa = PBXGroup;
 			children = (
+				A315219D11D238AB007F2123 /* main.m */,
 			);
-			name = Acceptance;
+			path = Acceptance;
 			sourceTree = "<group>";
 		};
 		A31520C511D2376C007F2123 /* Nibs */ = {
@@ -151,6 +175,23 @@
 			productReference = 1D6058910D05DD3D006BFB54 /* AuctionSniper.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A31521A411D238D3007F2123 /* Acceptance Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A31521AE11D238D3007F2123 /* Build configuration list for PBXNativeTarget "Acceptance Tests" */;
+			buildPhases = (
+				A31521A511D238D3007F2123 /* Resources */,
+				A31521A711D238D3007F2123 /* Sources */,
+				A31521AA11D238D3007F2123 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Acceptance Tests";
+			productName = AuctionSniper;
+			productReference = A31521B111D238D3007F2123 /* AuctionSniper.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -164,6 +205,7 @@
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* AuctionSniper */,
+				A31521A411D238D3007F2123 /* Acceptance Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -177,6 +219,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A31521A511D238D3007F2123 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A31521A611D238D3007F2123 /* MainWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -186,6 +236,15 @@
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AuctionSniperAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A31521A711D238D3007F2123 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A31521B411D238E2007F2123 /* main.m in Sources */,
+				A31521A911D238D3007F2123 /* AuctionSniperAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +273,33 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = AuctionSniper_Prefix.pch;
 				INFOPLIST_FILE = "AuctionSniper-Info.plist";
+				PRODUCT_NAME = AuctionSniper;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A31521AF11D238D3007F2123 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = AuctionSniper_Prefix.pch;
+				INFOPLIST_FILE = "AuctionSniper-Info copy.plist";
+				PRODUCT_NAME = AuctionSniper;
+			};
+			name = Debug;
+		};
+		A31521B011D238D3007F2123 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = AuctionSniper_Prefix.pch;
+				INFOPLIST_FILE = "AuctionSniper-Info copy.plist";
 				PRODUCT_NAME = AuctionSniper;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -254,6 +340,15 @@
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
 				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A31521AE11D238D3007F2123 /* Build configuration list for PBXNativeTarget "Acceptance Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A31521AF11D238D3007F2123 /* Debug */,
+				A31521B011D238D3007F2123 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
