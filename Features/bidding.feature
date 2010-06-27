@@ -8,7 +8,7 @@ Feature: Bidding on a single item
   
   Scenario: Sniper joins an auction
     Given an auction is selling an item
-    When the application is joins the auction
+    When the application joins the auction
     Then the auction should have received a join request from the sniper
     And the application should show the sniper has joined the auction
     
