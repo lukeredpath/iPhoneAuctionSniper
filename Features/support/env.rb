@@ -1,4 +1,5 @@
 require 'icuke/cucumber'
+$LOAD_PATH << File.join(File.dirname(__FILE__), *%w[.. support])
 
 OPENFIRE_PATH = "/opt/openfire/bin/openfire"
 

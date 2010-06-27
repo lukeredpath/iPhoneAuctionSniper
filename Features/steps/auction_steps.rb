@@ -1,11 +1,11 @@
-Given /^an auction is selling an item$/ do
-  pending # express the regexp above with the code you wish you had
+Given /^an auction is selling an item with the ID (\d+)$/ do |auction_id|
+  @auction = FakeAuctionServer.new(auction_id)
 end
 
 Then /^the auction should have received a join request from the sniper$/ do
-  pending # express the regexp above with the code you wish you had
+  @auction.assert_received_join_request_from_sniper
 end
 
 When /^the auction announces it has closed$/ do
-  pending # express the regexp above with the code you wish you had
+  @auction.announce_closed
 end
