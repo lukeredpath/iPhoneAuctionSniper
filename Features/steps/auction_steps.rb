@@ -1,5 +1,8 @@
-Given /^an auction is selling an item with the ID (\d+)$/ do |auction_id|
-  @auction = FakeAuctionServer.new(auction_id)
+TEST_AUCTION_ID = '1'
+
+Given /^an auction is selling an item$/ do
+  @auction = AuctionSniper::FakeAuctionServer.new(TEST_AUCTION_ID)
+  @auction.start_selling_item
 end
 
 Then /^the auction should have received a join request from the sniper$/ do

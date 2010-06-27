@@ -1,11 +1,9 @@
-require 'application_runner'
-
 # GIVENS
 #------------------------------------------------------------------------------
 
 Given /the application is running/ do 
   Given '"AuctionSniper.xcodeproj" is loaded in the iphone simulator'
-  @application_runner = AuctionSniper::ApplicationRunner.new(simulator)
+  @application_runner = AuctionSniper::ApplicationRunner.new(simulator_driver)
 end
 
 Given /^the application has joined the auction$/ do

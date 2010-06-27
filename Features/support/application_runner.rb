@@ -1,13 +1,12 @@
-require 'auction_driver'
-require 'fake_auction_server'
-
 module AuctionSniper
   unless const_defined?('STATUS_JOINING')
     STATUS_JOINING = "Joining"
     STATUS_LOST    = "Lost"
   end
   
-  module Assertions    
+  module Assertions
+    include Test::Unit::Assertions
+    
     def assert_sniper_has_joined_auction
       assert @auction_driver.shows_sniper_status?(STATUS_JOINING)
     end
@@ -27,10 +26,9 @@ module AuctionSniper
     include Assertions
     include Actions
     
-    def initialize(simulator)
-      @simulator = simulator
-      @auction_driver = AuctionDriver.new(simulator)
-      @auction_server = FakeAuctionServer.new
+    def initialize(simulator_driver)
+      @simulator_driver = simulator_driver
+      @auction_driver = AuctionDriver.new(simulator_driver)
     end
   end
 end
