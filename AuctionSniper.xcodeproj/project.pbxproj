@@ -10,20 +10,15 @@
 		1D3623260D0F684500981E51 /* AuctionSniperAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AuctionSniperAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
-		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		A31521A611D238D3007F2123 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		A31521A911D238D3007F2123 /* AuctionSniperAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AuctionSniperAppDelegate.m */; };
 		A31521AB11D238D3007F2123 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
-		A31521AC11D238D3007F2123 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		A31521AD11D238D3007F2123 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
-		A31521B411D238E2007F2123 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A315219D11D238AB007F2123 /* main.m */; };
-		A315223D11D23CED007F2123 /* libBromine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A315223C11D23CE0007F2123 /* libBromine.a */; };
-		A315247711D2693C007F2123 /* libCedar-StaticLib-iphonesimulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A315247211D2692C007F2123 /* libCedar-StaticLib-iphonesimulator.a */; };
-		A31524AE11D26C30007F2123 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A31524AD11D26C30007F2123 /* libxml2.dylib */; };
-		A31524EC11D26EE0007F2123 /* SkeletonTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A31524EB11D26EE0007F2123 /* SkeletonTest.m */; };
-		A315257C11D2737E007F2123 /* libOCHamcrest-StaticLib-iphonesimulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A315257911D27372007F2123 /* libOCHamcrest-StaticLib-iphonesimulator.a */; };
+		A3FC540B11D7CA390045F352 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3FC540A11D7CA390045F352 /* UIKit.framework */; };
+		A3FC540E11D7CA3D0045F352 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3FC540A11D7CA390045F352 /* UIKit.framework */; };
+		A3FC547411D7CA810045F352 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,70 +26,56 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = A315223711D23CE0007F2123 /* Bromine.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = D2AAC07E0554694100DB518D /* libBromine.a */;
-			remoteInfo = Bromine;
-		};
-		A315223E11D23CF4007F2123 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A315223711D23CE0007F2123 /* Bromine.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D2AAC07D0554694100DB518D /* Bromine */;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
 			remoteInfo = Bromine;
 		};
 		A315246D11D2692C007F2123 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A315245A11D2692C007F2123 /* Cedar.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 8DC2EF5B0486A6940098B216 /* Cedar.framework */;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
 			remoteInfo = Cedar;
 		};
 		A315246F11D2692C007F2123 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A315245A11D2692C007F2123 /* Cedar.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = AE603D65118CCB2100D312FC /* Test */;
+			remoteGlobalIDString = AE603D65118CCB2100D312FC;
 			remoteInfo = Specs;
 		};
 		A315247111D2692C007F2123 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A315245A11D2692C007F2123 /* Cedar.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = AED41F2C11B869D0006DBB00 /* libCedar-StaticLib-iphonesimulator.a */;
+			remoteGlobalIDString = AED41F2C11B869D0006DBB00;
 			remoteInfo = "Cedar-StaticLib";
 		};
 		A315247311D2692C007F2123 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A315245A11D2692C007F2123 /* Cedar.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = AE12B63211D0191000C236FF /* iPhoneSpecs.app */;
+			remoteGlobalIDString = AE12B63211D0191000C236FF;
 			remoteInfo = iPhoneSpecs;
-		};
-		A315247511D26937007F2123 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A315245A11D2692C007F2123 /* Cedar.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = AE0CDEB911C84CBE00EF2275 /* Cedar-iPhone */;
-			remoteInfo = "Cedar-iPhone";
 		};
 		A315257611D27372007F2123 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A315256F11D27372007F2123 /* OCHamcrest.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 8DC2EF5B0486A6940098B216 /* OCHamcrest.framework */;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
 			remoteInfo = OCHamcrest;
 		};
 		A315257811D27372007F2123 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A315256F11D27372007F2123 /* OCHamcrest.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 50066DAD1191DDE700A7A86D /* libOCHamcrest-StaticLib-iphonesimulator.a */;
+			remoteGlobalIDString = 50066DAD1191DDE700A7A86D;
 			remoteInfo = "OCHamcrest-StaticLib";
 		};
 		A315257A11D27372007F2123 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A315256F11D27372007F2123 /* OCHamcrest.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 0F2A4B1F0D8B68B400051BCF /* UnitTests.octest */;
+			remoteGlobalIDString = 0F2A4B1F0D8B68B400051BCF;
 			remoteInfo = UnitTests;
 		};
 /* End PBXContainerItemProxy section */
@@ -104,7 +85,6 @@
 		1D3623240D0F684500981E51 /* AuctionSniperAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuctionSniperAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* AuctionSniperAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuctionSniperAppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* AuctionSniper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuctionSniper.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -116,9 +96,9 @@
 		A31521B311D238D3007F2123 /* AuctionSniper-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AuctionSniper-Info copy.plist"; sourceTree = "<group>"; };
 		A315223711D23CE0007F2123 /* Bromine.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Bromine.xcodeproj; path = ../../../mine/bromine/Bromine.xcodeproj; sourceTree = SOURCE_ROOT; };
 		A315245A11D2692C007F2123 /* Cedar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cedar.xcodeproj; path = ../../../mine/cedar/Cedar.xcodeproj; sourceTree = SOURCE_ROOT; };
-		A31524AD11D26C30007F2123 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		A31524EB11D26EE0007F2123 /* SkeletonTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkeletonTest.m; sourceTree = "<group>"; };
 		A315256F11D27372007F2123 /* OCHamcrest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OCHamcrest.xcodeproj; path = ../../../mine/cedar/External/OCHamcrest/Source/OCHamcrest.xcodeproj; sourceTree = SOURCE_ROOT; };
+		A3FC540A11D7CA390045F352 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,8 +106,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3FC540B11D7CA390045F352 /* UIKit.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
-				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,13 +116,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A315257C11D2737E007F2123 /* libOCHamcrest-StaticLib-iphonesimulator.a in Frameworks */,
-				A315247711D2693C007F2123 /* libCedar-StaticLib-iphonesimulator.a in Frameworks */,
-				A315223D11D23CED007F2123 /* libBromine.a in Frameworks */,
+				A3FC540E11D7CA3D0045F352 /* UIKit.framework in Frameworks */,
 				A31521AB11D238D3007F2123 /* Foundation.framework in Frameworks */,
-				A31521AC11D238D3007F2123 /* UIKit.framework in Frameworks */,
 				A31521AD11D238D3007F2123 /* CoreGraphics.framework in Frameworks */,
-				A31524AE11D26C30007F2123 /* libxml2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,10 +180,9 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
-				A31524AD11D26C30007F2123 /* libxml2.dylib */,
+				A3FC540A11D7CA390045F352 /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -312,9 +287,9 @@
 			productReference = 1D6058910D05DD3D006BFB54 /* AuctionSniper.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A31521A411D238D3007F2123 /* Acceptance Tests */ = {
+		A31521A411D238D3007F2123 /* Testing */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A31521AE11D238D3007F2123 /* Build configuration list for PBXNativeTarget "Acceptance Tests" */;
+			buildConfigurationList = A31521AE11D238D3007F2123 /* Build configuration list for PBXNativeTarget "Testing" */;
 			buildPhases = (
 				A31521A511D238D3007F2123 /* Resources */,
 				A31521A711D238D3007F2123 /* Sources */,
@@ -323,10 +298,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				A315223F11D23CF4007F2123 /* PBXTargetDependency */,
-				A315247611D26937007F2123 /* PBXTargetDependency */,
 			);
-			name = "Acceptance Tests";
+			name = Testing;
 			productName = AuctionSniper;
 			productReference = A31521B111D238D3007F2123 /* AuctionSniper.app */;
 			productType = "com.apple.product-type.application";
@@ -358,7 +331,7 @@
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* AuctionSniper */,
-				A31521A411D238D3007F2123 /* Acceptance Tests */,
+				A31521A411D238D3007F2123 /* Testing */,
 			);
 		};
 /* End PBXProject section */
@@ -455,26 +428,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A31521B411D238E2007F2123 /* main.m in Sources */,
+				A3FC547411D7CA810045F352 /* main.m in Sources */,
 				A31521A911D238D3007F2123 /* AuctionSniperAppDelegate.m in Sources */,
-				A31524EC11D26EE0007F2123 /* SkeletonTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		A315223F11D23CF4007F2123 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Bromine;
-			targetProxy = A315223E11D23CF4007F2123 /* PBXContainerItemProxy */;
-		};
-		A315247611D26937007F2123 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Cedar-iPhone";
-			targetProxy = A315247511D26937007F2123 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
@@ -518,6 +477,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = AuctionSniper_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = BROMINE_ENABLED;
 				GCC_VERSION = 4.2;
 				INFOPLIST_FILE = "AuctionSniper-Info copy.plist";
 				OTHER_LDFLAGS = (
@@ -526,6 +486,7 @@
 					"-lstdc++",
 				);
 				PRODUCT_NAME = AuctionSniper;
+				USER_HEADER_SEARCH_PATHS = "~/Code/mine/bromine/build/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/usr/local/include";
 			};
 			name = Debug;
 		};
@@ -537,6 +498,7 @@
 				FRAMEWORK_SEARCH_PATHS = "~/Code/mine/cedar/build/${CONFIGURATION}-iphoneuniversal";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = AuctionSniper_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = BROMINE_ENABLED;
 				GCC_VERSION = 4.2;
 				INFOPLIST_FILE = "AuctionSniper-Info copy.plist";
 				OTHER_LDFLAGS = (
@@ -545,6 +507,7 @@
 					"-lstdc++",
 				);
 				PRODUCT_NAME = AuctionSniper;
+				USER_HEADER_SEARCH_PATHS = "~/Code/mine/bromine/build/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/usr/local/include";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -588,7 +551,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A31521AE11D238D3007F2123 /* Build configuration list for PBXNativeTarget "Acceptance Tests" */ = {
+		A31521AE11D238D3007F2123 /* Build configuration list for PBXNativeTarget "Testing" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A31521AF11D238D3007F2123 /* Debug */,

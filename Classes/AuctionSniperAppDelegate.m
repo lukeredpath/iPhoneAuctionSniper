@@ -18,6 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
+  NSLog(@"shouldn't be here");
     // Override point for customization after application launch.
 	
     [window makeKeyAndVisible];
@@ -61,6 +62,15 @@
      Called when the application is about to terminate.
      See also applicationDidEnterBackground:.
      */
+}
+
+#pragma mark -
+
+- (IBAction)testAction;
+{
+  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"It worked!" message:@"This is a test" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+  [alert show];
+  [alert release];
 }
 
 
