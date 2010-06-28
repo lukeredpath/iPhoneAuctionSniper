@@ -29,7 +29,7 @@
 - (void)setUp;
 {
   self.listener = [OCMockObject mockForProtocol:@protocol(AuctionSniperListener)];
-  self.auction  = [OCMockObject mockForClass:[Auction class]];
+  self.auction  = [OCMockObject mockForProtocol:@protocol(Auction)];
   self.sniper   = [[[AuctionSniper alloc] initWithAuction:self.auction] autorelease];
   self.sniper.delegate = self.listener;
 }

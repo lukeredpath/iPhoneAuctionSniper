@@ -7,13 +7,13 @@
 //
 
 #import "AuctionSniper.h"
-#import "Auction.h"
+#import "XMPPAuction.h"
 
 @implementation AuctionSniper
 
 @synthesize delegate;
 
-- (id)initWithAuction:(Auction *)anAuction;
+- (id)initWithAuction:(XMPPAuction *)anAuction;
 {
   if (self = [super init]) {
     auction = [anAuction retain];

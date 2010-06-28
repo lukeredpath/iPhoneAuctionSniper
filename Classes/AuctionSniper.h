@@ -10,13 +10,13 @@
 #import "AuctionEventListener.h"
 #import "AuctionSniperListener.h"
 
-@class Auction;
+@class XMPPAuction;
 
 @interface AuctionSniper : NSObject <AuctionEventListener> {
-  Auction *auction;
+  XMPPAuction *auction;
   id<AuctionSniperListener> delegate;
 }
-- (id)initWithAuction:(Auction *)anAuction;
+- (id)initWithAuction:(XMPPAuction *)anAuction;
 
 @property (nonatomic, assign) id<AuctionSniperListener> delegate;
 @end

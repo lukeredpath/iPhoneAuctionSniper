@@ -6,13 +6,11 @@
 //  Copyright 2010 LJR Software Limited. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@class XMPPStream;
 
-@interface Auction : NSObject {
-  XMPPStream *stream;
-}
-- (id)initWithStream:(XMPPStream *)aStream;
+@protocol Auction
+
 - (void)bid:(NSInteger)amount;
+
 @end
