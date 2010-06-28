@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+@class XMPPStream;
 
 @interface Auction : NSObject {
-
+  XMPPStream *stream;
 }
+- (id)initWithStream:(XMPPStream *)aStream;
 - (void)bid:(NSInteger)amount;
 @end

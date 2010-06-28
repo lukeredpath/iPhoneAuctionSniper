@@ -110,7 +110,7 @@ XMPPJID *auctionJID() {
 
   [xmppStream addDelegate:self];
   
-  Auction *auction = [[Auction alloc] init];
+  Auction *auction = [[Auction alloc] initWithStream:xmppStream];
   AuctionSniper *auctionSniper = [[AuctionSniper alloc] initWithAuction:auction];
   self.auctionSniperController.auctionSniper = auctionSniper;
   
