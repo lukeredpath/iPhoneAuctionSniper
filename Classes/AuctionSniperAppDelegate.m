@@ -20,7 +20,6 @@
 #define kAUCTION_ID           1
 
 @interface AuctionSniperAppDelegate ()
-- (void)joinAuction;
 - (void)subscribeToAuction;
 @end
 
@@ -33,6 +32,7 @@
 
 - (void)dealloc 
 {
+  [auction release];
   [xmppStream release];
   [messageTranslator release];
   [window release];
@@ -44,19 +44,6 @@ XMPPJID *auctionJID() {
   return [XMPPJID jidWithUser:auctionUser domain:kXMPP_HOSTNAME resource:kAUCTION_RESOURCE];
 }
 
-- (void)sendMessageToAuction:(NSString *)messageBody;
-{
-  NSXMLElement *body = [NSXMLElement elementWithName:@"body"];
-  [body setStringValue:messageBody];
-  
-  NSXMLElement *message = [NSXMLElement elementWithName:@"message"];
-  [message addAttributeWithName:@"type" stringValue:@"chat"];
-  [message addAttributeWithName:@"to" stringValue:auctionJID().full];
-  [message addChild:body]; 
-  
-  [xmppStream sendElement:message];
-}
-
 - (void)subscribeToAuction;
 {
   NSXMLElement *presence = [NSXMLElement elementWithName:@"presence"];
@@ -65,12 +52,6 @@ XMPPJID *auctionJID() {
   [presence addAttributeWithName:@"to" stringValue:auctionJID().bare];
 	[presence addAttributeWithName:@"type" stringValue:@"subscribed"];
   [xmppStream sendElement:presence];
-}
-
-- (void)joinAuction;
-{
-  [self subscribeToAuction];
-  [self sendMessageToAuction:@"SOLVersion: 1.1; Command: JOIN;"];
 }
 
 #pragma mark -
@@ -91,7 +72,8 @@ XMPPJID *auctionJID() {
 
 - (void)xmppStreamDidAuthenticate:(XMPPStream *)sender
 {
-  [self joinAuction];
+  [self subscribeToAuction];
+  [auction join];
 }
 
 - (void)xmppStream:(XMPPStream *)sender didNotAuthenticate:(NSXMLElement *)error;
@@ -110,7 +92,8 @@ XMPPJID *auctionJID() {
 
   [xmppStream addDelegate:self];
   
-  XMPPAuction *auction = [[XMPPAuction alloc] initWithStream:xmppStream];
+  auction = [[XMPPAuction alloc] initWithStream:xmppStream];
+  
   AuctionSniper *auctionSniper = [[AuctionSniper alloc] initWithAuction:auction];
   self.auctionSniperController.auctionSniper = auctionSniper;
   

@@ -11,11 +11,13 @@
 
 @class AuctionSniperViewController;
 @class AuctionMessageTranslator;
+@class XMPPAuction;
 
 @interface AuctionSniperAppDelegate : NSObject <UIApplicationDelegate, XMPPStreamDelegate> {
   UIWindow *window;
   AuctionSniperViewController *auctionSniperController;
   AuctionMessageTranslator *messageTranslator;
+  XMPPAuction *auction;
   XMPPStream *xmppStream;
 }
 @property (nonatomic, retain) IBOutlet UIWindow *window;

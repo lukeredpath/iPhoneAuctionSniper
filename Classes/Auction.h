@@ -11,6 +11,7 @@
 
 @protocol Auction
 
+- (void)join;
 - (void)bid:(NSInteger)amount;
 
 @end

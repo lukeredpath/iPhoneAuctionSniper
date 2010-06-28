@@ -34,10 +34,14 @@
   [super dealloc];
 }
 
+- (void)join;
+{
+  [self sendMessage:@"SOLVersion: 1.1; Command: JOIN;"];
+}
+
 - (void)bid:(NSInteger)amount;
 {
-  NSString *bidMessage = [NSString stringWithFormat:@"SOLVersion: 1.1; Command: BID; Price: %d;", amount];
-  [self sendMessage:bidMessage];
+  [self sendMessage:[NSString stringWithFormat:@"SOLVersion: 1.1; Command: BID; Price: %d;", amount]];
 }
 
 @end
