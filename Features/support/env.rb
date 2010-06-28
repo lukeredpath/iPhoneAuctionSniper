@@ -1,12 +1,34 @@
 require 'icuke/cucumber'
 require 'test/unit/assertions'
+require 'system_timer'
 
 World(Test::Unit::Assertions)
 
 OPENFIRE_PATH = "/opt/openfire/bin/openfire"
+OPENFIRE_PORT = 9090
 
 ICukeWorld.configure do
   set :target, 'Testing'
+end
+
+def wait_until(timeout, condition_lambda)
+  SystemTimer.timeout(timeout) do
+    loop do
+      satisfied = condition_lambda.call
+      return if satisfied
+      sleep(0.1)
+    end
+  end
+end
+
+def wait_for_openfire
+  wait_until(5, lambda {
+    begin
+      return TCPSocket.new('localhost', OPENFIRE_PORT)
+    rescue Exception => e
+      return false
+    end
+  })
 end
 
 class Openfire
@@ -38,7 +60,11 @@ $openfire ||= Openfire.new(OPENFIRE_PATH)
 AfterConfiguration do
   $openfire.start
   raise "Could not start Openfire" unless $openfire.running?
-  sleep(4) # give the daemon a chance to start up
+  begin
+    wait_for_openfire
+  rescue Timeout::Error
+    raise "Could not connect to Openfire in a timely manner"
+  end
 end
 
 at_exit do
