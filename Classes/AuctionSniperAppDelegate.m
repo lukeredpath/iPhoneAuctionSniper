@@ -28,16 +28,19 @@
   [super dealloc];
 }
 
+XMPPJID *auctionJID() {
+  NSString *auctionUser = [NSString stringWithFormat:@"auction-item-%d", kAUCTION_ID];
+  return [XMPPJID jidWithUser:auctionUser domain:kXMPP_HOSTNAME resource:kAUCTION_RESOURCE];
+}
+
 - (void)sendMessageToAuction:(NSString *)messageBody;
 {
   NSXMLElement *body = [NSXMLElement elementWithName:@"body"];
   [body setStringValue:messageBody];
   
-  NSString *auctionUser = [NSString stringWithFormat:@"auction-item-%d", kAUCTION_ID];
-  
   NSXMLElement *message = [NSXMLElement elementWithName:@"message"];
   [message addAttributeWithName:@"type" stringValue:@"chat"];
-  [message addAttributeWithName:@"to" stringValue:[XMPPJID jidWithUser:auctionUser domain:kXMPP_HOSTNAME resource:kAUCTION_RESOURCE].full];
+  [message addAttributeWithName:@"to" stringValue:auctionJID().full];
   [message addChild:body]; 
   
   [xmppStream sendElement:message];
@@ -61,12 +64,24 @@
 
 - (void)xmppStreamDidAuthenticate:(XMPPStream *)sender
 {
+  NSXMLElement *presence = [NSXMLElement elementWithName:@"presence"];
+  [xmppStream sendElement:presence];
+  
+  [presence addAttributeWithName:@"to" stringValue:auctionJID().bare];
+	[presence addAttributeWithName:@"type" stringValue:@"subscribed"];
+  [xmppStream sendElement:presence];
+  
   [self sendMessageToAuction:@"_"]; // don't care about message body yet
 }
 
 - (void)xmppStream:(XMPPStream *)sender didNotAuthenticate:(NSXMLElement *)error;
 {
   NSLog(@"Failed to authenticate, %@", error);
+}
+
+- (void)xmppStream:(XMPPStream *)sender didReceiveMessage:(XMPPMessage *)message
+{
+  [self.auctionSniperController setState:@"Lost"];
 }
 
 #pragma mark -
