@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "XMPPStream.h"
+#import "AuctionEventListener.h"
 
 @class AuctionSniperViewController;
+@class AuctionMessageTranslator;
 
-@interface AuctionSniperAppDelegate : NSObject <UIApplicationDelegate, XMPPStreamDelegate> {
+@interface AuctionSniperAppDelegate : NSObject <UIApplicationDelegate, XMPPStreamDelegate, AuctionEventListener> {
   UIWindow *window;
   AuctionSniperViewController *auctionSniperController;
+  AuctionMessageTranslator *messageTranslator;
   XMPPStream *xmppStream;
 }
 @property (nonatomic, retain) IBOutlet UIWindow *window;

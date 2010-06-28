@@ -61,7 +61,8 @@ module AuctionSniper
     AUCTION_RESOURCE = "auction"
     
     def announce_closed
-      @connection.deliver(@listener.last_jid, "_")
+      message = "SOLVersion: 1.1; Event: CLOSE;"
+      @connection.deliver(@listener.last_jid, message)
     end
     
     def start_selling_item

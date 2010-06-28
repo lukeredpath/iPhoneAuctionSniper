@@ -9,6 +9,7 @@
 #import "AuctionSniperAppDelegate.h"
 #import "AuctionSniperViewController.h"
 #import "XMPP.h"
+#import "AuctionMessageTranslator.h"
 
 #define kSNIPER_XMPP_USERNAME @"sniper"
 #define kSNIPER_XMPP_PASSWORD @"sniper"
@@ -31,6 +32,7 @@
 - (void)dealloc 
 {
   [xmppStream release];
+  [messageTranslator release];
   [window release];
   [super dealloc];
 }
@@ -95,9 +97,17 @@ XMPPJID *auctionJID() {
   NSLog(@"Failed to authenticate, %@", error);
 }
 
-- (void)xmppStream:(XMPPStream *)sender didReceiveMessage:(XMPPMessage *)message
+#pragma mark -
+#pragma mark AuctionEventListener methods
+
+- (void)auctionClosed;
 {
-  [self.auctionSniperController setState:@"Lost"];
+  [self.auctionSniperController setState:@"Lost"]; 
+}
+
+- (void)currentPriceForAuction:(NSInteger)price increment:(NSInteger)increment;
+{
+  [self.auctionSniperController setState:@"Bidding"];
 }
 
 #pragma mark -
@@ -109,7 +119,10 @@ XMPPJID *auctionJID() {
   xmppStream.hostName = kXMPP_HOSTNAME;
   xmppStream.myJID = [XMPPJID jidWithUser:kSNIPER_XMPP_USERNAME domain:kXMPP_HOSTNAME resource:nil];
 
-  [xmppStream addDelegate:self];	
+  [xmppStream addDelegate:self];
+  
+  messageTranslator = [[AuctionMessageTranslator alloc] initWithAuctionEventListener:self];
+  [xmppStream addDelegate:messageTranslator];
   
   NSError *connectionError = nil;
   if (![xmppStream connect:&connectionError]) {
