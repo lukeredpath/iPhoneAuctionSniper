@@ -48,7 +48,7 @@ module AuctionSniper
     end
     
     def start_selling_item
-      @listener = AuctionSniper::FakeAuctionServer::MessageListener.new(connection, @message_queue).run
+      @listener = AuctionSniper::FakeAuctionServer::MessageListener.new(@connection, @message_queue).run
     end
   end
   
@@ -60,16 +60,13 @@ module AuctionSniper
     
     def initialize(auction_id)
       @auction_id = auction_id
-    end
-    
-    def connection
-      @connection ||= Jabber::Simple.new(jid, XMPP_PASSWORD)
       @message_queue = PollableFIFOQueue.new
+      @connection = Jabber::Simple.new(jid, XMPP_PASSWORD)
     end
     
     def stop
       @listener.kill if @listener
-      connection.disconnect if @connection
+      @connection.disconnect if @connection
     end
     
     class MessageListener
@@ -83,7 +80,7 @@ module AuctionSniper
       
       def run
         @thread = Thread.new do
-          while(true) do
+          loop do
             @connection.received_messages do |msg|
               @queue.add(msg)
               @last_jid = msg.from
