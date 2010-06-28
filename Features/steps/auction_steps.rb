@@ -1,4 +1,5 @@
 TEST_AUCTION_ID = '1'
+SNIPER_XMPP_ID  = "sniper@localhost"
 
 Given /^an auction is selling an item$/ do
   @auction = AuctionSniper::FakeAuctionServer.new(TEST_AUCTION_ID)
@@ -11,6 +12,14 @@ end
 
 When /^the auction announces it has closed$/ do
   @auction.announce_closed
+end
+
+When /^the auction reports a price of (\d+) \+ (\d+) from "([^\"]*)"$/ do |price, increment, bidder|
+  @auction.report_price(price, increment, bidder)
+end
+
+Then /^the auction should have received a bid of (\d+) from the sniper$/ do |amount|
+  @auction.assert_received_bid(amount, SNIPER_XMPP_ID)
 end
 
 After do

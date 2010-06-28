@@ -2,11 +2,15 @@ require 'xmpp4r-simple'
 require 'system_timer'
 
 class PollableFIFOQueue < Array
-  def poll(timeout)
+  def poll(timeout, matcher_lambda = nil)
     SystemTimer.timeout(timeout) do
       loop do
         if (item = next_item)
-          return item
+          if matcher_lambda
+            return item if matcher_lambda.call(item)
+          else
+            return item
+          end
         else
           sleep(0.1)
         end
@@ -35,6 +39,13 @@ module AuctionSniper
       assert_not_nil @message_queue.poll(MESSAGE_POLL_TIMEOUT), 
         "#{self.class} did not receive join request in time"
     end
+    
+    def assert_received_bid(amount, sender)
+      assert_not_nil @message_queue.poll(MESSAGE_POLL_TIMEOUT, lambda{ |message|
+        expected_message = "SOLVersion: 1.1; Command: BID; Price: #{amount};"
+        return (message.from.to_s == sender && message.body == expected_message)
+      })
+    end
   end
   
   module Actions
@@ -50,6 +61,11 @@ module AuctionSniper
     def start_selling_item
       @listener = AuctionSniper::FakeAuctionServer::MessageListener.new(@connection, @message_queue)
       @listener.run
+    end
+    
+    def report_price(price, increment, bidder)
+      message = "SOLVersion: 1.1; Event: PRICE; CurrentPrice: #{price}; Increment: #{increment}; Bidder: #{bidder};"
+      @connection.deliver(@listener.last_jid, message)
     end
   end
   

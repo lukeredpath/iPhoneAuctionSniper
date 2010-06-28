@@ -21,10 +21,10 @@ end
 # THENS
 #------------------------------------------------------------------------------
 
-Then /^the application should show the sniper has joined the auction$/ do
-  @application_runner.assert_sniper_has_joined_auction
-end
-
 Then /^the application should show the sniper has lost the auction$/ do
   @application_runner.assert_sniper_has_lost_auction
+end
+
+Then /^the application should show the sniper is bidding$/ do
+  @application_runner.assert_sniper_is_bidding
 end

@@ -1,15 +1,15 @@
 module AuctionSniper
-  unless const_defined?('STATUS_JOINING')
-    STATUS_JOINING = "Joining"
-    STATUS_BIDDING = "Bidding"
-    STATUS_LOST    = "Lost"
-  end
+  STATUS_JOINING = "Joining"
+  STATUS_BIDDING = "Bidding"
+  STATUS_LOST    = "Lost"
   
   module Assertions
     include Test::Unit::Assertions
     
-    def assert_sniper_has_joined_auction
-      @auction_driver.assert_shows_sniper_status(STATUS_BIDDING)
+    def assert_sniper_is_bidding
+      try_assertion_for(1) do
+        @auction_driver.assert_shows_sniper_status(STATUS_BIDDING)
+      end
     end
     
     def assert_sniper_has_lost_auction
