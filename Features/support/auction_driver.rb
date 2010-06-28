@@ -7,6 +7,7 @@ module AuctionSniper
     end
     
     def assert_shows_sniper_status(status_string)
+      @simulator_driver.send(:refresh)
       @simulator_driver.assert_text_on_screen(status_string)
     end
   end
