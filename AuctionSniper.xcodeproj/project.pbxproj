@@ -65,6 +65,10 @@
 		A3FC554A11D82C420045F352 /* XMPPReconnect.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC554911D82C420045F352 /* XMPPReconnect.m */; };
 		A3FC554B11D82C420045F352 /* XMPPReconnect.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC554911D82C420045F352 /* XMPPReconnect.m */; };
 		A3FC554F11D82C580045F352 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3FC554E11D82C580045F352 /* SystemConfiguration.framework */; };
+		A3FC55DE11D8319C0045F352 /* AuctionSniperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC548D11D825170045F352 /* AuctionSniperViewController.m */; };
+		A3FC55F711D831D60045F352 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3FC54B911D8287A0045F352 /* CFNetwork.framework */; };
+		A3FC55F811D831E10045F352 /* libresolv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A3FC553611D82B460045F352 /* libresolv.dylib */; };
+		A3FC55F911D831E80045F352 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3FC554E11D82C580045F352 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -195,6 +199,7 @@
 		A3FC554811D82C420045F352 /* XMPPReconnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMPPReconnect.h; sourceTree = "<group>"; };
 		A3FC554911D82C420045F352 /* XMPPReconnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMPPReconnect.m; sourceTree = "<group>"; };
 		A3FC554E11D82C580045F352 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		A3FC560711D8329C0045F352 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,10 +221,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3FC551D11D829BE0045F352 /* libidn.a in Frameworks */,
+				A3FC55F911D831E80045F352 /* SystemConfiguration.framework in Frameworks */,
+				A3FC55F811D831E10045F352 /* libresolv.dylib in Frameworks */,
+				A3FC55F711D831D60045F352 /* CFNetwork.framework in Frameworks */,
 				A3FC540E11D7CA3D0045F352 /* UIKit.framework in Frameworks */,
 				A31521AB11D238D3007F2123 /* Foundation.framework in Frameworks */,
 				A31521AD11D238D3007F2123 /* CoreGraphics.framework in Frameworks */,
-				A3FC551D11D829BE0045F352 /* libidn.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +264,7 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				A31520D011D237FE007F2123 /* Acceptance-Info.plist */,
+				A3FC560711D8329C0045F352 /* libiconv.dylib */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -618,6 +627,7 @@
 				A3FC552911D829F30045F352 /* RFSRVResolver.m in Sources */,
 				A3FC552A11D829F30045F352 /* XMPPModule.m in Sources */,
 				A3FC554B11D82C420045F352 /* XMPPReconnect.m in Sources */,
+				A3FC55DE11D8319C0045F352 /* AuctionSniperViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -709,11 +719,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Vendor/XMPPFramework\"",
 				);
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-all_load",
-					"-lstdc++",
-				);
+				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = AuctionSniper;
 				USER_HEADER_SEARCH_PATHS = "~/Code/mine/bromine/build/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/usr/local/include";
 			};
@@ -734,11 +740,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Vendor/XMPPFramework\"",
 				);
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-all_load",
-					"-lstdc++",
-				);
+				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = AuctionSniper;
 				USER_HEADER_SEARCH_PATHS = "~/Code/mine/bromine/build/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/usr/local/include";
 				VALIDATE_PRODUCT = YES;

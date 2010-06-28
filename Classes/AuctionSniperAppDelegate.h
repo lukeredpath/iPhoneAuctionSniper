@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XMPPStream.h"
 
-@interface AuctionSniperAppDelegate : NSObject <UIApplicationDelegate> {
-    UIWindow *window;
+@interface AuctionSniperAppDelegate : NSObject <UIApplicationDelegate, XMPPStreamDelegate> {
+  UIWindow *window;
+  XMPPStream *xmppStream;
 }
-
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @end
 
