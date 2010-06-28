@@ -7,6 +7,7 @@
 //
 
 #import "AuctionSniperViewController.h"
+#import "AuctionSniper.h"
 
 @interface AuctionSniperViewController ()
 - (void)setState:(NSString *)state;
@@ -23,6 +24,13 @@
 {
   [auctionSniper release];
   [super dealloc];
+}
+
+- (void)setAuctionSniper:(AuctionSniper *)sniper;
+{
+  [auctionSniper autorelease];
+  auctionSniper = [sniper retain];
+  auctionSniper.delegate = self;
 }
 
 - (void)viewDidLoad 
@@ -48,6 +56,11 @@
 - (void)auctionSniperLost;
 {
   [self setState:@"Lost"];
+}
+
+- (void)auctionSniperBidding;
+{
+  [self setState:@"Bidding"];
 }
 
 @end

@@ -1,17 +1,19 @@
 //
-//  AuctionSniperListener.h
+//  Auction.m
 //  AuctionSniper
 //
 //  Created by Luke Redpath on 28/06/2010.
 //  Copyright 2010 LJR Software Limited. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "Auction.h"
 
 
-@protocol AuctionSniperListener
+@implementation Auction
 
-- (void)auctionSniperLost;
-- (void)auctionSniperBidding;
+- (void)bid:(NSInteger)amount;
+{
+  
+}
 
 @end

@@ -9,24 +9,29 @@
 #import "TestingCommon.h"
 #import "AuctionSniper.h"
 #import "AuctionSniperListener.h"
+#import "Auction.h"
 
 @interface AuctionSniperTest : SenTestCase
 {
   AuctionSniper *sniper;
+  id auction;
   id listener;
 }
 @property (nonatomic, retain) AuctionSniper *sniper;
 @property (nonatomic, retain) id listener;
+@property (nonatomic, retain) id auction;
 @end
 
 @implementation AuctionSniperTest
 
-@synthesize sniper, listener;
+@synthesize sniper, listener, auction;
 
 - (void)setUp;
 {
   self.listener = [OCMockObject mockForProtocol:@protocol(AuctionSniperListener)];
-  self.sniper   = [[[AuctionSniper alloc] initWithSniperListener:self.listener] autorelease];
+  self.auction  = [OCMockObject mockForClass:[Auction class]];
+  self.sniper   = [[[AuctionSniper alloc] initWithAuction:self.auction] autorelease];
+  self.sniper.delegate = self.listener;
 }
 
 - (void)tearDown;
@@ -38,6 +43,17 @@
 {
   [[self.listener expect] auctionSniperLost];
   [self.sniper auctionClosed];
+}
+
+- (void)testBidsHigherAndReportsBiddingWhenNewPriceArrives;
+{
+  NSInteger price = 100;
+  NSInteger increment = 25;
+  
+  [[self.auction expect] bid:(price + increment)];
+  [[self.listener expect] auctionSniperBidding];
+  
+  [self.sniper currentPriceForAuction:price increment:increment];
 }
 
 @end

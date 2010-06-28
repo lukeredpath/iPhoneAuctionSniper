@@ -107,6 +107,9 @@
 		A3FC5F4511D929440045F352 /* AuctionSniper.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC5F4411D929440045F352 /* AuctionSniper.m */; };
 		A3FC5F6811D92C160045F352 /* AuctionSniper.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC5F4411D929440045F352 /* AuctionSniper.m */; };
 		A3FC5F6911D92C170045F352 /* AuctionSniper.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC5F4411D929440045F352 /* AuctionSniper.m */; };
+		A3FC5F8011D92DCC0045F352 /* Auction.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC5F7F11D92DCC0045F352 /* Auction.m */; };
+		A3FC5F8511D92DDE0045F352 /* Auction.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC5F7F11D92DCC0045F352 /* Auction.m */; };
+		A3FC5F8611D92DDF0045F352 /* Auction.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC5F7F11D92DCC0045F352 /* Auction.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -194,6 +197,8 @@
 		A3FC5F4311D929440045F352 /* AuctionSniper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuctionSniper.h; sourceTree = "<group>"; };
 		A3FC5F4411D929440045F352 /* AuctionSniper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuctionSniper.m; sourceTree = "<group>"; };
 		A3FC5F4811D9298D0045F352 /* AuctionSniperListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuctionSniperListener.h; sourceTree = "<group>"; };
+		A3FC5F7E11D92DCC0045F352 /* Auction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Auction.h; sourceTree = "<group>"; };
+		A3FC5F7F11D92DCC0045F352 /* Auction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Auction.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -418,6 +423,8 @@
 				A3FC5BDB11D90A390045F352 /* AuctionMessageTranslator.m */,
 				A3FC5F4311D929440045F352 /* AuctionSniper.h */,
 				A3FC5F4411D929440045F352 /* AuctionSniper.m */,
+				A3FC5F7E11D92DCC0045F352 /* Auction.h */,
+				A3FC5F7F11D92DCC0045F352 /* Auction.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -601,6 +608,7 @@
 				A3FC55DE11D8319C0045F352 /* AuctionSniperViewController.m in Sources */,
 				A3FC5BDD11D90A4B0045F352 /* AuctionMessageTranslator.m in Sources */,
 				A3FC5F6911D92C170045F352 /* AuctionSniper.m in Sources */,
+				A3FC5F8611D92DDF0045F352 /* Auction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,6 +640,7 @@
 				A3FC554A11D82C420045F352 /* XMPPReconnect.m in Sources */,
 				A3FC5BDE11D90A4B0045F352 /* AuctionMessageTranslator.m in Sources */,
 				A3FC5F6811D92C160045F352 /* AuctionSniper.m in Sources */,
+				A3FC5F8511D92DDE0045F352 /* Auction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,6 +675,7 @@
 				A3FC5F1511D926680045F352 /* NSNotificationCenter+OCMAdditions.m in Sources */,
 				A3FC5F3811D929040045F352 /* AuctionSniperTest.m in Sources */,
 				A3FC5F4511D929440045F352 /* AuctionSniper.m in Sources */,
+				A3FC5F8011D92DCC0045F352 /* Auction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

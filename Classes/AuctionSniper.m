@@ -7,16 +7,24 @@
 //
 
 #import "AuctionSniper.h"
-
+#import "Auction.h"
 
 @implementation AuctionSniper
 
-- (id)initWithSniperListener:(id<AuctionSniperListener>)listener;
+@synthesize delegate;
+
+- (id)initWithAuction:(Auction *)anAuction;
 {
   if (self = [super init]) {
-    sniperListener = listener;
+    auction = [anAuction retain];
   }
   return self;
+}
+
+- (void)dealloc;
+{
+  [auction release];
+  [super dealloc];
 }
 
 #pragma mark -
@@ -24,12 +32,13 @@
 
 - (void)auctionClosed;
 {
-  [sniperListener auctionSniperLost];
+  [self.delegate auctionSniperLost];
 }
 
 - (void)currentPriceForAuction:(NSInteger)price increment:(NSInteger)increment;
 {
- 
+  [auction bid:(price + increment)];
+  [self.delegate auctionSniperBidding];
 }
 
 @end
