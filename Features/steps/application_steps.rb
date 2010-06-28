@@ -8,7 +8,7 @@ end
 
 Given /^the application has joined the auction$/ do
   @application_runner.join_auction(@auction)
-  @auction.assert_received_join_request_from_sniper
+  @auction.assert_received_join_request_from(Global.SNIPER_XMPP_ID)
 end
 
 # WHENS

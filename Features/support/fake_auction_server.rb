@@ -35,16 +35,22 @@ module AuctionSniper
   module Assertions
     include Test::Unit::Assertions
         
-    def assert_received_join_request_from_sniper
-      assert_not_nil @message_queue.poll(MESSAGE_POLL_TIMEOUT), 
-        "#{self.class} did not receive join request in time"
+    def assert_received_join_request_from(sender)
+      assert_received_message_matching(sender, /SOLVersion: 1.1; Command: JOIN;/, 
+        "#{self.class} did not receive join request in time")
     end
     
     def assert_received_bid(amount, sender)
+      assert_received_message_matching(sender, /SOLVersion: 1.1; Command: BID; Price: #{amount};/,
+        "#{self.class} did not receive a bid of amount #{amount} from #{sender}")
+    end
+    
+    private
+    
+    def assert_received_message_matching(sender, pattern, failure_message = nil)
       assert_not_nil @message_queue.poll(MESSAGE_POLL_TIMEOUT, lambda{ |message|
-        expected_message = "SOLVersion: 1.1; Command: BID; Price: #{amount};"
-        return (message.from.to_s == sender && message.body == expected_message)
-      })
+        return (message.from.bare == sender && pattern.match(message.body))
+      }), failure_message
     end
   end
   

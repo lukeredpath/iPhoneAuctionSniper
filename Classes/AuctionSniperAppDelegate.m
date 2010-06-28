@@ -16,6 +16,13 @@
 #define kAUCTION_RESOURCE     @"auction"
 #define kAUCTION_ID           1
 
+@interface AuctionSniperAppDelegate ()
+- (void)joinAuction;
+- (void)subscribeToAuction;
+@end
+
+#pragma mark -
+
 @implementation AuctionSniperAppDelegate
 
 @synthesize window;
@@ -46,6 +53,22 @@ XMPPJID *auctionJID() {
   [xmppStream sendElement:message];
 }
 
+- (void)subscribeToAuction;
+{
+  NSXMLElement *presence = [NSXMLElement elementWithName:@"presence"];
+  [xmppStream sendElement:presence];
+  
+  [presence addAttributeWithName:@"to" stringValue:auctionJID().bare];
+	[presence addAttributeWithName:@"type" stringValue:@"subscribed"];
+  [xmppStream sendElement:presence];
+}
+
+- (void)joinAuction;
+{
+  [self subscribeToAuction];
+  [self sendMessageToAuction:@"SOLVersion: 1.1; Command: JOIN;"];
+}
+
 #pragma mark -
 #pragma mark XMPPStreamDelegate methods
 
@@ -64,14 +87,7 @@ XMPPJID *auctionJID() {
 
 - (void)xmppStreamDidAuthenticate:(XMPPStream *)sender
 {
-  NSXMLElement *presence = [NSXMLElement elementWithName:@"presence"];
-  [xmppStream sendElement:presence];
-  
-  [presence addAttributeWithName:@"to" stringValue:auctionJID().bare];
-	[presence addAttributeWithName:@"type" stringValue:@"subscribed"];
-  [xmppStream sendElement:presence];
-  
-  [self sendMessageToAuction:@"_"]; // don't care about message body yet
+  [self joinAuction];
 }
 
 - (void)xmppStream:(XMPPStream *)sender didNotAuthenticate:(NSXMLElement *)error;

@@ -1,6 +1,7 @@
 require 'icuke/cucumber'
 require 'test/unit/assertions'
 require 'system_timer'
+require File.join(File.dirname(__FILE__), *%w[global])
 
 World(Test::Unit::Assertions)
 
@@ -70,3 +71,4 @@ end
 at_exit do
   $openfire.stop
 end
+
