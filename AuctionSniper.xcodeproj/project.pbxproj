@@ -55,8 +55,6 @@
 		A3FC551511D8299C0045F352 /* MulticastDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC550B11D8299C0045F352 /* MulticastDelegate.m */; };
 		A3FC551611D8299C0045F352 /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC550D11D8299C0045F352 /* NSDataAdditions.m */; };
 		A3FC551711D8299C0045F352 /* NSXMLElementAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC550F11D8299C0045F352 /* NSXMLElementAdditions.m */; };
-		A3FC551D11D829BE0045F352 /* libidn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3FC551C11D829BE0045F352 /* libidn.a */; };
-		A3FC551E11D829BE0045F352 /* libidn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3FC551C11D829BE0045F352 /* libidn.a */; };
 		A3FC552711D829F30045F352 /* RFSRVResolver.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC552411D829F30045F352 /* RFSRVResolver.m */; };
 		A3FC552811D829F30045F352 /* XMPPModule.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC552611D829F30045F352 /* XMPPModule.m */; };
 		A3FC552911D829F30045F352 /* RFSRVResolver.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC552411D829F30045F352 /* RFSRVResolver.m */; };
@@ -69,66 +67,43 @@
 		A3FC55F711D831D60045F352 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3FC54B911D8287A0045F352 /* CFNetwork.framework */; };
 		A3FC55F811D831E10045F352 /* libresolv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A3FC553611D82B460045F352 /* libresolv.dylib */; };
 		A3FC55F911D831E80045F352 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3FC554E11D82C580045F352 /* SystemConfiguration.framework */; };
+		A3FC5B4011D8EB380045F352 /* AuctionMessageTranslatorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC574E11D8D7640045F352 /* AuctionMessageTranslatorTest.m */; };
+		A3FC5BC011D8ED760045F352 /* libOCHamcrest-StaticLib-iphonesimulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3FC5BBF11D8ED760045F352 /* libOCHamcrest-StaticLib-iphonesimulator.a */; };
+		A3FC5BDC11D90A390045F352 /* AuctionMessageTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC5BDB11D90A390045F352 /* AuctionMessageTranslator.m */; };
+		A3FC5BDD11D90A4B0045F352 /* AuctionMessageTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC5BDB11D90A390045F352 /* AuctionMessageTranslator.m */; };
+		A3FC5BDE11D90A4B0045F352 /* AuctionMessageTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC5BDB11D90A390045F352 /* AuctionMessageTranslator.m */; };
+		A3FC5BF111D90C130045F352 /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC550D11D8299C0045F352 /* NSDataAdditions.m */; };
+		A3FC5BF211D90C130045F352 /* NSXMLElementAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC550F11D8299C0045F352 /* NSXMLElementAdditions.m */; };
+		A3FC5BF311D90C130045F352 /* XMPPMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC54F311D829860045F352 /* XMPPMessage.m */; };
+		A3FC5BF411D90C130045F352 /* DDXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC54CD11D828BC0045F352 /* DDXMLDocument.m */; };
+		A3FC5BF511D90C130045F352 /* DDXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC54CF11D828BC0045F352 /* DDXMLElement.m */; };
+		A3FC5BF611D90C130045F352 /* DDXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC54D111D828BC0045F352 /* DDXMLNode.m */; };
+		A3FC5BF711D90C130045F352 /* NSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC54D411D828BC0045F352 /* NSStringAdditions.m */; };
+		A3FC5C6A11D90C320045F352 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3FC554E11D82C580045F352 /* SystemConfiguration.framework */; };
+		A3FC5C6D11D90C560045F352 /* XMPPElement.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC54ED11D829860045F352 /* XMPPElement.m */; };
+		A3FC5C7011D90C5F0045F352 /* XMPPIQ.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC54EF11D829860045F352 /* XMPPIQ.m */; };
+		A3FC5C7111D90C5F0045F352 /* XMPPJID.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC54F111D829860045F352 /* XMPPJID.m */; };
+		A3FC5C7211D90C5F0045F352 /* XMPPParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC54F511D829860045F352 /* XMPPParser.m */; };
+		A3FC5C7311D90C5F0045F352 /* XMPPPresence.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC54F711D829860045F352 /* XMPPPresence.m */; };
+		A3FC5C7411D90C5F0045F352 /* XMPPStream.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC54F911D829860045F352 /* XMPPStream.m */; };
+		A3FC5C7711D90C660045F352 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3FC54B911D8287A0045F352 /* CFNetwork.framework */; };
+		A3FC5C7A11D90C6F0045F352 /* XMPPReconnect.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC554911D82C420045F352 /* XMPPReconnect.m */; };
+		A3FC5C7B11D90C6F0045F352 /* RFSRVResolver.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC552411D829F30045F352 /* RFSRVResolver.m */; };
+		A3FC5C7C11D90C6F0045F352 /* XMPPModule.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC552611D829F30045F352 /* XMPPModule.m */; };
+		A3FC5C7E11D90C730045F352 /* libresolv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A3FC553611D82B460045F352 /* libresolv.dylib */; };
+		A3FC5C8111D90C7D0045F352 /* MulticastDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC550B11D8299C0045F352 /* MulticastDelegate.m */; };
+		A3FC5C8411D90C860045F352 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC54C711D828AE0045F352 /* AsyncSocket.m */; };
+		A3FC5D2211D910870045F352 /* libOCMock-StaticLib-iphonesimulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3FC5D2111D910870045F352 /* libOCMock-StaticLib-iphonesimulator.a */; };
+		A3FC5E6411D920D20045F352 /* LibIDN.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC550911D8299C0045F352 /* LibIDN.m */; };
+		A3FC5E6811D920EA0045F352 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A3FC560711D8329C0045F352 /* libiconv.dylib */; };
+		A3FC5E7C11D924530045F352 /* libidn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3FC5E7B11D924530045F352 /* libidn.a */; };
+		A3FC5E7D11D924530045F352 /* libidn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3FC5E7B11D924530045F352 /* libidn.a */; };
+		A3FC5E7E11D924530045F352 /* libidn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3FC5E7B11D924530045F352 /* libidn.a */; };
+		A3FC5F1211D926680045F352 /* NSInvocation+OCMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC5F0B11D926680045F352 /* NSInvocation+OCMAdditions.m */; };
+		A3FC5F1311D926680045F352 /* NSInvocationOCMAdditionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC5F0D11D926680045F352 /* NSInvocationOCMAdditionsTests.m */; };
+		A3FC5F1411D926680045F352 /* NSMethodSignature+OCMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC5F0F11D926680045F352 /* NSMethodSignature+OCMAdditions.m */; };
+		A3FC5F1511D926680045F352 /* NSNotificationCenter+OCMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC5F1111D926680045F352 /* NSNotificationCenter+OCMAdditions.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		A315223B11D23CE0007F2123 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A315223711D23CE0007F2123 /* Bromine.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D2AAC07E0554694100DB518D;
-			remoteInfo = Bromine;
-		};
-		A315246D11D2692C007F2123 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A315245A11D2692C007F2123 /* Cedar.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
-			remoteInfo = Cedar;
-		};
-		A315246F11D2692C007F2123 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A315245A11D2692C007F2123 /* Cedar.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = AE603D65118CCB2100D312FC;
-			remoteInfo = Specs;
-		};
-		A315247111D2692C007F2123 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A315245A11D2692C007F2123 /* Cedar.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = AED41F2C11B869D0006DBB00;
-			remoteInfo = "Cedar-StaticLib";
-		};
-		A315247311D2692C007F2123 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A315245A11D2692C007F2123 /* Cedar.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = AE12B63211D0191000C236FF;
-			remoteInfo = iPhoneSpecs;
-		};
-		A315257611D27372007F2123 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A315256F11D27372007F2123 /* OCHamcrest.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
-			remoteInfo = OCHamcrest;
-		};
-		A315257811D27372007F2123 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A315256F11D27372007F2123 /* OCHamcrest.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 50066DAD1191DDE700A7A86D;
-			remoteInfo = "OCHamcrest-StaticLib";
-		};
-		A315257A11D27372007F2123 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A315256F11D27372007F2123 /* OCHamcrest.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0F2A4B1F0D8B68B400051BCF;
-			remoteInfo = UnitTests;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -141,13 +116,7 @@
 		32CA4F630368D1EE00C91783 /* AuctionSniper_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuctionSniper_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* AuctionSniper-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AuctionSniper-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		A31520D011D237FE007F2123 /* Acceptance-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Acceptance-Info.plist"; sourceTree = "<group>"; };
-		A315219D11D238AB007F2123 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A31521B111D238D3007F2123 /* AuctionSniper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuctionSniper.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A31521B311D238D3007F2123 /* AuctionSniper-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AuctionSniper-Info copy.plist"; sourceTree = "<group>"; };
-		A315223711D23CE0007F2123 /* Bromine.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Bromine.xcodeproj; path = ../../../mine/bromine/Bromine.xcodeproj; sourceTree = SOURCE_ROOT; };
-		A315245A11D2692C007F2123 /* Cedar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cedar.xcodeproj; path = ../../../mine/cedar/Cedar.xcodeproj; sourceTree = SOURCE_ROOT; };
-		A31524EB11D26EE0007F2123 /* SkeletonTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkeletonTest.m; sourceTree = "<group>"; };
-		A315256F11D27372007F2123 /* OCHamcrest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OCHamcrest.xcodeproj; path = ../../../mine/cedar/External/OCHamcrest/Source/OCHamcrest.xcodeproj; sourceTree = SOURCE_ROOT; };
 		A3FC540A11D7CA390045F352 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A3FC548C11D825170045F352 /* AuctionSniperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuctionSniperViewController.h; sourceTree = "<group>"; };
 		A3FC548D11D825170045F352 /* AuctionSniperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuctionSniperViewController.m; sourceTree = "<group>"; };
@@ -190,7 +159,6 @@
 		A3FC550F11D8299C0045F352 /* NSXMLElementAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSXMLElementAdditions.m; sourceTree = "<group>"; };
 		A3FC551A11D829B20045F352 /* idn-int.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "idn-int.h"; sourceTree = "<group>"; };
 		A3FC551B11D829B20045F352 /* stringprep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stringprep.h; sourceTree = "<group>"; };
-		A3FC551C11D829BE0045F352 /* libidn.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libidn.a; sourceTree = "<group>"; };
 		A3FC552311D829F30045F352 /* RFSRVResolver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFSRVResolver.h; sourceTree = "<group>"; };
 		A3FC552411D829F30045F352 /* RFSRVResolver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFSRVResolver.m; sourceTree = "<group>"; };
 		A3FC552511D829F30045F352 /* XMPPModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMPPModule.h; sourceTree = "<group>"; };
@@ -200,6 +168,23 @@
 		A3FC554911D82C420045F352 /* XMPPReconnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMPPReconnect.m; sourceTree = "<group>"; };
 		A3FC554E11D82C580045F352 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A3FC560711D8329C0045F352 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		A3FC574E11D8D7640045F352 /* AuctionMessageTranslatorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuctionMessageTranslatorTest.m; sourceTree = "<group>"; };
+		A3FC5B3911D8EB2B0045F352 /* Unit Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unit Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3FC5B3A11D8EB2B0045F352 /* Unit Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Unit Tests-Info.plist"; sourceTree = "<group>"; };
+		A3FC5BBF11D8ED760045F352 /* libOCHamcrest-StaticLib-iphonesimulator.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libOCHamcrest-StaticLib-iphonesimulator.a"; path = "../../../others/OCHamcrest/Source/build/Release-iphonesimulator/libOCHamcrest-StaticLib-iphonesimulator.a"; sourceTree = SOURCE_ROOT; };
+		A3FC5BDA11D90A390045F352 /* AuctionMessageTranslator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuctionMessageTranslator.h; sourceTree = "<group>"; };
+		A3FC5BDB11D90A390045F352 /* AuctionMessageTranslator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuctionMessageTranslator.m; sourceTree = "<group>"; };
+		A3FC5D2111D910870045F352 /* libOCMock-StaticLib-iphonesimulator.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libOCMock-StaticLib-iphonesimulator.a"; sourceTree = "<group>"; };
+		A3FC5D7611D913240045F352 /* AuctionEventListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuctionEventListener.h; sourceTree = "<group>"; };
+		A3FC5E7B11D924530045F352 /* libidn.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libidn.a; sourceTree = "<group>"; };
+		A3FC5F0A11D926680045F352 /* NSInvocation+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSInvocation+OCMAdditions.h"; sourceTree = "<group>"; };
+		A3FC5F0B11D926680045F352 /* NSInvocation+OCMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSInvocation+OCMAdditions.m"; sourceTree = "<group>"; };
+		A3FC5F0C11D926680045F352 /* NSInvocationOCMAdditionsTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSInvocationOCMAdditionsTests.h; sourceTree = "<group>"; };
+		A3FC5F0D11D926680045F352 /* NSInvocationOCMAdditionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSInvocationOCMAdditionsTests.m; sourceTree = "<group>"; };
+		A3FC5F0E11D926680045F352 /* NSMethodSignature+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMethodSignature+OCMAdditions.h"; sourceTree = "<group>"; };
+		A3FC5F0F11D926680045F352 /* NSMethodSignature+OCMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMethodSignature+OCMAdditions.m"; sourceTree = "<group>"; };
+		A3FC5F1011D926680045F352 /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
+		A3FC5F1111D926680045F352 /* NSNotificationCenter+OCMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNotificationCenter+OCMAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,9 +196,9 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
 				A3FC54BA11D8287A0045F352 /* CFNetwork.framework in Frameworks */,
-				A3FC551E11D829BE0045F352 /* libidn.a in Frameworks */,
 				A3FC553711D82B460045F352 /* libresolv.dylib in Frameworks */,
 				A3FC554F11D82C580045F352 /* SystemConfiguration.framework in Frameworks */,
+				A3FC5E7E11D924530045F352 /* libidn.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,13 +206,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3FC551D11D829BE0045F352 /* libidn.a in Frameworks */,
 				A3FC55F911D831E80045F352 /* SystemConfiguration.framework in Frameworks */,
 				A3FC55F811D831E10045F352 /* libresolv.dylib in Frameworks */,
 				A3FC55F711D831D60045F352 /* CFNetwork.framework in Frameworks */,
 				A3FC540E11D7CA3D0045F352 /* UIKit.framework in Frameworks */,
 				A31521AB11D238D3007F2123 /* Foundation.framework in Frameworks */,
 				A31521AD11D238D3007F2123 /* CoreGraphics.framework in Frameworks */,
+				A3FC5E7D11D924530045F352 /* libidn.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A3FC5B3611D8EB2B0045F352 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3FC5C7E11D90C730045F352 /* libresolv.dylib in Frameworks */,
+				A3FC5C7711D90C660045F352 /* CFNetwork.framework in Frameworks */,
+				A3FC5C6A11D90C320045F352 /* SystemConfiguration.framework in Frameworks */,
+				A3FC5BC011D8ED760045F352 /* libOCHamcrest-StaticLib-iphonesimulator.a in Frameworks */,
+				A3FC5D2211D910870045F352 /* libOCMock-StaticLib-iphonesimulator.a in Frameworks */,
+				A3FC5E6811D920EA0045F352 /* libiconv.dylib in Frameworks */,
+				A3FC5E7C11D924530045F352 /* libidn.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +236,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A3FC5BD911D909FF0045F352 /* Model */,
 				A3FC548B11D825030045F352 /* Controllers */,
 				1D3623240D0F684500981E51 /* AuctionSniperAppDelegate.h */,
 				1D3623250D0F684500981E51 /* AuctionSniperAppDelegate.m */,
@@ -249,6 +249,7 @@
 			children = (
 				1D6058910D05DD3D006BFB54 /* AuctionSniper.app */,
 				A31521B111D238D3007F2123 /* AuctionSniper.app */,
+				A3FC5B3911D8EB2B0045F352 /* Unit Tests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -264,7 +265,7 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				A31520D011D237FE007F2123 /* Acceptance-Info.plist */,
-				A3FC560711D8329C0045F352 /* libiconv.dylib */,
+				A3FC5B3A11D8EB2B0045F352 /* Unit Tests-Info.plist */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -275,7 +276,6 @@
 				32CA4F630368D1EE00C91783 /* AuctionSniper_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 				8D1107310486CEB800E47090 /* AuctionSniper-Info.plist */,
-				A31521B311D238D3007F2123 /* AuctionSniper-Info copy.plist */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -291,6 +291,9 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A3FC5D2111D910870045F352 /* libOCMock-StaticLib-iphonesimulator.a */,
+				A3FC5BBF11D8ED760045F352 /* libOCHamcrest-StaticLib-iphonesimulator.a */,
+				A3FC560711D8329C0045F352 /* libiconv.dylib */,
 				A3FC554E11D82C580045F352 /* SystemConfiguration.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
@@ -303,26 +306,9 @@
 		A31520AC11D236CA007F2123 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				A31520B011D236DA007F2123 /* Acceptance */,
-				A31520AF11D236D3007F2123 /* Unit */,
+				A3FC574E11D8D7640045F352 /* AuctionMessageTranslatorTest.m */,
 			);
 			path = Tests;
-			sourceTree = "<group>";
-		};
-		A31520AF11D236D3007F2123 /* Unit */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Unit;
-			sourceTree = "<group>";
-		};
-		A31520B011D236DA007F2123 /* Acceptance */ = {
-			isa = PBXGroup;
-			children = (
-				A31524BB11D26D4D007F2123 /* Support */,
-				A31524EB11D26EE0007F2123 /* SkeletonTest.m */,
-			);
-			path = Acceptance;
 			sourceTree = "<group>";
 		};
 		A31520C511D2376C007F2123 /* Nibs */ = {
@@ -337,49 +323,10 @@
 		A315223311D23CD6007F2123 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				A3FC5F0611D926520045F352 /* OCMock */,
 				A3FC54B811D8286B0045F352 /* XMPPFramework */,
-				A315256F11D27372007F2123 /* OCHamcrest.xcodeproj */,
-				A315245A11D2692C007F2123 /* Cedar.xcodeproj */,
-				A315223711D23CE0007F2123 /* Bromine.xcodeproj */,
 			);
 			name = External;
-			sourceTree = "<group>";
-		};
-		A315223811D23CE0007F2123 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A315223C11D23CE0007F2123 /* libBromine.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		A315245B11D2692C007F2123 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A315246E11D2692C007F2123 /* Cedar.framework */,
-				A315247011D2692C007F2123 /* Test */,
-				A315247211D2692C007F2123 /* libCedar-StaticLib-iphonesimulator.a */,
-				A315247411D2692C007F2123 /* iPhoneSpecs.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		A31524BB11D26D4D007F2123 /* Support */ = {
-			isa = PBXGroup;
-			children = (
-				A315219D11D238AB007F2123 /* main.m */,
-			);
-			name = Support;
-			sourceTree = "<group>";
-		};
-		A315257011D27372007F2123 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A315257711D27372007F2123 /* OCHamcrest.framework */,
-				A315257911D27372007F2123 /* libOCHamcrest-StaticLib-iphonesimulator.a */,
-				A315257B11D27372007F2123 /* UnitTests.octest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		A3FC548B11D825030045F352 /* Controllers */ = {
@@ -394,13 +341,13 @@
 		A3FC54B811D8286B0045F352 /* XMPPFramework */ = {
 			isa = PBXGroup;
 			children = (
+				A3FC5E7B11D924530045F352 /* libidn.a */,
 				A3FC554811D82C420045F352 /* XMPPReconnect.h */,
 				A3FC554911D82C420045F352 /* XMPPReconnect.m */,
 				A3FC552311D829F30045F352 /* RFSRVResolver.h */,
 				A3FC552411D829F30045F352 /* RFSRVResolver.m */,
 				A3FC552511D829F30045F352 /* XMPPModule.h */,
 				A3FC552611D829F30045F352 /* XMPPModule.m */,
-				A3FC551C11D829BE0045F352 /* libidn.a */,
 				A3FC553611D82B460045F352 /* libresolv.dylib */,
 				A3FC551A11D829B20045F352 /* idn-int.h */,
 				A3FC551B11D829B20045F352 /* stringprep.h */,
@@ -452,6 +399,39 @@
 			path = KissXML;
 			sourceTree = "<group>";
 		};
+		A3FC5BD911D909FF0045F352 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A3FC5D7711D913270045F352 /* Protocols */,
+				A3FC5BDA11D90A390045F352 /* AuctionMessageTranslator.h */,
+				A3FC5BDB11D90A390045F352 /* AuctionMessageTranslator.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A3FC5D7711D913270045F352 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A3FC5D7611D913240045F352 /* AuctionEventListener.h */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		A3FC5F0611D926520045F352 /* OCMock */ = {
+			isa = PBXGroup;
+			children = (
+				A3FC5F0A11D926680045F352 /* NSInvocation+OCMAdditions.h */,
+				A3FC5F0B11D926680045F352 /* NSInvocation+OCMAdditions.m */,
+				A3FC5F0C11D926680045F352 /* NSInvocationOCMAdditionsTests.h */,
+				A3FC5F0D11D926680045F352 /* NSInvocationOCMAdditionsTests.m */,
+				A3FC5F0E11D926680045F352 /* NSMethodSignature+OCMAdditions.h */,
+				A3FC5F0F11D926680045F352 /* NSMethodSignature+OCMAdditions.m */,
+				A3FC5F1011D926680045F352 /* NSNotificationCenter+OCMAdditions.h */,
+				A3FC5F1111D926680045F352 /* NSNotificationCenter+OCMAdditions.m */,
+			);
+			name = OCMock;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -489,6 +469,24 @@
 			productReference = A31521B111D238D3007F2123 /* AuctionSniper.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A3FC5B3811D8EB2B0045F352 /* Unit Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A3FC5B3D11D8EB2C0045F352 /* Build configuration list for PBXNativeTarget "Unit Tests" */;
+			buildPhases = (
+				A3FC5B3411D8EB2B0045F352 /* Resources */,
+				A3FC5B3511D8EB2B0045F352 /* Sources */,
+				A3FC5B3611D8EB2B0045F352 /* Frameworks */,
+				A3FC5B3711D8EB2B0045F352 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Unit Tests";
+			productName = "Unit Tests";
+			productReference = A3FC5B3911D8EB2B0045F352 /* Unit Tests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -499,86 +497,14 @@
 			hasScannedForEncodings = 1;
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = A315223811D23CE0007F2123 /* Products */;
-					ProjectRef = A315223711D23CE0007F2123 /* Bromine.xcodeproj */;
-				},
-				{
-					ProductGroup = A315245B11D2692C007F2123 /* Products */;
-					ProjectRef = A315245A11D2692C007F2123 /* Cedar.xcodeproj */;
-				},
-				{
-					ProductGroup = A315257011D27372007F2123 /* Products */;
-					ProjectRef = A315256F11D27372007F2123 /* OCHamcrest.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* AuctionSniper */,
 				A31521A411D238D3007F2123 /* Testing */,
+				A3FC5B3811D8EB2B0045F352 /* Unit Tests */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		A315223C11D23CE0007F2123 /* libBromine.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libBromine.a;
-			remoteRef = A315223B11D23CE0007F2123 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A315246E11D2692C007F2123 /* Cedar.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Cedar.framework;
-			remoteRef = A315246D11D2692C007F2123 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A315247011D2692C007F2123 /* Test */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = Test;
-			remoteRef = A315246F11D2692C007F2123 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A315247211D2692C007F2123 /* libCedar-StaticLib-iphonesimulator.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libCedar-StaticLib-iphonesimulator.a";
-			remoteRef = A315247111D2692C007F2123 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A315247411D2692C007F2123 /* iPhoneSpecs.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = iPhoneSpecs.app;
-			remoteRef = A315247311D2692C007F2123 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A315257711D27372007F2123 /* OCHamcrest.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = OCHamcrest.framework;
-			remoteRef = A315257611D27372007F2123 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A315257911D27372007F2123 /* libOCHamcrest-StaticLib-iphonesimulator.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libOCHamcrest-StaticLib-iphonesimulator.a";
-			remoteRef = A315257811D27372007F2123 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A315257B11D27372007F2123 /* UnitTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = UnitTests.octest;
-			remoteRef = A315257A11D27372007F2123 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1D60588D0D05DD3D006BFB54 /* Resources */ = {
@@ -599,7 +525,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A3FC5B3411D8EB2B0045F352 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A3FC5B3711D8EB2B0045F352 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1D60588E0D05DD3D006BFB54 /* Sources */ = {
@@ -628,6 +577,7 @@
 				A3FC552A11D829F30045F352 /* XMPPModule.m in Sources */,
 				A3FC554B11D82C420045F352 /* XMPPReconnect.m in Sources */,
 				A3FC55DE11D8319C0045F352 /* AuctionSniperViewController.m in Sources */,
+				A3FC5BDD11D90A4B0045F352 /* AuctionMessageTranslator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,6 +607,39 @@
 				A3FC552711D829F30045F352 /* RFSRVResolver.m in Sources */,
 				A3FC552811D829F30045F352 /* XMPPModule.m in Sources */,
 				A3FC554A11D82C420045F352 /* XMPPReconnect.m in Sources */,
+				A3FC5BDE11D90A4B0045F352 /* AuctionMessageTranslator.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A3FC5B3511D8EB2B0045F352 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3FC5B4011D8EB380045F352 /* AuctionMessageTranslatorTest.m in Sources */,
+				A3FC5BDC11D90A390045F352 /* AuctionMessageTranslator.m in Sources */,
+				A3FC5BF111D90C130045F352 /* NSDataAdditions.m in Sources */,
+				A3FC5BF211D90C130045F352 /* NSXMLElementAdditions.m in Sources */,
+				A3FC5BF311D90C130045F352 /* XMPPMessage.m in Sources */,
+				A3FC5BF411D90C130045F352 /* DDXMLDocument.m in Sources */,
+				A3FC5BF511D90C130045F352 /* DDXMLElement.m in Sources */,
+				A3FC5BF611D90C130045F352 /* DDXMLNode.m in Sources */,
+				A3FC5BF711D90C130045F352 /* NSStringAdditions.m in Sources */,
+				A3FC5C6D11D90C560045F352 /* XMPPElement.m in Sources */,
+				A3FC5C7011D90C5F0045F352 /* XMPPIQ.m in Sources */,
+				A3FC5C7111D90C5F0045F352 /* XMPPJID.m in Sources */,
+				A3FC5C7211D90C5F0045F352 /* XMPPParser.m in Sources */,
+				A3FC5C7311D90C5F0045F352 /* XMPPPresence.m in Sources */,
+				A3FC5C7411D90C5F0045F352 /* XMPPStream.m in Sources */,
+				A3FC5C7A11D90C6F0045F352 /* XMPPReconnect.m in Sources */,
+				A3FC5C7B11D90C6F0045F352 /* RFSRVResolver.m in Sources */,
+				A3FC5C7C11D90C6F0045F352 /* XMPPModule.m in Sources */,
+				A3FC5C8111D90C7D0045F352 /* MulticastDelegate.m in Sources */,
+				A3FC5C8411D90C860045F352 /* AsyncSocket.m in Sources */,
+				A3FC5E6411D920D20045F352 /* LibIDN.m in Sources */,
+				A3FC5F1211D926680045F352 /* NSInvocation+OCMAdditions.m in Sources */,
+				A3FC5F1311D926680045F352 /* NSInvocationOCMAdditionsTests.m in Sources */,
+				A3FC5F1411D926680045F352 /* NSMethodSignature+OCMAdditions.m in Sources */,
+				A3FC5F1511D926680045F352 /* NSNotificationCenter+OCMAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -714,7 +697,7 @@
 				GCC_PREFIX_HEADER = AuctionSniper_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = BROMINE_ENABLED;
 				GCC_VERSION = 4.2;
-				INFOPLIST_FILE = "AuctionSniper-Info copy.plist";
+				INFOPLIST_FILE = "AuctionSniper-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Vendor/XMPPFramework\"",
@@ -735,7 +718,7 @@
 				GCC_PREFIX_HEADER = AuctionSniper_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = BROMINE_ENABLED;
 				GCC_VERSION = 4.2;
-				INFOPLIST_FILE = "AuctionSniper-Info copy.plist";
+				INFOPLIST_FILE = "AuctionSniper-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Vendor/XMPPFramework\"",
@@ -744,6 +727,88 @@
 				PRODUCT_NAME = AuctionSniper;
 				USER_HEADER_SEARCH_PATHS = "~/Code/mine/bromine/build/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/usr/local/include";
 				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A3FC5B3B11D8EB2C0045F352 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)/Vendor\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = "";
+				INFOPLIST_FILE = "Unit Tests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../others/OCHamcrest/Source/build/Release-iphonesimulator\"",
+					"\"$(SRCROOT)/Vendor/XMPPFramework\"",
+					"\"$(SRCROOT)\"",
+					/usr/local/lib,
+				);
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					SenTestingKit,
+					"-framework",
+					UIKit,
+					"-lstdc++",
+					"-lxml2",
+					"-ObjC",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "Unit Tests";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		A3FC5B3C11D8EB2C0045F352 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)/Vendor\"",
+				);
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = "";
+				INFOPLIST_FILE = "Unit Tests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../others/OCHamcrest/Source/build/Release-iphonesimulator\"",
+					"\"$(SRCROOT)/Vendor/XMPPFramework\"",
+					"\"$(SRCROOT)\"",
+					/usr/local/lib,
+				);
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					SenTestingKit,
+					"-framework",
+					UIKit,
+					"-lstdc++",
+					"-lxml2",
+					"-ObjC",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "Unit Tests";
+				WRAPPER_EXTENSION = octest;
+				ZERO_LINK = NO;
 			};
 			name = Release;
 		};
@@ -795,6 +860,15 @@
 			buildConfigurations = (
 				A31521AF11D238D3007F2123 /* Debug */,
 				A31521B011D238D3007F2123 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A3FC5B3D11D8EB2C0045F352 /* Build configuration list for PBXNativeTarget "Unit Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A3FC5B3B11D8EB2C0045F352 /* Debug */,
+				A3FC5B3C11D8EB2C0045F352 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
