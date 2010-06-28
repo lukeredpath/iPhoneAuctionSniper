@@ -8,6 +8,7 @@
 
 #import "AuctionSniperAppDelegate.h"
 
+
 @implementation AuctionSniperAppDelegate
 
 @synthesize window;
@@ -16,12 +17,13 @@
 #pragma mark -
 #pragma mark Application lifecycle
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-
-    // Override point for customization after application launch.
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions 
+{    
+  
+  
 	
-    [window makeKeyAndVisible];
-	
+    
+  [window makeKeyAndVisible];
 	return YES;
 }
 
