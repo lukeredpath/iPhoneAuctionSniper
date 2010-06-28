@@ -12,3 +12,7 @@ end
 When /^the auction announces it has closed$/ do
   @auction.announce_closed
 end
+
+After do
+  @auction.stop if @auction
+end

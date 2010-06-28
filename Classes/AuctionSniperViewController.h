@@ -10,7 +10,9 @@
 
 
 @interface AuctionSniperViewController : UIViewController {
-
+  UILabel *stateLabel;
 }
+@property (nonatomic, retain) IBOutlet UILabel *stateLabel;
 
+- (void)setState:(NSString *)state;
 @end

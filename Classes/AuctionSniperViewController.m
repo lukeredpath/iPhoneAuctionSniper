@@ -11,6 +11,8 @@
 
 @implementation AuctionSniperViewController
 
+@synthesize stateLabel;
+
 - (void)dealloc 
 {
   [super dealloc];
@@ -21,6 +23,11 @@
   [super viewDidLoad];
   
   
+}
+
+- (void)setState:(NSString *)state;
+{
+  self.stateLabel.text = state;
 }
 
 - (void)viewDidUnload 

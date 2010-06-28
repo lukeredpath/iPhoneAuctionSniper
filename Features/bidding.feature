@@ -10,8 +10,7 @@ Feature: Bidding on a single item
     Given an auction is selling an item
     When the application joins the auction
     Then the auction should have received a join request from the sniper
-    
-  @pending
+
   Scenario: Auction closes immediately after sniper has joined an auction
     Given an auction is selling an item
     And the application has joined the auction
