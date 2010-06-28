@@ -19,6 +19,9 @@
 		A3FC540B11D7CA390045F352 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3FC540A11D7CA390045F352 /* UIKit.framework */; };
 		A3FC540E11D7CA3D0045F352 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3FC540A11D7CA390045F352 /* UIKit.framework */; };
 		A3FC547411D7CA810045F352 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		A3FC548F11D825170045F352 /* AuctionSniperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC548D11D825170045F352 /* AuctionSniperViewController.m */; };
+		A3FC549511D825330045F352 /* AuctionSniperViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3FC549411D825330045F352 /* AuctionSniperViewController.xib */; };
+		A3FC54A711D826240045F352 /* AuctionSniperViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3FC549411D825330045F352 /* AuctionSniperViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +102,9 @@
 		A31524EB11D26EE0007F2123 /* SkeletonTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkeletonTest.m; sourceTree = "<group>"; };
 		A315256F11D27372007F2123 /* OCHamcrest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OCHamcrest.xcodeproj; path = ../../../mine/cedar/External/OCHamcrest/Source/OCHamcrest.xcodeproj; sourceTree = SOURCE_ROOT; };
 		A3FC540A11D7CA390045F352 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A3FC548C11D825170045F352 /* AuctionSniperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuctionSniperViewController.h; sourceTree = "<group>"; };
+		A3FC548D11D825170045F352 /* AuctionSniperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuctionSniperViewController.m; sourceTree = "<group>"; };
+		A3FC549411D825330045F352 /* AuctionSniperViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuctionSniperViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +134,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A3FC548B11D825030045F352 /* Controllers */,
 				1D3623240D0F684500981E51 /* AuctionSniperAppDelegate.h */,
 				1D3623250D0F684500981E51 /* AuctionSniperAppDelegate.m */,
 			);
@@ -215,6 +222,7 @@
 		A31520C511D2376C007F2123 /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
+				A3FC549411D825330045F352 /* AuctionSniperViewController.xib */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 			);
 			path = Nibs;
@@ -265,6 +273,15 @@
 				A315257B11D27372007F2123 /* UnitTests.octest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A3FC548B11D825030045F352 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A3FC548C11D825170045F352 /* AuctionSniperViewController.h */,
+				A3FC548D11D825170045F352 /* AuctionSniperViewController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -400,6 +417,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3FC54A711D826240045F352 /* AuctionSniperViewController.xib in Resources */,
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,6 +427,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A31521A611D238D3007F2123 /* MainWindow.xib in Resources */,
+				A3FC549511D825330045F352 /* AuctionSniperViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +449,7 @@
 			files = (
 				A3FC547411D7CA810045F352 /* main.m in Sources */,
 				A31521A911D238D3007F2123 /* AuctionSniperAppDelegate.m in Sources */,
+				A3FC548F11D825170045F352 /* AuctionSniperViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
