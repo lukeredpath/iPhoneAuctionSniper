@@ -9,17 +9,17 @@ module AuctionSniper
     include Test::Unit::Assertions
     
     def assert_sniper_has_joined_auction
-      assert @auction_driver.shows_sniper_status?(STATUS_BIDDING)
+      @auction_driver.assert_shows_sniper_status(STATUS_BIDDING)
     end
     
     def assert_sniper_has_lost_auction
-      assert @auction_driver.shows_sniper_status?(STATUS_LOST)
+      @auction_driver.assert_shows_sniper_status(STATUS_LOST)
     end
   end
   
   module Actions
     def join_auction(auction)
-      assert @auction_driver.shows_sniper_status?(STATUS_JOINING)
+      @auction_driver.assert_shows_sniper_status(STATUS_JOINING)
     end
   end
   
