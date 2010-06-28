@@ -13,7 +13,5 @@
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
-
-- (IBAction)testAction;
 @end
 

@@ -17,8 +17,7 @@
 #pragma mark Application lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-    
-  NSLog(@"shouldn't be here");
+
     // Override point for customization after application launch.
 	
     [window makeKeyAndVisible];
@@ -63,16 +62,6 @@
      See also applicationDidEnterBackground:.
      */
 }
-
-#pragma mark -
-
-- (IBAction)testAction;
-{
-  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"It worked!" message:@"This is a test" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-  [alert show];
-  [alert release];
-}
-
 
 #pragma mark -
 #pragma mark Memory management
