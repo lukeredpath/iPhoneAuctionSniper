@@ -44,11 +44,12 @@ module AuctionSniper
     AUCTION_RESOURCE = "auction"
     
     def announce_closed
-      @connection.deliver(@listener.last_jid, "")
+      @connection.deliver(@listener.last_jid, "_")
     end
     
     def start_selling_item
-      @listener = AuctionSniper::FakeAuctionServer::MessageListener.new(@connection, @message_queue).run
+      @listener = AuctionSniper::FakeAuctionServer::MessageListener.new(@connection, @message_queue)
+      @listener.run
     end
   end
   
