@@ -10,6 +10,7 @@
 #import "AuctionSniperViewController.h"
 #import "XMPP.h"
 #import "AuctionMessageTranslator.h"
+#import "AuctionSniper.h"
 
 #define kSNIPER_XMPP_USERNAME @"sniper"
 #define kSNIPER_XMPP_PASSWORD @"sniper"
@@ -98,19 +99,6 @@ XMPPJID *auctionJID() {
 }
 
 #pragma mark -
-#pragma mark AuctionEventListener methods
-
-- (void)auctionClosed;
-{
-  [self.auctionSniperController setState:@"Lost"]; 
-}
-
-- (void)currentPriceForAuction:(NSInteger)price increment:(NSInteger)increment;
-{
-  [self.auctionSniperController setState:@"Bidding"];
-}
-
-#pragma mark -
 #pragma mark Application lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions 
@@ -121,8 +109,13 @@ XMPPJID *auctionJID() {
 
   [xmppStream addDelegate:self];
   
-  messageTranslator = [[AuctionMessageTranslator alloc] initWithAuctionEventListener:self];
+  AuctionSniper *auctionSniper = [[AuctionSniper alloc] initWithSniperListener:self.auctionSniperController];
+  self.auctionSniperController.auctionSniper = auctionSniper;
+  
+  messageTranslator = [[AuctionMessageTranslator alloc] initWithAuctionEventListener:auctionSniper];
   [xmppStream addDelegate:messageTranslator];
+  
+  [auctionSniper release];
   
   NSError *connectionError = nil;
   if (![xmppStream connect:&connectionError]) {

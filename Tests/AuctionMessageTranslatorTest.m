@@ -6,11 +6,7 @@
 //  Copyright 2010 LJR Software Limited. All rights reserved.
 //
 
-#define HC_SHORTHAND
-#import <SenTestingKit/SenTestingKit.h>
-#import <OCHamcrest/OCHamcrest.h>
-#import <OCMock/OCMock.h>
-
+#import "TestingCommon.h"
 #import "AuctionMessageTranslator.h"
 #import "XMPPMessage.h"
 #import "NSXMLElementAdditions.h"

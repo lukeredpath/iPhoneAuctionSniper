@@ -103,6 +103,10 @@
 		A3FC5F1311D926680045F352 /* NSInvocationOCMAdditionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC5F0D11D926680045F352 /* NSInvocationOCMAdditionsTests.m */; };
 		A3FC5F1411D926680045F352 /* NSMethodSignature+OCMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC5F0F11D926680045F352 /* NSMethodSignature+OCMAdditions.m */; };
 		A3FC5F1511D926680045F352 /* NSNotificationCenter+OCMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC5F1111D926680045F352 /* NSNotificationCenter+OCMAdditions.m */; };
+		A3FC5F3811D929040045F352 /* AuctionSniperTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC5F3711D929040045F352 /* AuctionSniperTest.m */; };
+		A3FC5F4511D929440045F352 /* AuctionSniper.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC5F4411D929440045F352 /* AuctionSniper.m */; };
+		A3FC5F6811D92C160045F352 /* AuctionSniper.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC5F4411D929440045F352 /* AuctionSniper.m */; };
+		A3FC5F6911D92C170045F352 /* AuctionSniper.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC5F4411D929440045F352 /* AuctionSniper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -185,6 +189,11 @@
 		A3FC5F0F11D926680045F352 /* NSMethodSignature+OCMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMethodSignature+OCMAdditions.m"; sourceTree = "<group>"; };
 		A3FC5F1011D926680045F352 /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
 		A3FC5F1111D926680045F352 /* NSNotificationCenter+OCMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNotificationCenter+OCMAdditions.m"; sourceTree = "<group>"; };
+		A3FC5F3411D928E10045F352 /* TestingCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestingCommon.h; sourceTree = "<group>"; };
+		A3FC5F3711D929040045F352 /* AuctionSniperTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuctionSniperTest.m; sourceTree = "<group>"; };
+		A3FC5F4311D929440045F352 /* AuctionSniper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuctionSniper.h; sourceTree = "<group>"; };
+		A3FC5F4411D929440045F352 /* AuctionSniper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuctionSniper.m; sourceTree = "<group>"; };
+		A3FC5F4811D9298D0045F352 /* AuctionSniperListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuctionSniperListener.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,7 +315,9 @@
 		A31520AC11D236CA007F2123 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				A3FC5F3311D928D50045F352 /* Support */,
 				A3FC574E11D8D7640045F352 /* AuctionMessageTranslatorTest.m */,
+				A3FC5F3711D929040045F352 /* AuctionSniperTest.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -405,6 +416,8 @@
 				A3FC5D7711D913270045F352 /* Protocols */,
 				A3FC5BDA11D90A390045F352 /* AuctionMessageTranslator.h */,
 				A3FC5BDB11D90A390045F352 /* AuctionMessageTranslator.m */,
+				A3FC5F4311D929440045F352 /* AuctionSniper.h */,
+				A3FC5F4411D929440045F352 /* AuctionSniper.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -413,6 +426,7 @@
 			isa = PBXGroup;
 			children = (
 				A3FC5D7611D913240045F352 /* AuctionEventListener.h */,
+				A3FC5F4811D9298D0045F352 /* AuctionSniperListener.h */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -430,6 +444,14 @@
 				A3FC5F1111D926680045F352 /* NSNotificationCenter+OCMAdditions.m */,
 			);
 			name = OCMock;
+			sourceTree = "<group>";
+		};
+		A3FC5F3311D928D50045F352 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				A3FC5F3411D928E10045F352 /* TestingCommon.h */,
+			);
+			name = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -578,6 +600,7 @@
 				A3FC554B11D82C420045F352 /* XMPPReconnect.m in Sources */,
 				A3FC55DE11D8319C0045F352 /* AuctionSniperViewController.m in Sources */,
 				A3FC5BDD11D90A4B0045F352 /* AuctionMessageTranslator.m in Sources */,
+				A3FC5F6911D92C170045F352 /* AuctionSniper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,6 +631,7 @@
 				A3FC552811D829F30045F352 /* XMPPModule.m in Sources */,
 				A3FC554A11D82C420045F352 /* XMPPReconnect.m in Sources */,
 				A3FC5BDE11D90A4B0045F352 /* AuctionMessageTranslator.m in Sources */,
+				A3FC5F6811D92C160045F352 /* AuctionSniper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,6 +664,8 @@
 				A3FC5F1311D926680045F352 /* NSInvocationOCMAdditionsTests.m in Sources */,
 				A3FC5F1411D926680045F352 /* NSMethodSignature+OCMAdditions.m in Sources */,
 				A3FC5F1511D926680045F352 /* NSNotificationCenter+OCMAdditions.m in Sources */,
+				A3FC5F3811D929040045F352 /* AuctionSniperTest.m in Sources */,
+				A3FC5F4511D929440045F352 /* AuctionSniper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,13 +8,20 @@
 
 #import "AuctionSniperViewController.h"
 
+@interface AuctionSniperViewController ()
+- (void)setState:(NSString *)state;
+@end
+
+#pragma mark -
 
 @implementation AuctionSniperViewController
 
 @synthesize stateLabel;
+@synthesize auctionSniper;
 
 - (void)dealloc 
 {
+  [auctionSniper release];
   [super dealloc];
 }
 
@@ -33,6 +40,14 @@
 - (void)viewDidUnload 
 {
   [super viewDidUnload];
+}
+
+#pragma mark -
+#pragma mark Sniper events
+
+- (void)auctionSniperLost;
+{
+  [self setState:@"Lost"];
 }
 
 @end
