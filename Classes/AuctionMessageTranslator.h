@@ -17,3 +17,16 @@
 }
 - (id)initWithAuctionEventListener:(id<AuctionEventListener>)listener;
 @end
+
+@interface AuctionEvent : NSObject
+{
+  NSDictionary *eventData;
+}
+@property (nonatomic, readonly) NSInteger currentPrice;
+@property (nonatomic, readonly) NSInteger increment;
+@property (nonatomic, readonly) NSString *type;
+
++ (id)auctionEventFromMessage:(NSString *)messageBody;
+- (id)initWithDictionary:(NSDictionary *)dictionary;
+@end
+
