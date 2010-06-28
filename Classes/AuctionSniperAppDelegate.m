@@ -7,6 +7,7 @@
 //
 
 #import "AuctionSniperAppDelegate.h"
+#import "AuctionSniperViewController.h"
 #import "XMPP.h"
 
 #define kSNIPER_XMPP_USERNAME @"sniper"
@@ -18,6 +19,7 @@
 @implementation AuctionSniperAppDelegate
 
 @synthesize window;
+@synthesize auctionSniperController;
 
 - (void)dealloc 
 {
@@ -59,7 +61,7 @@
 
 - (void)xmppStreamDidAuthenticate:(XMPPStream *)sender
 {
-  [self sendMessageToAuction:@"test"];
+  [self sendMessageToAuction:@"_"]; // don't care about message body yet
 }
 
 - (void)xmppStream:(XMPPStream *)sender didNotAuthenticate:(NSXMLElement *)error;
