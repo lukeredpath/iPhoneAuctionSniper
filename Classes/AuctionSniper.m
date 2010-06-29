@@ -9,9 +9,14 @@
 #import "AuctionSniper.h"
 #import "XMPPAuction.h"
 
+@interface AuctionSniper ()
+@property (nonatomic, assign) SniperState state;
+@end
+
 @implementation AuctionSniper
 
 @synthesize delegate;
+@synthesize state;
 
 - (id)initWithAuction:(XMPPAuction *)anAuction;
 {
@@ -32,14 +37,20 @@
 
 - (void)auctionClosed;
 {
-  [self.delegate auctionSniperLost];
+  if (self.state == SniperStateWinning) {
+    [self.delegate auctionSniperWon]; 
+  } else {
+    [self.delegate auctionSniperLost];
+  }
 }
 
 - (void)currentPriceForAuction:(NSInteger)price increment:(NSInteger)increment priceSource:(AuctionPriceSource)priceSource;
 {
   if (priceSource == PriceFromSniper) {
+    self.state = SniperStateWinning;
     [self.delegate auctionSniperWinning]; 
   } else {
+    self.state = SniperStateBidding;
     [auction bid:(price + increment)];
     [self.delegate auctionSniperBidding];
   }

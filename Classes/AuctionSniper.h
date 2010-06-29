@@ -12,9 +12,18 @@
 
 @class XMPPAuction;
 
+typedef enum {
+  SniperStateJoining = 0,
+  SniperStateBidding,
+  SniperStateWinning,
+  SniperStateWon,
+  SniperStateLost
+} SniperState;
+
 @interface AuctionSniper : NSObject <AuctionEventListener> {
   XMPPAuction *auction;
   id<AuctionSniperListener> delegate;
+  SniperState state;
 }
 - (id)initWithAuction:(XMPPAuction *)anAuction;
 

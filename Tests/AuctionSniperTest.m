@@ -39,7 +39,7 @@
   [self.listener verify];
 }
 
-- (void)testReportsLostWhenAuctionCloses;
+- (void)testReportsLostWhenAuctionClosesWhilstJoining;
 {
   [[self.listener expect] auctionSniperLost];
   [self.sniper auctionClosed];
@@ -59,8 +59,15 @@
 - (void)testReportsWinningWhenNewPriceArrivesFromSniper;
 {
   [[self.listener expect] auctionSniperWinning];
-  
   [self.sniper currentPriceForAuction:1500 increment:100 priceSource:PriceFromSniper];
+}
+
+- (void)testReportsWonWhenAuctionClosesWhilstWinning;
+{
+  [[self.listener stub] auctionSniperWinning];
+  [self.sniper currentPriceForAuction:1500 increment:100 priceSource:PriceFromSniper];
+  [[self.listener expect] auctionSniperWon];
+  [self.sniper auctionClosed];
 }
 
 @end
