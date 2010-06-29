@@ -63,4 +63,9 @@
   [self setState:@"Bidding"];
 }
 
+- (void)auctionSniperWinning;
+{
+  [self setState:@"Winning"];
+}
+
 @end
