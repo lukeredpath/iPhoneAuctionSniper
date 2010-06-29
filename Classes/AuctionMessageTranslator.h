@@ -29,6 +29,6 @@
 
 + (id)auctionEventFromMessage:(NSString *)messageBody;
 - (id)initWithDictionary:(NSDictionary *)dictionary;
-- (BOOL)isFromBidder:(NSString *)bidderID;
+- (AuctionPriceSource)isFromSniper:(NSString *)sniperID;
 @end
 
