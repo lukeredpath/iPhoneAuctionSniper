@@ -13,11 +13,6 @@
 
 @synthesize delegate;
 
-+ (NSString *)sniperID;
-{
-  return @"sniper@localhost";
-}
-
 - (id)initWithAuction:(XMPPAuction *)anAuction;
 {
   if (self = [super init]) {

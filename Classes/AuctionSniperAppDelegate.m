@@ -98,7 +98,7 @@ XMPPJID *auctionJID() {
   AuctionSniper *auctionSniper = [[AuctionSniper alloc] initWithAuction:auction];
   self.auctionSniperController.auctionSniper = auctionSniper;
   
-  messageTranslator = [[AuctionMessageTranslator alloc] initWithSniperID:[AuctionSniper sniperID] eventListener:auctionSniper];
+  messageTranslator = [[AuctionMessageTranslator alloc] initWithSniperID:xmppStream.myJID.base eventListener:auctionSniper];
   [xmppStream addDelegate:messageTranslator];
   
   [auction release];
