@@ -28,7 +28,11 @@ Feature: Bidding on a single item
     
   @focussed
   Scenario: Sniper wins an auction by bidding higher
-    Given an auction is selling an item with a price of 1000 + 98 from "other bidder"
+    Given an auction is selling an item
+    And the application has joined the auction
+    When the auction reports a price of 1000 + 98 from "other bidder"
+    Then the application should show the sniper is bidding
+    And the auction should have received a bid of 1098 from the sniper
     When the auction reports a price of 1098 + 7 from the sniper
     Then the application should show the sniper is winning
     When the auction announces it has closed

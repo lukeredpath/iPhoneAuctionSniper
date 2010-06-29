@@ -1,13 +1,5 @@
 TEST_AUCTION_ID = '1'
 
-Given /^an auction is selling an item with a price of (\d+) \+ (\d+) from "([^\"]*)"$/ do |price, increment, bidder|
-  @auction = AuctionSniper::FakeAuctionServer.new(TEST_AUCTION_ID)
-  @auction.start_selling_item
-  @default_price = price
-  @default_increment = increment
-  @default_bidder = bidder
-end
-
 Given /^an auction is selling an item$/ do
   @auction = AuctionSniper::FakeAuctionServer.new(TEST_AUCTION_ID)
   @auction.start_selling_item
