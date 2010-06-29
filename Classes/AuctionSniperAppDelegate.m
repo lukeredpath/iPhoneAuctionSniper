@@ -61,26 +61,29 @@
   NSLog(@"Failed to authenticate, %@", error);
 }
 
+XMPPStream *newXMPPStream(NSString *hostName, NSString *user) 
+{
+  XMPPStream *stream = [[XMPPStream alloc] init];
+  stream.hostName = hostName;
+  stream.myJID = [XMPPJID jidWithUser:user domain:hostName resource:nil];
+  return stream;
+}
+
 #pragma mark -
 #pragma mark Application lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions 
 {    
-  xmppStream = [[XMPPStream alloc] init];
-  xmppStream.hostName = kXMPP_HOSTNAME;
-  xmppStream.myJID = [XMPPJID jidWithUser:kSNIPER_XMPP_USERNAME domain:kXMPP_HOSTNAME resource:nil];
-
-  [xmppStream addDelegate:self];
-  
+  xmppStream = newXMPPStream(kXMPP_HOSTNAME, kSNIPER_XMPP_USERNAME);
   auction = [[XMPPAuction alloc] initWithStream:xmppStream];
   
   AuctionSniper *auctionSniper = [[AuctionSniper alloc] initWithAuction:auction];
-  self.auctionSniperController.auctionSniper = auctionSniper;
-  
   messageTranslator = [[AuctionMessageTranslator alloc] initWithSniperID:xmppStream.myJID.bare eventListener:auctionSniper];
+  
+  [xmppStream addDelegate:self];
   [xmppStream addDelegate:messageTranslator];
   
-  [auction release];
+  self.auctionSniperController.auctionSniper = auctionSniper;
   [auctionSniper release];
   
   NSError *connectionError = nil;
