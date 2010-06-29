@@ -24,7 +24,7 @@ module AuctionSniper
     
     def assert_sniper_has_won
       try_assertion_for(ASSERTION_TIMEOUT) do
-        @auction_driver.assert_shows_sniper_status(STATUS_WINNING)
+        @auction_driver.assert_shows_sniper_status(STATUS_WON)
       end
     end
     
