@@ -70,5 +70,14 @@
   [self.sniper auctionClosed];
 }
 
+- (void)testReportsLostWhenAuctionClosesWhilstBidding;
+{
+  [[self.auction stub] bid:1600];
+  [[self.listener stub] auctionSniperBidding];
+  [self.sniper currentPriceForAuction:1500 increment:100 priceSource:PriceFromOtherBidder];
+  [[self.listener expect] auctionSniperLost];
+  [self.sniper auctionClosed];
+}
+
 @end
 
