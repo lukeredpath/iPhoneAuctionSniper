@@ -20,11 +20,6 @@
 #define kAUCTION_RESOURCE     @"auction"
 #define kAUCTION_ID           1
 
-@interface AuctionSniperAppDelegate ()
-- (void)subscribeToAuction;
-@end
-
-#pragma mark -
 
 @implementation AuctionSniperAppDelegate
 
@@ -38,21 +33,6 @@
   [messageTranslator release];
   [window release];
   [super dealloc];
-}
-
-XMPPJID *auctionJID() {
-  NSString *auctionUser = [NSString stringWithFormat:@"auction-item-%d", kAUCTION_ID];
-  return [XMPPJID jidWithUser:auctionUser domain:kXMPP_HOSTNAME resource:kAUCTION_RESOURCE];
-}
-
-- (void)subscribeToAuction;
-{
-  NSXMLElement *presence = [NSXMLElement elementWithName:@"presence"];
-  [xmppStream sendElement:presence];
-  
-  [presence addAttributeWithName:@"to" stringValue:auctionJID().bare];
-	[presence addAttributeWithName:@"type" stringValue:@"subscribed"];
-  [xmppStream sendElement:presence];
 }
 
 #pragma mark -
@@ -73,7 +53,6 @@ XMPPJID *auctionJID() {
 
 - (void)xmppStreamDidAuthenticate:(XMPPStream *)sender
 {
-  [self subscribeToAuction];
   [auction join];
 }
 

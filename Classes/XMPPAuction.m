@@ -11,6 +11,7 @@
 
 @interface XMPPAuction (Messaging)
 - (void)sendMessage:(NSString *)messageBody;
+- (void)subscribeToAuctionMessages;
 @end
 
 #pragma mark -
@@ -36,6 +37,7 @@
 
 - (void)join;
 {
+  [self subscribeToAuctionMessages];
   [self sendMessage:@"SOLVersion: 1.1; Command: JOIN;"];
 }
 
@@ -48,7 +50,7 @@
 
 @implementation XMPPAuction (Messaging)
 
-XMPPJID *_auctionJID(XMPPStream *stream, NSString *resource, NSInteger auctionID) {
+XMPPJID *auctionJID(XMPPStream *stream, NSString *resource, NSInteger auctionID) {
   NSString *auctionUser = [NSString stringWithFormat:@"auction-item-%d", auctionID];
   return [XMPPJID jidWithUser:auctionUser domain:stream.hostName resource:resource];
 }
@@ -60,10 +62,19 @@ XMPPJID *_auctionJID(XMPPStream *stream, NSString *resource, NSInteger auctionID
   
   NSXMLElement *message = [NSXMLElement elementWithName:@"message"];
   [message addAttributeWithName:@"type" stringValue:@"chat"];
-  [message addAttributeWithName:@"to" stringValue:_auctionJID(stream, kAUCTION_RESOURCE, kAUCTION_ID).full];
+  [message addAttributeWithName:@"to" stringValue:auctionJID(stream, kAUCTION_RESOURCE, kAUCTION_ID).full];
   [message addChild:body]; 
   
   [stream sendElement:message];
+}
+
+- (void)subscribeToAuctionMessages;
+{
+  NSXMLElement *presence = [NSXMLElement elementWithName:@"presence"];
+  [stream sendElement:presence];
+  [presence addAttributeWithName:@"to" stringValue:auctionJID(stream, kAUCTION_RESOURCE, kAUCTION_ID).bare];
+	[presence addAttributeWithName:@"type" stringValue:@"subscribed"];
+  [stream sendElement:presence];
 }
 
 @end
