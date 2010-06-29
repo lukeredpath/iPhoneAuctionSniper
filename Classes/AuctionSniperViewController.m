@@ -68,4 +68,9 @@
   [self setState:@"Winning"];
 }
 
+- (void)auctionSniperWon;
+{
+  [self setState:@"Won"];
+}
+
 @end
