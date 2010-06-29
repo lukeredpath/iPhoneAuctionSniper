@@ -39,7 +39,7 @@
   [self.listener verify];
 }
 
-- (void)testReportsLostWhenAuctionClosesWhilstJoining;
+- (void)testReportsLostWhenAuctionClosesImmediately;
 {
   [[self.listener expect] auctionSniperLost];
   [self.sniper auctionClosed];
