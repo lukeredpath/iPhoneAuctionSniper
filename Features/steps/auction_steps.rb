@@ -17,6 +17,10 @@ When /^the auction reports a price of (\d+) \+ (\d+) from "([^\"]*)"$/ do |price
   @auction.report_price(price, increment, bidder)
 end
 
+When /^the auction reports a price of (\d+) \+ (\d+) from the sniper$/ do |price, increment|
+  @auction.report_price(price, increment, Global.SNIPER_XMPP_ID)
+end
+
 Then /^the auction should have received a bid of (\d+) from the sniper$/ do |amount|
   @auction.assert_received_bid(amount, Global.SNIPER_XMPP_ID)
 end

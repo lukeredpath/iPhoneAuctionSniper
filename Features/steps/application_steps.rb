@@ -21,10 +21,7 @@ end
 # THENS
 #------------------------------------------------------------------------------
 
-Then /^the application should show the sniper has lost the auction$/ do
-  @application_runner.assert_sniper_has_lost_auction
+Then /^the application should show the sniper (is|has) (.*)$/ do |tense, state|
+  @application_runner.send("assert_sniper_#{tense}_#{state}")
 end
 
-Then /^the application should show the sniper is bidding$/ do
-  @application_runner.assert_sniper_is_bidding
-end
