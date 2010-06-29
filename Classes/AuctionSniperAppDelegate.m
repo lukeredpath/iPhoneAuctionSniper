@@ -12,6 +12,7 @@
 #import "AuctionMessageTranslator.h"
 #import "AuctionSniper.h"
 #import "XMPPAuction.h"
+#import "XMPPJID.h"
 
 #define kSNIPER_XMPP_USERNAME @"sniper"
 #define kSNIPER_XMPP_PASSWORD @"sniper"
@@ -97,7 +98,7 @@ XMPPJID *auctionJID() {
   AuctionSniper *auctionSniper = [[AuctionSniper alloc] initWithAuction:auction];
   self.auctionSniperController.auctionSniper = auctionSniper;
   
-  messageTranslator = [[AuctionMessageTranslator alloc] initWithAuctionEventListener:auctionSniper];
+  messageTranslator = [[AuctionMessageTranslator alloc] initWithSniperID:[AuctionSniper sniperID] eventListener:auctionSniper];
   [xmppStream addDelegate:messageTranslator];
   
   [auction release];

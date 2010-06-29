@@ -19,4 +19,5 @@
 - (id)initWithAuction:(XMPPAuction *)anAuction;
 
 @property (nonatomic, assign) id<AuctionSniperListener> delegate;
++ (NSString *)sniperID;
 @end

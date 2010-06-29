@@ -38,12 +38,11 @@ XMPPMessage *createMessageWithBody(NSString *body) {
 @synthesize listener;
 
 static id UNUSED_STREAM = nil;
-static NSString *SNIPER_ID = @"sniper@localhost";
 
 - (void)setUp;
 {
   self.listener   = [OCMockObject mockForProtocol:@protocol(AuctionEventListener)];
-  self.translator = [[[AuctionMessageTranslator alloc] initWithSniperID:SNIPER_ID eventListener:self.listener] autorelease];
+  self.translator = [[[AuctionMessageTranslator alloc] initWithSniperID:[AuctionSniper sniperID] eventListener:self.listener] autorelease];
 }
 
 - (void)tearDown;
