@@ -35,10 +35,14 @@
   [self.delegate auctionSniperLost];
 }
 
-- (void)currentPriceForAuction:(NSInteger)price increment:(NSInteger)increment;
+- (void)currentPriceForAuction:(NSInteger)price increment:(NSInteger)increment priceSource:(AuctionPriceSource)priceSource;
 {
-  [auction bid:(price + increment)];
-  [self.delegate auctionSniperBidding];
+  if (priceSource == PriceFromSniper) {
+    [self.delegate auctionSniperWinning]; 
+  } else {
+    [auction bid:(price + increment)];
+    [self.delegate auctionSniperBidding];
+  }
 }
 
 @end

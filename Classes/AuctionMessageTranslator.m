@@ -13,12 +13,19 @@
 
 @implementation AuctionMessageTranslator
 
-- (id)initWithAuctionEventListener:(id<AuctionEventListener>)listener;
+- (id)initWithSniperID:(NSString *)_sniperID eventListener:(id<AuctionEventListener>)listener;
 {
   if (self = [super init]) {
+    sniperID = [_sniperID copy];
     auctionEventListener = listener;
   }
   return self;
+}
+
+- (void)dealloc;
+{
+  [sniperID release];
+  [super dealloc];
 }
 
 - (void)xmppStream:(XMPPStream *)sender didReceiveMessage:(XMPPMessage *)message
@@ -29,7 +36,8 @@
     [auctionEventListener auctionClosed];
   }
   if ([event.type isEqualToString:@"PRICE"]) {
-    [auctionEventListener currentPriceForAuction:event.currentPrice increment:event.increment];
+    AuctionPriceSource priceSource = ([sniperID isEqualToString:event.bidder] ? PriceFromSniper : PriceFromOtherBidder);
+    [auctionEventListener currentPriceForAuction:event.currentPrice increment:event.increment priceSource:priceSource];
   }
 }
 
@@ -84,6 +92,11 @@ NSString *trimString(NSString *string) {
 - (NSString *)type;
 {
   return [eventData valueForKey:@"Event"];
+}
+
+- (NSString *)bidder;
+{
+  return [eventData valueForKey:@"Bidder"];
 }
 
 @end

@@ -38,11 +38,12 @@ XMPPMessage *createMessageWithBody(NSString *body) {
 @synthesize listener;
 
 static id UNUSED_STREAM = nil;
+static NSString *SNIPER_ID = @"sniper@localhost";
 
 - (void)setUp;
 {
   self.listener   = [OCMockObject mockForProtocol:@protocol(AuctionEventListener)];
-  self.translator = [[[AuctionMessageTranslator alloc] initWithAuctionEventListener:self.listener] autorelease];
+  self.translator = [[[AuctionMessageTranslator alloc] initWithSniperID:SNIPER_ID eventListener:self.listener] autorelease];
 }
 
 - (void)tearDown;
@@ -58,11 +59,19 @@ static id UNUSED_STREAM = nil;
   [translator xmppStream:UNUSED_STREAM didReceiveMessage:message];
 }
 
-- (void)testNotifiesBidDetailsWhenCurrentPriceMessageReceived;
+- (void)testNotifiesBidDetailsWhenCurrentPriceMessageReceivedFromOtherBidder;
 {
-  [[self.listener expect] currentPriceForAuction:192 increment:7];
+  [[self.listener expect] currentPriceForAuction:192 increment:7 priceSource:PriceFromOtherBidder];
   
   XMPPMessage *message = createMessageWithBody(@"SOLVersion: 1.1; Event: PRICE; CurrentPrice: 192; Increment: 7; Bidder: Someone else;");
+  [translator xmppStream:UNUSED_STREAM didReceiveMessage:message];
+}
+
+- (void)testNotifiesBidDetailsWhenCurrentPriceMessageReceivedFromSniper;
+{
+  [[self.listener expect] currentPriceForAuction:192 increment:7 priceSource:PriceFromSniper];
+  
+  XMPPMessage *message = createMessageWithBody([NSString stringWithFormat:@"SOLVersion: 1.1; Event: PRICE; CurrentPrice: 192; Increment: 7; Bidder: %@;", SNIPER_ID]);
   [translator xmppStream:UNUSED_STREAM didReceiveMessage:message];
 }
 

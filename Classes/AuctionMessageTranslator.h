@@ -13,9 +13,10 @@
 @class XMPPMessage;
 
 @interface AuctionMessageTranslator : NSObject <XMPPStreamDelegate> {
+  NSString *sniperID;
   id<AuctionEventListener> auctionEventListener;
 }
-- (id)initWithAuctionEventListener:(id<AuctionEventListener>)listener;
+- (id)initWithSniperID:(NSString *)_sniperID eventListener:(id<AuctionEventListener>)listener;
 @end
 
 @interface AuctionEvent : NSObject
@@ -25,6 +26,7 @@
 @property (nonatomic, readonly) NSInteger currentPrice;
 @property (nonatomic, readonly) NSInteger increment;
 @property (nonatomic, readonly) NSString *type;
+@property (nonatomic, readonly) NSString *bidder;
 
 + (id)auctionEventFromMessage:(NSString *)messageBody;
 - (id)initWithDictionary:(NSDictionary *)dictionary;

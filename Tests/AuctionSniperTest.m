@@ -45,7 +45,7 @@
   [self.sniper auctionClosed];
 }
 
-- (void)testBidsHigherAndReportsBiddingWhenNewPriceArrives;
+- (void)testBidsHigherAndReportsBiddingWhenNewPriceArrivesFromOtherBidder;
 {
   NSInteger price = 100;
   NSInteger increment = 25;
@@ -53,7 +53,14 @@
   [[self.auction expect] bid:(price + increment)];
   [[self.listener expect] auctionSniperBidding];
   
-  [self.sniper currentPriceForAuction:price increment:increment];
+  [self.sniper currentPriceForAuction:price increment:increment priceSource:PriceFromOtherBidder];
+}
+
+- (void)testReportsWinningWhenNewPriceArrivesFromSniper;
+{
+  [[self.listener expect] auctionSniperWinning];
+  
+  [self.sniper currentPriceForAuction:1500 increment:100 priceSource:PriceFromSniper];
 }
 
 @end

@@ -13,5 +13,6 @@
 
 - (void)auctionSniperLost;
 - (void)auctionSniperBidding;
+- (void)auctionSniperWinning;
 
 @end
