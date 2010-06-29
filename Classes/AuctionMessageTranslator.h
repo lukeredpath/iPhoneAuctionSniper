@@ -26,9 +26,9 @@
 @property (nonatomic, readonly) NSInteger currentPrice;
 @property (nonatomic, readonly) NSInteger increment;
 @property (nonatomic, readonly) NSString *type;
-@property (nonatomic, readonly) NSString *bidder;
 
 + (id)auctionEventFromMessage:(NSString *)messageBody;
 - (id)initWithDictionary:(NSDictionary *)dictionary;
+- (BOOL)isFromBidder:(NSString *)bidderID;
 @end
 

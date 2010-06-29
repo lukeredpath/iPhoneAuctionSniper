@@ -36,7 +36,7 @@
     [auctionEventListener auctionClosed];
   }
   if ([event.type isEqualToString:@"PRICE"]) {
-    AuctionPriceSource priceSource = ([sniperID isEqualToString:event.bidder] ? PriceFromSniper : PriceFromOtherBidder);
+    AuctionPriceSource priceSource = ([event isFromBidder:sniperID] ? PriceFromSniper : PriceFromOtherBidder);
     [auctionEventListener currentPriceForAuction:event.currentPrice increment:event.increment priceSource:priceSource];
   }
 }
@@ -94,9 +94,9 @@ NSString *trimString(NSString *string) {
   return [eventData valueForKey:@"Event"];
 }
 
-- (NSString *)bidder;
+- (BOOL)isFromBidder:(NSString *)bidderID;
 {
-  return [eventData valueForKey:@"Bidder"];
+  return [bidderID isEqualToString:[eventData valueForKey:@"Bidder"]];
 }
 
 @end
