@@ -10,6 +10,7 @@
 #import "AuctionMessageTranslator.h"
 #import "XMPPMessage.h"
 #import "NSXMLElementAdditions.h"
+#import "AuctionSniper.h"
 
 @interface AuctionMessageTranslatorTest : SenTestCase {
   AuctionMessageTranslator *translator;
@@ -70,7 +71,7 @@ static id UNUSED_STREAM = nil;
 {
   [[self.listener expect] currentPriceForAuction:192 increment:7 priceSource:PriceFromSniper];
   
-  XMPPMessage *message = createMessageWithBody([NSString stringWithFormat:@"SOLVersion: 1.1; Event: PRICE; CurrentPrice: 192; Increment: 7; Bidder: %@;", SNIPER_ID]);
+  XMPPMessage *message = createMessageWithBody([NSString stringWithFormat:@"SOLVersion: 1.1; Event: PRICE; CurrentPrice: 192; Increment: 7; Bidder: %@;", [AuctionSniper sniperID]]);
   [translator xmppStream:UNUSED_STREAM didReceiveMessage:message];
 }
 
