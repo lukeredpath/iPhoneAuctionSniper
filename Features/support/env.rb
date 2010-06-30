@@ -6,7 +6,7 @@ require File.join(File.dirname(__FILE__), *%w[global])
 World(Test::Unit::Assertions)
 
 OPENFIRE_PATH = "/opt/openfire/bin/openfire"
-OPENFIRE_PORT = 9090
+OPENFIRE_PORT = 5222
 
 ICukeWorld.configure do
   set :target, 'Testing'
