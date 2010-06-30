@@ -85,7 +85,11 @@ module AuctionSniper
     def initialize(auction_id)
       @auction_id = auction_id
       @message_queue = PollableFIFOQueue.new
-      @connection = Jabber::Simple.new(jid, XMPP_PASSWORD)
+      SystemTimer.timeout(3) do
+        @connection = Jabber::Simple.new(jid, XMPP_PASSWORD)
+      end
+    rescue Timeout::Error
+      raise "FakeAuctionServer could not connect to Openfire"
     end
     
     def stop
