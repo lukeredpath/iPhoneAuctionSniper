@@ -14,6 +14,10 @@ module AuctionSniper
         next if property.nil?
         @simulator_driver.assert_text_on_screen_with_scope(property, cell_scope)
       end
+      @simulator_driver.assert_text_on_screen_with_scope(auction_id, cell_scope)
+      @simulator_driver.assert_text_on_screen_with_scope(status_string, cell_scope)
+      @simulator_driver.assert_text_on_screen_with_scope("Price: #{price}", cell_scope)
+      @simulator_driver.assert_text_on_screen_with_scope("Bid: #{bid}", cell_scope)
     end
   end
 end

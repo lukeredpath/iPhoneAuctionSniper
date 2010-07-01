@@ -32,14 +32,14 @@ module AuctionSniper
     
     def assert_sniper_has_lost(auction)
       try_assertion_for(ASSERTION_TIMEOUT) do
-        @auction_driver.assert_shows_sniper_status(auction.auction_id, nil, nil, STATUS_LOST)
+        @auction_driver.assert_shows_sniper_status(auction.auction_id, auction.current_price, self.current_bid, STATUS_LOST)
       end
     end
   end
   
   module Actions
     def join_auction(auction)
-      @auction_driver.assert_shows_sniper_status(auction.auction_id, nil, nil, STATUS_JOINING)
+      @auction_driver.assert_shows_sniper_status(auction.auction_id, 0, 0, STATUS_JOINING)
     end
   end
   
