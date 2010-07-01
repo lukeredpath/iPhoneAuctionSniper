@@ -52,9 +52,47 @@
     [self.delegate auctionSniperWinning]; 
   } else {
     self.state = SniperStateBidding;
-    [auction bid:(price + increment)];
-    [self.delegate auctionSniperBidding];
+    NSInteger bid = price + increment;
+    [auction bid:bid];
+    SniperSnapshot *snapshot = [[SniperSnapshot alloc] initWithAuctionID:@"auction-id" lastPrice:price lastBid:bid state:SniperStateBidding];
+    [self.delegate auctionSniperBidding:snapshot];
+    [snapshot release];
   }
+}
+
+@end
+
+@implementation SniperSnapshot
+
+@synthesize lastPrice, lastBid, state;
+
+- (id)initWithAuctionID:(NSString *)anAuctionID lastPrice:(NSInteger)price lastBid:(NSInteger)bid state:(SniperState)sniperState;
+{
+  if (self = [super init]) {
+    auctionID = [anAuctionID copy];
+    lastPrice = price;
+    lastBid = bid;
+    state = sniperState;
+  }
+  return self;
+}
+
+- (BOOL)isForSameAuction:(NSString *)anAuctionID;
+{
+  return [anAuctionID isEqualToString:auctionID];
+}
+
+- (BOOL)isEqual:(id)object;
+{
+  if (![object isKindOfClass:[SniperSnapshot class]]) {
+    return NO;
+  }
+  return [self isEqualToSnapshot:object];
+}
+
+- (BOOL)isEqualToSnapshot:(SniperSnapshot *)snapshot;
+{
+  return ([snapshot isForSameAuction:auctionID] && snapshot.lastPrice == self.lastPrice && snapshot.lastBid == self.lastBid && snapshot.state == self.state);
 }
 
 @end

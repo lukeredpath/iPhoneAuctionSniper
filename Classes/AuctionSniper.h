@@ -31,3 +31,19 @@ typedef enum {
 @property (nonatomic, readonly) id<Auction> auction;
 @property (nonatomic, assign) id<AuctionSniperListener> delegate;
 @end
+
+@interface SniperSnapshot : NSObject
+{
+  NSString *auctionID;
+  NSInteger lastPrice;
+  NSInteger lastBid;
+  SniperState state;
+}
+@property (nonatomic, readonly) NSInteger lastPrice;
+@property (nonatomic, readonly) NSInteger lastBid;
+@property (nonatomic, readonly) SniperState state;
+
+- (id)initWithAuctionID:(NSString *)auctionID lastPrice:(NSInteger)price lastBid:(NSInteger)bid state:(SniperState)sniperState;
+- (BOOL)isEqualToSnapshot:(SniperSnapshot *)snapshot;
+- (BOOL)isForSameAuction:(NSString *)anAuctionID;
+@end

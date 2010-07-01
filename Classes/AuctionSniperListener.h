@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class SniperSnapshot;
 
 @protocol AuctionSniperListener
 
 - (void)auctionSniperLost;
-- (void)auctionSniperBidding;
+- (void)auctionSniperBidding:(SniperSnapshot *)snapshot;
 - (void)auctionSniperWinning;
 - (void)auctionSniperWon;
 

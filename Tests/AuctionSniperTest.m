@@ -11,6 +11,10 @@
 #import "AuctionSniperListener.h"
 #import "Auction.h"
 
+SniperSnapshot *snapshotFor(NSString *auctionID, NSInteger lastPrice, NSInteger lastBid, SniperState state) {
+  return [[[SniperSnapshot alloc] initWithAuctionID:auctionID lastPrice:lastPrice lastBid:lastBid state:state] autorelease];
+}
+
 @interface AuctionSniperTest : SenTestCase
 {
   AuctionSniper *sniper;
@@ -49,9 +53,10 @@
 {
   NSInteger price = 100;
   NSInteger increment = 25;
+  NSInteger bid = price + increment;
   
-  [[self.auction expect] bid:(price + increment)];
-  [[self.listener expect] auctionSniperBidding];
+  [[self.auction expect] bid:bid];
+  [[self.listener expect] auctionSniperBidding:equalTo(snapshotFor(@"auction-id", price, bid, SniperStateBidding))];
   
   [self.sniper currentPriceForAuction:price increment:increment priceSource:PriceFromOtherBidder];
 }
@@ -73,7 +78,7 @@
 - (void)testReportsLostWhenAuctionClosesWhilstBidding;
 {
   [[self.auction stub] bid:1600];
-  [[self.listener stub] auctionSniperBidding];
+  [[self.listener stub] auctionSniperBidding:instanceOf([SniperSnapshot class])];
   [self.sniper currentPriceForAuction:1500 increment:100 priceSource:PriceFromOtherBidder];
   [[self.listener expect] auctionSniperLost];
   [self.sniper auctionClosed];
