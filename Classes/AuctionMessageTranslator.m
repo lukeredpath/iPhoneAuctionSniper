@@ -17,13 +17,14 @@
 {
   if (self = [super init]) {
     sniperID = [_sniperID copy];
-    auctionEventListener = listener;
+    auctionEventListener = [listener retain];
   }
   return self;
 }
 
 - (void)dealloc;
 {
+  [auctionEventListener release];
   [sniperID release];
   [super dealloc];
 }
