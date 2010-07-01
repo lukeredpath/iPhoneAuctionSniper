@@ -8,6 +8,7 @@
 
 #import "AuctionSniperViewController.h"
 #import "AuctionSniper.h"
+#import "AuctionSnipersDataSource.h"
 
 @interface AuctionSniperViewController ()
 - (void)setState:(NSString *)state;
@@ -17,32 +18,41 @@
 
 @implementation AuctionSniperViewController
 
-@synthesize stateLabel;
-@synthesize auctionSniper;
+@synthesize dataSource;
 
 - (void)dealloc 
 {
-  [auctionSniper release];
+  [dataSource release];
   [super dealloc];
+}
+
+- (void)awakeFromNib;
+{
+  self.dataSource = [[[AuctionSnipersDataSource alloc] init] autorelease];
+  self.tableView.dataSource = self.dataSource;
 }
 
 - (void)setAuctionSniper:(AuctionSniper *)sniper;
 {
-  [auctionSniper autorelease];
-  auctionSniper = [sniper retain];
-  auctionSniper.delegate = self;
+  [self.dataSource addSniper:sniper];
+  [self setState:@"Joining"];
+
+  NSIndexPath *sniperIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+  [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:sniperIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+  
+  sniper.delegate = self;
 }
 
 - (void)viewDidLoad 
 {
   [super viewDidLoad];
-  
-  
 }
 
 - (void)setState:(NSString *)state;
 {
-  self.stateLabel.text = state;
+  self.dataSource.statusText = state;
+  NSIndexPath *sniperIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+  [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:sniperIndexPath] withRowAnimation:UITableViewRowAnimationNone];
 }
 
 - (void)viewDidUnload 

@@ -83,7 +83,7 @@ XMPPStream *newXMPPStream(NSString *hostName, NSString *user)
   [xmppStream addDelegate:self];
   [xmppStream addDelegate:messageTranslator];
   
-  self.auctionSniperController.auctionSniper = auctionSniper;
+  [self.auctionSniperController setAuctionSniper:auctionSniper];
   [auctionSniper release];
   
   NSError *connectionError = nil;

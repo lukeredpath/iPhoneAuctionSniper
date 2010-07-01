@@ -10,11 +10,12 @@
 #import "AuctionSniperListener.h"
 
 @class AuctionSniper;
+@class AuctionSnipersDataSource;
 
-@interface AuctionSniperViewController : UIViewController <AuctionSniperListener> {
-  UILabel *stateLabel;
-  AuctionSniper *auctionSniper;
+@interface AuctionSniperViewController : UITableViewController <AuctionSniperListener> {
+
 }
-@property (nonatomic, retain) IBOutlet UILabel *stateLabel;
-@property (nonatomic, retain) AuctionSniper *auctionSniper;
+@property (nonatomic, retain) IBOutlet AuctionSnipersDataSource *dataSource;
+
+- (void)setAuctionSniper:(AuctionSniper *)sniper;
 @end

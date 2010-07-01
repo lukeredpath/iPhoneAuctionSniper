@@ -112,6 +112,9 @@
 		A3FC5F8611D92DDF0045F352 /* XMPPAuction.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC5F7F11D92DCC0045F352 /* XMPPAuction.m */; };
 		A3FC5FF311D9372D0045F352 /* XMPPAuctionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC5FE011D935880045F352 /* XMPPAuctionTest.m */; };
 		A3FC60A411D93E0D0045F352 /* ElementHasMessageBody.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC60A311D93E0D0045F352 /* ElementHasMessageBody.m */; };
+		A3FD70F911DC132B008A44FB /* AuctionSnipersDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FD70F811DC132B008A44FB /* AuctionSnipersDataSource.m */; };
+		A3FD713211DC1731008A44FB /* AuctionSnipersDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FD70F811DC132B008A44FB /* AuctionSnipersDataSource.m */; };
+		A3FD713311DC1733008A44FB /* AuctionSnipersDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FD70F811DC132B008A44FB /* AuctionSnipersDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -205,6 +208,8 @@
 		A3FC5FE011D935880045F352 /* XMPPAuctionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMPPAuctionTest.m; sourceTree = "<group>"; };
 		A3FC60A211D93E0D0045F352 /* ElementHasMessageBody.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElementHasMessageBody.h; sourceTree = "<group>"; };
 		A3FC60A311D93E0D0045F352 /* ElementHasMessageBody.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElementHasMessageBody.m; sourceTree = "<group>"; };
+		A3FD70F711DC132B008A44FB /* AuctionSnipersDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuctionSnipersDataSource.h; sourceTree = "<group>"; };
+		A3FD70F811DC132B008A44FB /* AuctionSnipersDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuctionSnipersDataSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -356,6 +361,7 @@
 		A3FC548B11D825030045F352 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A3FD70F511DC1305008A44FB /* Data Sources */,
 				A3FC548C11D825170045F352 /* AuctionSniperViewController.h */,
 				A3FC548D11D825170045F352 /* AuctionSniperViewController.m */,
 			);
@@ -477,6 +483,15 @@
 				A3FC60A311D93E0D0045F352 /* ElementHasMessageBody.m */,
 			);
 			name = Matchers;
+			sourceTree = "<group>";
+		};
+		A3FD70F511DC1305008A44FB /* Data Sources */ = {
+			isa = PBXGroup;
+			children = (
+				A3FD70F711DC132B008A44FB /* AuctionSnipersDataSource.h */,
+				A3FD70F811DC132B008A44FB /* AuctionSnipersDataSource.m */,
+			);
+			name = "Data Sources";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -627,6 +642,7 @@
 				A3FC5BDD11D90A4B0045F352 /* AuctionMessageTranslator.m in Sources */,
 				A3FC5F6911D92C170045F352 /* AuctionSniper.m in Sources */,
 				A3FC5F8611D92DDF0045F352 /* XMPPAuction.m in Sources */,
+				A3FD713311DC1733008A44FB /* AuctionSnipersDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -659,6 +675,7 @@
 				A3FC5BDE11D90A4B0045F352 /* AuctionMessageTranslator.m in Sources */,
 				A3FC5F6811D92C160045F352 /* AuctionSniper.m in Sources */,
 				A3FC5F8511D92DDE0045F352 /* XMPPAuction.m in Sources */,
+				A3FD713211DC1731008A44FB /* AuctionSnipersDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -696,6 +713,7 @@
 				A3FC5F8011D92DCC0045F352 /* XMPPAuction.m in Sources */,
 				A3FC5FF311D9372D0045F352 /* XMPPAuctionTest.m in Sources */,
 				A3FC60A411D93E0D0045F352 /* ElementHasMessageBody.m in Sources */,
+				A3FD70F911DC132B008A44FB /* AuctionSnipersDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -874,6 +892,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
@@ -889,6 +908,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
