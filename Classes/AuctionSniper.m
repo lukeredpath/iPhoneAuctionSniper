@@ -18,8 +18,7 @@
 + (id)joining:(NSString *)auctionID;
 - (id)bidding:(NSInteger)lastPrice nextBid:(NSInteger)bid;
 - (id)winning:(NSInteger)price currentBid:(NSInteger)bid;
-- (id)won;
-- (id)lost;
+- (id)closed;
 @end
 
 @implementation AuctionSniper
@@ -51,13 +50,8 @@
 
 - (void)auctionClosed;
 {
-  if ([self.currentSnapshot isWinning]) {
-    self.currentSnapshot = [self.currentSnapshot won];
-    [self notifyChange];
-  } else {
-    self.currentSnapshot = [self.currentSnapshot lost];
-    [self notifyChange];
-  }
+  self.currentSnapshot = [self.currentSnapshot closed];
+  [self notifyChange];
 }
 
 - (void)currentPriceForAuction:(NSInteger)price increment:(NSInteger)increment priceSource:(AuctionPriceSource)priceSource;
@@ -119,9 +113,15 @@
   return ([snapshot isForSameAuction:auctionID] && snapshot.lastPrice == self.lastPrice && snapshot.lastBid == self.lastBid && snapshot.state == self.state);
 }
 
-- (BOOL)isWinning;
+- (SniperState)stateWhenClosed;
 {
-  return self.state == SniperStateWinning;
+  if (self.state == SniperStateWinning) {
+    return SniperStateWon;
+  }
+  if (self.state == SniperStateWon || self.state == SniperStateLost) {
+    @throw NSInternalInconsistencyException;
+  }
+  return SniperStateLost;
 }
 
 @end
@@ -143,14 +143,9 @@
   return [[[SniperSnapshot alloc] initWithAuctionID:auctionID lastPrice:price lastBid:bid state:SniperStateWinning] autorelease];
 }
 
-- (id)won;
+- (id)closed;
 {
-  return [[[SniperSnapshot alloc] initWithAuctionID:auctionID lastPrice:lastPrice lastBid:lastBid state:SniperStateWon] autorelease];
-}
-
-- (id)lost;
-{
-  return [[[SniperSnapshot alloc] initWithAuctionID:auctionID lastPrice:lastPrice lastBid:lastBid state:SniperStateLost] autorelease];
+  return [[[SniperSnapshot alloc] initWithAuctionID:auctionID lastPrice:lastPrice lastBid:lastBid state:[self stateWhenClosed]] autorelease];
 }
 
 @end
