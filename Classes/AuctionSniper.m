@@ -10,7 +10,6 @@
 #import "XMPPAuction.h"
 
 @interface AuctionSniper ()
-@property (nonatomic, assign) SniperState state;
 @property (nonatomic, retain, readwrite) SniperSnapshot *currentSnapshot;
 - (void)notifyChange;
 @end
@@ -26,7 +25,6 @@
 @implementation AuctionSniper
 
 @synthesize delegate;
-@synthesize state;
 @synthesize auction;
 @synthesize auctionID;
 @synthesize currentSnapshot;
@@ -53,7 +51,7 @@
 
 - (void)auctionClosed;
 {
-  if (self.state == SniperStateWinning) {
+  if ([self.currentSnapshot isWinning]) {
     self.currentSnapshot = [self.currentSnapshot won];
     [self notifyChange];
   } else {
@@ -65,11 +63,9 @@
 - (void)currentPriceForAuction:(NSInteger)price increment:(NSInteger)increment priceSource:(AuctionPriceSource)priceSource;
 {
   if (priceSource == PriceFromSniper) {
-    self.state = SniperStateWinning;
     self.currentSnapshot = [self.currentSnapshot winning:price currentBid:price];
     [self.delegate auctionSniperChanged:self.currentSnapshot]; 
   } else {
-    self.state = SniperStateBidding;
     NSInteger bid = price + increment;
     [auction bid:bid];
     self.currentSnapshot = [self.currentSnapshot bidding:price nextBid:bid];
@@ -121,6 +117,11 @@
 - (BOOL)isEqualToSnapshot:(SniperSnapshot *)snapshot;
 {
   return ([snapshot isForSameAuction:auctionID] && snapshot.lastPrice == self.lastPrice && snapshot.lastBid == self.lastBid && snapshot.state == self.state);
+}
+
+- (BOOL)isWinning;
+{
+  return self.state == SniperStateWinning;
 }
 
 @end
