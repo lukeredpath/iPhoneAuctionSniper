@@ -17,4 +17,6 @@
 @property (nonatomic, readonly) NSString *auctionID;
 
 - (id)initWithStream:(XMPPStream *)aStream;
+- (void)subscribe;
+- (void)subscribeAndJoin;
 @end

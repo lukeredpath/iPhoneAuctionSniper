@@ -53,7 +53,7 @@
 
 - (void)xmppStreamDidAuthenticate:(XMPPStream *)sender
 {
-  [auction join];
+  [auction subscribeAndJoin];
 }
 
 - (void)xmppStream:(XMPPStream *)sender didNotAuthenticate:(NSXMLElement *)error;
