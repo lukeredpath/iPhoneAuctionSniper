@@ -11,18 +11,32 @@
 #import "AuctionSniper.h"
 
 @interface AuctionSnipersDataSource ()
-@property (nonatomic, copy) NSString *statusText;
 @property (nonatomic, retain) SniperSnapshot *snapshot;
 @end
 
 @implementation AuctionSnipersDataSource
 
-@synthesize statusText, snapshot;
+@synthesize snapshot;
 @synthesize cellPrototype;
 
-- (void)updateSniper:(SniperSnapshot *)sniperSnapshot statusText:(NSString *)text;
+static NSArray *sniperStateLabels = nil;
+
++ (void)initialize;
 {
-  self.statusText = text;
+  [super initialize];
+  
+  if (sniperStateLabels == nil) {
+    sniperStateLabels = [[NSArray alloc] initWithObjects:
+                         @"Joining",
+                         @"Bidding",
+                         @"Winning",
+                         @"Won",
+                         @"Lost", nil];
+  }
+}
+
+- (void)updateSniper:(SniperSnapshot *)sniperSnapshot;
+{
   self.snapshot = sniperSnapshot;
 }
 
@@ -45,7 +59,7 @@
     self.cellPrototype = nil;
   }
   [cell setAuctionID:self.snapshot.auctionID];
-  [cell setStatus:self.statusText];
+  [cell setStatus:[sniperStateLabels objectAtIndex:self.snapshot.state]];
   [cell setPrice:self.snapshot.lastPrice andBid:self.snapshot.lastBid];
   
   return cell;

@@ -11,6 +11,16 @@
 
 @interface AuctionSniper ()
 @property (nonatomic, assign) SniperState state;
+@property (nonatomic, retain, readwrite) SniperSnapshot *currentSnapshot;
+- (void)notifyChange;
+@end
+
+@interface SniperSnapshot (Factories)
++ (id)joining:(NSString *)auctionID;
+- (id)bidding:(NSInteger)lastPrice nextBid:(NSInteger)bid;
+- (id)winning:(NSInteger)price currentBid:(NSInteger)bid;
+- (id)won;
+- (id)lost;
 @end
 
 @implementation AuctionSniper
@@ -19,12 +29,14 @@
 @synthesize state;
 @synthesize auction;
 @synthesize auctionID;
+@synthesize currentSnapshot;
 
 - (id)initWithAuction:(XMPPAuction *)anAuction auctionID:(NSString *)anAuctionID;
 {
   if (self = [super init]) {
     auction = [anAuction retain];
     auctionID = [anAuctionID copy];
+    self.currentSnapshot = [SniperSnapshot joining:auctionID];
   }
   return self;
 }
@@ -42,9 +54,11 @@
 - (void)auctionClosed;
 {
   if (self.state == SniperStateWinning) {
-    [self.delegate auctionSniperWon]; 
+    self.currentSnapshot = [self.currentSnapshot won];
+    [self notifyChange];
   } else {
-    [self.delegate auctionSniperLost];
+    self.currentSnapshot = [self.currentSnapshot lost];
+    [self notifyChange];
   }
 }
 
@@ -52,15 +66,20 @@
 {
   if (priceSource == PriceFromSniper) {
     self.state = SniperStateWinning;
-    [self.delegate auctionSniperWinning]; 
+    self.currentSnapshot = [self.currentSnapshot winning:price currentBid:price];
+    [self.delegate auctionSniperChanged:self.currentSnapshot]; 
   } else {
     self.state = SniperStateBidding;
     NSInteger bid = price + increment;
     [auction bid:bid];
-    SniperSnapshot *snapshot = [[SniperSnapshot alloc] initWithAuctionID:auctionID lastPrice:price lastBid:bid state:SniperStateBidding];
-    [self.delegate auctionSniperBidding:snapshot];
-    [snapshot release];
+    self.currentSnapshot = [self.currentSnapshot bidding:price nextBid:bid];
+    [self notifyChange];
   }
+}
+
+- (void)notifyChange;
+{
+  [self.delegate auctionSniperChanged:self.currentSnapshot];
 }
 
 @end
@@ -105,3 +124,34 @@
 }
 
 @end
+
+@implementation SniperSnapshot (Factories)
+
++ (id)joining:(NSString *)auctionID;
+{
+  return [[[self alloc] initWithAuctionID:auctionID lastPrice:0 lastBid:0 state:SniperStateJoining] autorelease];
+}
+
+- (id)bidding:(NSInteger)price nextBid:(NSInteger)bid;
+{
+  return [[[SniperSnapshot alloc] initWithAuctionID:auctionID lastPrice:price lastBid:bid state:SniperStateBidding] autorelease];
+}
+
+- (id)winning:(NSInteger)price currentBid:(NSInteger)bid;
+{
+  return [[[SniperSnapshot alloc] initWithAuctionID:auctionID lastPrice:price lastBid:bid state:SniperStateWinning] autorelease];
+}
+
+- (id)won;
+{
+  return [[[SniperSnapshot alloc] initWithAuctionID:auctionID lastPrice:lastPrice lastBid:lastBid state:SniperStateWon] autorelease];
+}
+
+- (id)lost;
+{
+  return [[[SniperSnapshot alloc] initWithAuctionID:auctionID lastPrice:lastPrice lastBid:lastBid state:SniperStateLost] autorelease];
+}
+
+@end
+
+

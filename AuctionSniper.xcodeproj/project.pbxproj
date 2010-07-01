@@ -122,6 +122,7 @@
 		A3FD720511DC21C4008A44FB /* AuctionSniperCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FD71DD11DC1FAC008A44FB /* AuctionSniperCell.m */; };
 		A3FD720611DC21C4008A44FB /* AuctionSniperCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FD71DD11DC1FAC008A44FB /* AuctionSniperCell.m */; };
 		A3FD728E11DC256D008A44FB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3FC540A11D7CA390045F352 /* UIKit.framework */; };
+		A3FD73C011DCB96A008A44FB /* SnapshotWithState.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FD73BF11DCB96A008A44FB /* SnapshotWithState.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -220,6 +221,8 @@
 		A3FD71D811DC1E76008A44FB /* AuctionSniperCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuctionSniperCell.xib; sourceTree = "<group>"; };
 		A3FD71DC11DC1FAC008A44FB /* AuctionSniperCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuctionSniperCell.h; sourceTree = "<group>"; };
 		A3FD71DD11DC1FAC008A44FB /* AuctionSniperCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuctionSniperCell.m; sourceTree = "<group>"; };
+		A3FD73BE11DCB96A008A44FB /* SnapshotWithState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapshotWithState.h; sourceTree = "<group>"; };
+		A3FD73BF11DCB96A008A44FB /* SnapshotWithState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnapshotWithState.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -494,6 +497,8 @@
 			children = (
 				A3FC60A211D93E0D0045F352 /* ElementHasMessageBody.h */,
 				A3FC60A311D93E0D0045F352 /* ElementHasMessageBody.m */,
+				A3FD73BE11DCB96A008A44FB /* SnapshotWithState.h */,
+				A3FD73BF11DCB96A008A44FB /* SnapshotWithState.m */,
 			);
 			name = Matchers;
 			sourceTree = "<group>";
@@ -742,6 +747,7 @@
 				A3FC60A411D93E0D0045F352 /* ElementHasMessageBody.m in Sources */,
 				A3FD70F911DC132B008A44FB /* AuctionSnipersDataSource.m in Sources */,
 				A3FD71DE11DC1FAC008A44FB /* AuctionSniperCell.m in Sources */,
+				A3FD73C011DCB96A008A44FB /* SnapshotWithState.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

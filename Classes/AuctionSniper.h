@@ -26,10 +26,12 @@ typedef enum {
   NSString *auctionID;
   id<AuctionSniperListener> delegate;
   SniperState state;
+  SniperSnapshot *currentSnapshot;
 }
 @property (nonatomic, readonly) id<Auction> auction;
 @property (nonatomic, readonly) NSString *auctionID;
 @property (nonatomic, assign) id<AuctionSniperListener> delegate;
+@property (nonatomic, retain, readonly) SniperSnapshot *currentSnapshot;
 
 - (id)initWithAuction:(XMPPAuction *)anAuction auctionID:(NSString *)anAuctionID;
 @end

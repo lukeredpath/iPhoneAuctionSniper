@@ -15,5 +15,5 @@
 }
 @property (nonatomic, assign) IBOutlet AuctionSniperCell *cellPrototype;
 
-- (void)updateSniper:(SniperSnapshot *)snapshot statusText:(NSString *)text;
+- (void)updateSniper:(SniperSnapshot *)snapshot;
 @end

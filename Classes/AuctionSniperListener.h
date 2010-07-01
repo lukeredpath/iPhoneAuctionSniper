@@ -12,9 +12,6 @@
 
 @protocol AuctionSniperListener
 
-- (void)auctionSniperLost;
-- (void)auctionSniperBidding:(SniperSnapshot *)snapshot;
-- (void)auctionSniperWinning;
-- (void)auctionSniperWon;
+- (void)auctionSniperChanged:(SniperSnapshot *)snapshot;
 
 @end
