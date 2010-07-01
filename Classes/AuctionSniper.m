@@ -59,20 +59,19 @@
   switch (priceSource) {
     case PriceFromSniper: {
       self.currentSnapshot = [self.currentSnapshot winning:price currentBid:price];
-      [self notifyChange];
       break; 
     }
     case PriceFromOtherBidder: {
       NSInteger bid = price + increment;
       [auction bid:bid];
       self.currentSnapshot = [self.currentSnapshot bidding:price nextBid:bid];
-      [self notifyChange];
       break;
     }
     default:
       @throw NSInternalInconsistencyException;
       break;
   }
+  [self notifyChange];
 }
 
 - (void)notifyChange;
