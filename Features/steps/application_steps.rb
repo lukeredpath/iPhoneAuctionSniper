@@ -22,6 +22,6 @@ end
 #------------------------------------------------------------------------------
 
 Then /^the application should show the sniper (is|has) (.*)$/ do |tense, state|
-  @application_runner.send("assert_sniper_#{tense}_#{state}")
+  @application_runner.send("assert_sniper_#{tense}_#{state}", @auction)
 end
 

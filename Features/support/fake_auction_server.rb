@@ -73,6 +73,8 @@ module AuctionSniper
     def report_price(price, increment, bidder)
       message = "SOLVersion: 1.1; Event: PRICE; CurrentPrice: #{price}; Increment: #{increment}; Bidder: #{bidder};"
       @connection.deliver(@listener.last_jid, message)
+      self.current_price = price
+      self.current_increment = increment
     end
   end
   
@@ -81,6 +83,7 @@ module AuctionSniper
     include Actions
     
     attr_reader :auction_id
+    attr_accessor :current_price, :current_increment
     
     def initialize(auction_id)
       @auction_id = auction_id

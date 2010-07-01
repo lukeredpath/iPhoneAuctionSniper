@@ -27,6 +27,7 @@ Feature: Bidding on a single item
     When the auction announces it has closed
     Then the application should show the sniper has lost
 
+  @focussed
   Scenario: Sniper wins an auction by bidding higher
     Given an auction is selling an item
     And the application has joined the auction

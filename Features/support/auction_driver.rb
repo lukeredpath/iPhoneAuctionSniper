@@ -6,9 +6,13 @@ module AuctionSniper
       @simulator_driver = simulator_driver
     end
     
-    def assert_shows_sniper_status(status_string)
+    def assert_shows_sniper_status(auction_id, price, bid, status_string)
       @simulator_driver.refresh
-      @simulator_driver.assert_text_on_screen_with_scope(status_string, "//UITableView//UITableViewCell")
+      
+      cell_scope = "//UITableView//UITableViewCell"
+      [auction_id, price, bid, status_string].each do |property|
+        @simulator_driver.assert_text_on_screen_with_scope(property, cell_scope)
+      end
     end
   end
 end
