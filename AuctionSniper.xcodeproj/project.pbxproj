@@ -121,6 +121,7 @@
 		A3FD71FD11DC21AE008A44FB /* AuctionSniperCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3FD71D811DC1E76008A44FB /* AuctionSniperCell.xib */; };
 		A3FD720511DC21C4008A44FB /* AuctionSniperCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FD71DD11DC1FAC008A44FB /* AuctionSniperCell.m */; };
 		A3FD720611DC21C4008A44FB /* AuctionSniperCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FD71DD11DC1FAC008A44FB /* AuctionSniperCell.m */; };
+		A3FD728E11DC256D008A44FB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3FC540A11D7CA390045F352 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -261,6 +262,7 @@
 				A3FC5D2211D910870045F352 /* libOCMock-StaticLib-iphonesimulator.a in Frameworks */,
 				A3FC5E6811D920EA0045F352 /* libiconv.dylib in Frameworks */,
 				A3FC5E7C11D924530045F352 /* libidn.a in Frameworks */,
+				A3FD728E11DC256D008A44FB /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
