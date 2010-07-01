@@ -17,6 +17,7 @@
 
 @synthesize delegate;
 @synthesize state;
+@synthesize auction;
 
 - (id)initWithAuction:(XMPPAuction *)anAuction;
 {

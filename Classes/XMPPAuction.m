@@ -16,7 +16,7 @@
 
 #pragma mark -
 
-#define kAUCTION_ID 1
+#define kAUCTION_ID @"item-1"
 #define kAUCTION_RESOURCE @"auction"
 
 @implementation XMPPAuction
@@ -46,12 +46,17 @@
   [self sendMessage:[NSString stringWithFormat:@"SOLVersion: 1.1; Command: BID; Price: %d;", amount]];
 }
 
+- (NSString *)auctionID;
+{
+  return kAUCTION_ID;
+}
+
 @end
 
 @implementation XMPPAuction (Messaging)
 
-XMPPJID *auctionJID(XMPPStream *stream, NSString *resource, NSInteger auctionID) {
-  NSString *auctionUser = [NSString stringWithFormat:@"auction-item-%d", auctionID];
+XMPPJID *auctionJID(XMPPStream *stream, NSString *resource, NSString *auctionID) {
+  NSString *auctionUser = [NSString stringWithFormat:@"auction-%@", auctionID];
   return [XMPPJID jidWithUser:auctionUser domain:stream.hostName resource:resource];
 }
 

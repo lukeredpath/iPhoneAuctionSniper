@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "AuctionEventListener.h"
 #import "AuctionSniperListener.h"
+#import "Auction.h"
 
 @class XMPPAuction;
 
@@ -27,5 +28,6 @@ typedef enum {
 }
 - (id)initWithAuction:(XMPPAuction *)anAuction;
 
+@property (nonatomic, readonly) id<Auction> auction;
 @property (nonatomic, assign) id<AuctionSniperListener> delegate;
 @end

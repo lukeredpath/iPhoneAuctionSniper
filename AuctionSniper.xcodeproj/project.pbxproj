@@ -115,6 +115,12 @@
 		A3FD70F911DC132B008A44FB /* AuctionSnipersDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FD70F811DC132B008A44FB /* AuctionSnipersDataSource.m */; };
 		A3FD713211DC1731008A44FB /* AuctionSnipersDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FD70F811DC132B008A44FB /* AuctionSnipersDataSource.m */; };
 		A3FD713311DC1733008A44FB /* AuctionSnipersDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FD70F811DC132B008A44FB /* AuctionSnipersDataSource.m */; };
+		A3FD71D911DC1E76008A44FB /* AuctionSniperCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3FD71D811DC1E76008A44FB /* AuctionSniperCell.xib */; };
+		A3FD71DE11DC1FAC008A44FB /* AuctionSniperCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FD71DD11DC1FAC008A44FB /* AuctionSniperCell.m */; };
+		A3FD71FC11DC21AD008A44FB /* AuctionSniperCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3FD71D811DC1E76008A44FB /* AuctionSniperCell.xib */; };
+		A3FD71FD11DC21AE008A44FB /* AuctionSniperCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3FD71D811DC1E76008A44FB /* AuctionSniperCell.xib */; };
+		A3FD720511DC21C4008A44FB /* AuctionSniperCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FD71DD11DC1FAC008A44FB /* AuctionSniperCell.m */; };
+		A3FD720611DC21C4008A44FB /* AuctionSniperCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FD71DD11DC1FAC008A44FB /* AuctionSniperCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -210,6 +216,9 @@
 		A3FC60A311D93E0D0045F352 /* ElementHasMessageBody.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElementHasMessageBody.m; sourceTree = "<group>"; };
 		A3FD70F711DC132B008A44FB /* AuctionSnipersDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuctionSnipersDataSource.h; sourceTree = "<group>"; };
 		A3FD70F811DC132B008A44FB /* AuctionSnipersDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuctionSnipersDataSource.m; sourceTree = "<group>"; };
+		A3FD71D811DC1E76008A44FB /* AuctionSniperCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuctionSniperCell.xib; sourceTree = "<group>"; };
+		A3FD71DC11DC1FAC008A44FB /* AuctionSniperCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuctionSniperCell.h; sourceTree = "<group>"; };
+		A3FD71DD11DC1FAC008A44FB /* AuctionSniperCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuctionSniperCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,6 +270,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A3FD71DB11DC1F8F008A44FB /* Cells */,
 				A3FC5BD911D909FF0045F352 /* Model */,
 				A3FC548B11D825030045F352 /* Controllers */,
 				1D3623240D0F684500981E51 /* AuctionSniperAppDelegate.h */,
@@ -345,6 +355,7 @@
 			children = (
 				A3FC549411D825330045F352 /* AuctionSniperViewController.xib */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+				A3FD71D811DC1E76008A44FB /* AuctionSniperCell.xib */,
 			);
 			path = Nibs;
 			sourceTree = "<group>";
@@ -494,6 +505,15 @@
 			name = "Data Sources";
 			sourceTree = "<group>";
 		};
+		A3FD71DB11DC1F8F008A44FB /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A3FD71DC11DC1FAC008A44FB /* AuctionSniperCell.h */,
+				A3FD71DD11DC1FAC008A44FB /* AuctionSniperCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -575,6 +595,7 @@
 			files = (
 				A3FC54A711D826240045F352 /* AuctionSniperViewController.xib in Resources */,
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
+				A3FD71FD11DC21AE008A44FB /* AuctionSniperCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,6 +605,7 @@
 			files = (
 				A31521A611D238D3007F2123 /* MainWindow.xib in Resources */,
 				A3FC549511D825330045F352 /* AuctionSniperViewController.xib in Resources */,
+				A3FD71FC11DC21AD008A44FB /* AuctionSniperCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,6 +613,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3FD71D911DC1E76008A44FB /* AuctionSniperCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -643,6 +666,7 @@
 				A3FC5F6911D92C170045F352 /* AuctionSniper.m in Sources */,
 				A3FC5F8611D92DDF0045F352 /* XMPPAuction.m in Sources */,
 				A3FD713311DC1733008A44FB /* AuctionSnipersDataSource.m in Sources */,
+				A3FD720511DC21C4008A44FB /* AuctionSniperCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -676,6 +700,7 @@
 				A3FC5F6811D92C160045F352 /* AuctionSniper.m in Sources */,
 				A3FC5F8511D92DDE0045F352 /* XMPPAuction.m in Sources */,
 				A3FD713211DC1731008A44FB /* AuctionSnipersDataSource.m in Sources */,
+				A3FD720611DC21C4008A44FB /* AuctionSniperCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -714,6 +739,7 @@
 				A3FC5FF311D9372D0045F352 /* XMPPAuctionTest.m in Sources */,
 				A3FC60A411D93E0D0045F352 /* ElementHasMessageBody.m in Sources */,
 				A3FD70F911DC132B008A44FB /* AuctionSnipersDataSource.m in Sources */,
+				A3FD71DE11DC1FAC008A44FB /* AuctionSniperCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

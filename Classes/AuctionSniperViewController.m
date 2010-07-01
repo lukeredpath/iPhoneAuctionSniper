@@ -46,6 +46,8 @@
 - (void)viewDidLoad 
 {
   [super viewDidLoad];
+  
+  self.tableView.rowHeight = 60;
 }
 
 - (void)setState:(NSString *)state;

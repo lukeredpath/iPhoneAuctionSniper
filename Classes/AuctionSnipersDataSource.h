@@ -9,11 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @class AuctionSniper;
+@class AuctionSniperCell;
 
 @interface AuctionSnipersDataSource : NSObject <UITableViewDataSource> {
   NSMutableArray *snipers;
 }
 @property (nonatomic, copy) NSString *statusText;
+@property (nonatomic, assign) IBOutlet AuctionSniperCell *cellPrototype;
 
 - (void)addSniper:(AuctionSniper *)sniper;
 - (AuctionSniper *)sniperForCellAtIndexPath:(NSIndexPath *)indexPath;

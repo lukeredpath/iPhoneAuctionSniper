@@ -7,11 +7,12 @@
 //
 
 #import "AuctionSnipersDataSource.h"
-
+#import "AuctionSniperCell.h"
 
 @implementation AuctionSnipersDataSource
 
 @synthesize statusText;
+@synthesize cellPrototype;
 
 - (id)init;
 {
@@ -43,11 +44,15 @@
 {
   static NSString *CellIdentifier = @"AuctionSniperCell";
   
-  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+  AuctionSniperCell *cell = (AuctionSniperCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
   if (cell == nil) {
-    cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    [[UINib nibWithNibName:@"AuctionSniperCell" bundle:nil] instantiateWithOwner:self options:nil];
+    cell = self.cellPrototype;
+    self.cellPrototype = nil;
   }
-  cell.textLabel.text = self.statusText;
+  AuctionSniper *sniper = [self sniperForCellAtIndexPath:indexPath];
+  
+  [cell updateWithAuctionSniper:sniper status:self.statusText];
   
   return cell;
 }

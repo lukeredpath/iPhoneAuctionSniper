@@ -13,5 +13,6 @@
 
 - (void)join;
 - (void)bid:(NSInteger)amount;
+- (NSString *)auctionID;
 
 @end

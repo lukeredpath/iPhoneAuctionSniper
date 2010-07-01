@@ -1,4 +1,4 @@
-TEST_AUCTION_ID = '1'
+TEST_AUCTION_ID = 'item-1'
 
 Given /^an auction is selling an item$/ do
   @auction = AuctionSniper::FakeAuctionServer.new(TEST_AUCTION_ID)

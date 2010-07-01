@@ -14,5 +14,7 @@
 @interface XMPPAuction : NSObject <Auction> {
   XMPPStream *stream;
 }
+@property (nonatomic, readonly) NSString *auctionID;
+
 - (id)initWithStream:(XMPPStream *)aStream;
 @end
