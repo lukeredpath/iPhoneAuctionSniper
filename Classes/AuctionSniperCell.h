@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@class AuctionSniper;
-
 @interface AuctionSniperCell : UITableViewCell {
   NSString *priceStringFormat;
 }
@@ -17,5 +15,7 @@
 @property (nonatomic, retain) IBOutlet UILabel *pricesLabel;
 @property (nonatomic, retain) IBOutlet UILabel *statusLabel;
 
-- (void)updateWithAuctionSniper:(AuctionSniper *)auctionSniper status:(NSString *)statusString;
+- (void)setAuctionID:(NSString *)auctionID;
+- (void)setStatus:(NSString *)statusText;
+- (void)setPrice:(NSInteger)price andBid:(NSInteger)bid;
 @end

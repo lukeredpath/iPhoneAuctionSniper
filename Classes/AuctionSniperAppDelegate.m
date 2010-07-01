@@ -18,7 +18,7 @@
 #define kSNIPER_XMPP_PASSWORD @"sniper"
 #define kXMPP_HOSTNAME        @"localhost"
 #define kAUCTION_RESOURCE     @"auction"
-#define kAUCTION_ID           1
+#define kAUCTION_ID           @"item-1"
 
 
 @implementation AuctionSniperAppDelegate
@@ -77,7 +77,7 @@ XMPPStream *newXMPPStream(NSString *hostName, NSString *user)
   xmppStream = newXMPPStream(kXMPP_HOSTNAME, kSNIPER_XMPP_USERNAME);
   auction = [[XMPPAuction alloc] initWithStream:xmppStream];
   
-  AuctionSniper *auctionSniper = [[AuctionSniper alloc] initWithAuction:auction];
+  AuctionSniper *auctionSniper = [[AuctionSniper alloc] initWithAuction:auction auctionID:kAUCTION_ID];
   messageTranslator = [[AuctionMessageTranslator alloc] initWithSniperID:xmppStream.myJID.bare eventListener:auctionSniper];
   
   [xmppStream addDelegate:self];

@@ -8,15 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@class AuctionSniper;
 @class AuctionSniperCell;
+@class SniperSnapshot;
 
 @interface AuctionSnipersDataSource : NSObject <UITableViewDataSource> {
-  NSMutableArray *snipers;
 }
-@property (nonatomic, copy) NSString *statusText;
 @property (nonatomic, assign) IBOutlet AuctionSniperCell *cellPrototype;
 
-- (void)addSniper:(AuctionSniper *)sniper;
-- (AuctionSniper *)sniperForCellAtIndexPath:(NSIndexPath *)indexPath;
+- (void)updateSniper:(SniperSnapshot *)snapshot statusText:(NSString *)text;
 @end

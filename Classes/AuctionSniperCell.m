@@ -30,10 +30,18 @@
   priceStringFormat = [pricesLabel.text copy];
 }
 
-- (void)updateWithAuctionSniper:(AuctionSniper *)auctionSniper status:(NSString *)statusString;
+- (void)setAuctionID:(NSString *)auctionID;
 {
-  auctionLabel.text = auctionSniper.auction.auctionID;
-  statusLabel.text = statusString;
+  auctionLabel.text = auctionID;
+}
+
+- (void)setStatus:(NSString *)statusText;
+{
+  statusLabel.text = statusText;
+}
+
+- (void)setPrice:(NSInteger)price andBid:(NSInteger)bid;
+{
   pricesLabel.text = [NSString stringWithFormat:priceStringFormat, 1000, 1098];
 }
 

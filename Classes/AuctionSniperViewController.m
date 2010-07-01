@@ -12,6 +12,7 @@
 
 @interface AuctionSniperViewController ()
 - (void)setState:(NSString *)state;
+- (void)setState:(NSString *)state snapshot:(SniperSnapshot *)snapshot;
 @end
 
 #pragma mark -
@@ -34,8 +35,9 @@
 
 - (void)setAuctionSniper:(AuctionSniper *)sniper;
 {
-  [self.dataSource addSniper:sniper];
-  [self setState:@"Joining"];
+  SniperSnapshot *defaultSnapshot = [[SniperSnapshot alloc] initWithAuctionID:sniper.auctionID lastPrice:0 lastBid:0 state:SniperStateJoining];
+  [self setState:@"Joining" snapshot:defaultSnapshot];
+  [defaultSnapshot release];
 
   NSIndexPath *sniperIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
   [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:sniperIndexPath] withRowAnimation:UITableViewRowAnimationFade];
@@ -52,7 +54,12 @@
 
 - (void)setState:(NSString *)state;
 {
-  self.dataSource.statusText = state;
+  [self setState:state snapshot:nil];
+}
+
+- (void)setState:(NSString *)state snapshot:(SniperSnapshot *)snapshot;
+{
+  [self.dataSource updateSniper:snapshot statusText:state];
   NSIndexPath *sniperIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
   [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:sniperIndexPath] withRowAnimation:UITableViewRowAnimationNone];
 }
@@ -70,9 +77,9 @@
   [self setState:@"Lost"];
 }
 
-- (void)auctionSniperBidding;
+- (void)auctionSniperBidding:(SniperSnapshot *)snapshot;
 {
-  [self setState:@"Bidding"];
+  [self setState:@"Bidding" snapshot:snapshot];
 }
 
 - (void)auctionSniperWinning;

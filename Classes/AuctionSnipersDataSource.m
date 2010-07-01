@@ -8,28 +8,22 @@
 
 #import "AuctionSnipersDataSource.h"
 #import "AuctionSniperCell.h"
+#import "AuctionSniper.h"
+
+@interface AuctionSnipersDataSource ()
+@property (nonatomic, copy) NSString *statusText;
+@property (nonatomic, retain) SniperSnapshot *snapshot;
+@end
 
 @implementation AuctionSnipersDataSource
 
-@synthesize statusText;
+@synthesize statusText, snapshot;
 @synthesize cellPrototype;
 
-- (id)init;
+- (void)updateSniper:(SniperSnapshot *)sniperSnapshot statusText:(NSString *)text;
 {
-  if (self = [super init]) {
-    snipers = [[NSMutableArray alloc] init];
-  }
-  return self;
-}
-
-- (void)addSniper:(AuctionSniper *)sniper
-{
-  [snipers addObject:sniper];
-}
-
-- (AuctionSniper *)sniperForCellAtIndexPath:(NSIndexPath *)indexPath;
-{
-  return [snipers objectAtIndex:indexPath.row];
+  self.statusText = text;
+  self.snapshot = sniperSnapshot;
 }
 
 #pragma mark -
@@ -37,7 +31,7 @@
 
 - (NSInteger)tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section
 {
-  return [snipers count];
+  return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -50,9 +44,9 @@
     cell = self.cellPrototype;
     self.cellPrototype = nil;
   }
-  AuctionSniper *sniper = [self sniperForCellAtIndexPath:indexPath];
-  
-  [cell updateWithAuctionSniper:sniper status:self.statusText];
+  [cell setAuctionID:self.snapshot.auctionID];
+  [cell setStatus:self.statusText];
+  [cell setPrice:self.snapshot.lastPrice andBid:self.snapshot.lastBid];
   
   return cell;
 }

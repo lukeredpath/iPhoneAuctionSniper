@@ -18,17 +18,20 @@
 @synthesize delegate;
 @synthesize state;
 @synthesize auction;
+@synthesize auctionID;
 
-- (id)initWithAuction:(XMPPAuction *)anAuction;
+- (id)initWithAuction:(XMPPAuction *)anAuction auctionID:(NSString *)anAuctionID;
 {
   if (self = [super init]) {
     auction = [anAuction retain];
+    auctionID = [anAuctionID copy];
   }
   return self;
 }
 
 - (void)dealloc;
 {
+  [auctionID release];
   [auction release];
   [super dealloc];
 }
@@ -54,7 +57,7 @@
     self.state = SniperStateBidding;
     NSInteger bid = price + increment;
     [auction bid:bid];
-    SniperSnapshot *snapshot = [[SniperSnapshot alloc] initWithAuctionID:@"auction-id" lastPrice:price lastBid:bid state:SniperStateBidding];
+    SniperSnapshot *snapshot = [[SniperSnapshot alloc] initWithAuctionID:auctionID lastPrice:price lastBid:bid state:SniperStateBidding];
     [self.delegate auctionSniperBidding:snapshot];
     [snapshot release];
   }
@@ -64,7 +67,7 @@
 
 @implementation SniperSnapshot
 
-@synthesize lastPrice, lastBid, state;
+@synthesize lastPrice, lastBid, state, auctionID;
 
 - (id)initWithAuctionID:(NSString *)anAuctionID lastPrice:(NSInteger)price lastBid:(NSInteger)bid state:(SniperState)sniperState;
 {
@@ -75,6 +78,12 @@
     state = sniperState;
   }
   return self;
+}
+
+- (void)dealloc;
+{
+  [auctionID release];
+  [super dealloc];
 }
 
 - (BOOL)isForSameAuction:(NSString *)anAuctionID;
