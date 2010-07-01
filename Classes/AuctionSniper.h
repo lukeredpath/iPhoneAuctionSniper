@@ -22,7 +22,7 @@ typedef enum {
 } SniperState;
 
 @interface AuctionSniper : NSObject <AuctionEventListener> {
-  XMPPAuction *auction;
+  id<Auction> auction;
   NSString *auctionID;
   id<AuctionSniperListener> delegate;
   SniperSnapshot *currentSnapshot;
@@ -32,7 +32,7 @@ typedef enum {
 @property (nonatomic, assign) id<AuctionSniperListener> delegate;
 @property (nonatomic, retain, readonly) SniperSnapshot *currentSnapshot;
 
-- (id)initWithAuction:(XMPPAuction *)anAuction auctionID:(NSString *)anAuctionID;
+- (id)initWithAuction:(id<Auction>)anAuction auctionID:(NSString *)anAuctionID;
 @end
 
 @interface SniperSnapshot : NSObject

@@ -28,7 +28,7 @@
 @synthesize auctionID;
 @synthesize currentSnapshot;
 
-- (id)initWithAuction:(XMPPAuction *)anAuction auctionID:(NSString *)anAuctionID;
+- (id)initWithAuction:(id<Auction>)anAuction auctionID:(NSString *)anAuctionID;
 {
   if (self = [super init]) {
     auction = [anAuction retain];
@@ -56,14 +56,22 @@
 
 - (void)currentPriceForAuction:(NSInteger)price increment:(NSInteger)increment priceSource:(AuctionPriceSource)priceSource;
 {
-  if (priceSource == PriceFromSniper) {
-    self.currentSnapshot = [self.currentSnapshot winning:price currentBid:price];
-    [self.delegate auctionSniperChanged:self.currentSnapshot]; 
-  } else {
-    NSInteger bid = price + increment;
-    [auction bid:bid];
-    self.currentSnapshot = [self.currentSnapshot bidding:price nextBid:bid];
-    [self notifyChange];
+  switch (priceSource) {
+    case PriceFromSniper: {
+      self.currentSnapshot = [self.currentSnapshot winning:price currentBid:price];
+      [self notifyChange];
+      break; 
+    }
+    case PriceFromOtherBidder: {
+      NSInteger bid = price + increment;
+      [auction bid:bid];
+      self.currentSnapshot = [self.currentSnapshot bidding:price nextBid:bid];
+      [self notifyChange];
+      break;
+    }
+    default:
+      @throw NSInternalInconsistencyException;
+      break;
   }
 }
 

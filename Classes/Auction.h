@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@protocol Auction
+@protocol Auction <NSObject>
 
 - (void)join;
 - (void)bid:(NSInteger)amount;
