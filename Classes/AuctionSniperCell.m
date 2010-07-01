@@ -42,7 +42,7 @@
 
 - (void)setPrice:(NSInteger)price andBid:(NSInteger)bid;
 {
-  pricesLabel.text = [NSString stringWithFormat:priceStringFormat, 1000, 1098];
+  pricesLabel.text = [NSString stringWithFormat:priceStringFormat, price, bid];
 }
 
 @end
