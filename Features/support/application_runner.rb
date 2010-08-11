@@ -10,7 +10,7 @@ module AuctionSniper
   module Assertions
     include Test::Unit::Assertions
     
-    def assert_sniper_is_bidding(auction)
+    def assert_sniper_is_bidding(bid_amount, auction)
       try_assertion_for(ASSERTION_TIMEOUT) do
         next_bid = next_bid_for(auction)
         @auction_driver.assert_shows_sniper_status(auction.auction_id, auction.current_price, next_bid, STATUS_BIDDING)
@@ -24,9 +24,9 @@ module AuctionSniper
       end
     end
     
-    def assert_sniper_has_won(auction)
+    def assert_sniper_has_won_with_bid(winning_bid, auction)
       try_assertion_for(ASSERTION_TIMEOUT) do
-        @auction_driver.assert_shows_sniper_status(auction.auction_id, auction.current_price, self.current_bid, STATUS_WON)
+        @auction_driver.assert_shows_sniper_status(auction.auction_id, auction.current_price, winning_bid, STATUS_WON)
       end
     end
     

@@ -25,8 +25,12 @@ Then /^the application should show the sniper is winning with a bid of (\d+)$/ d
   @application_runner.assert_sniper_is_winning_with_bid(winning_bid, @auction)
 end
 
-Then /^the application should show the sniper is bidding$/ do 
-  @application_runner.assert_sniper_is_bidding(@auction)
+Then /^the application should show the sniper is bidding (\d+)$/ do |bid_amount|
+  @application_runner.assert_sniper_is_bidding(bid_amount, @auction)
+end
+
+Then /^the application should show the sniper has won with a bid of (\d+)$/ do |winning_bid|
+  @application_runner.assert_sniper_has_won_with_bid(winning_bid, @auction)
 end
 
 Then /^the application should show the sniper (is|has) (.*) the auction$/ do |tense, state|
