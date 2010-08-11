@@ -18,15 +18,15 @@ module AuctionSniper
       end
     end
     
-    def assert_sniper_is_winning(auction)
+    def assert_sniper_is_winning_with_bid(winning_bid, auction)
       try_assertion_for(ASSERTION_TIMEOUT) do
-        @auction_driver.assert_shows_sniper_status(auction.auction_id, self.current_bid, self.current_bid, STATUS_WINNING)
+        @auction_driver.assert_shows_sniper_status(auction.auction_id, auction.current_price, winning_bid, STATUS_WINNING)
       end
     end
     
     def assert_sniper_has_won(auction)
       try_assertion_for(ASSERTION_TIMEOUT) do
-        @auction_driver.assert_shows_sniper_status(auction.auction_id, self.current_bid, self.current_bid, STATUS_WON)
+        @auction_driver.assert_shows_sniper_status(auction.auction_id, auction.current_price, self.current_bid, STATUS_WON)
       end
     end
     

@@ -16,7 +16,7 @@ Feature: Bidding on a single item
     Given an auction is selling an item
     And the application has joined the auction
     When the auction announces it has closed
-    Then the application should show the sniper has lost
+    Then the application should show the sniper has lost the auction
     
   Scenario: Sniper makes a higher bid but loses
     Given an auction is selling an item
@@ -25,7 +25,7 @@ Feature: Bidding on a single item
     Then the application should show the sniper is bidding
     And the auction should have received a bid of 1098 from the sniper
     When the auction announces it has closed
-    Then the application should show the sniper has lost
+    Then the application should show the sniper has lost the auction
 
   @focussed
   Scenario: Sniper wins an auction by bidding higher
@@ -35,7 +35,7 @@ Feature: Bidding on a single item
     Then the application should show the sniper is bidding
     And the auction should have received a bid of 1098 from the sniper
     When the auction reports a price of 1098 + 7 from the sniper
-    Then the application should show the sniper is winning
+    Then the application should show the sniper is winning with a bid of 1098
     When the auction announces it has closed
-    Then the application should show the sniper has won
+    Then the application should show the sniper has won the auction
     

@@ -1,4 +1,5 @@
-require 'icuke/cucumber'
+require 'simcontrol'
+require 'simcontrol/integration/cucumber'
 require 'test/unit/assertions'
 require 'system_timer'
 require File.join(File.dirname(__FILE__), *%w[global])
@@ -8,7 +9,7 @@ World(Test::Unit::Assertions)
 OPENFIRE_PATH = "/opt/openfire/bin/openfire"
 OPENFIRE_PORT = 5222
 
-ICukeWorld.configure do
+SimControlWorld.configure do
   set :target, 'Testing'
 end
 

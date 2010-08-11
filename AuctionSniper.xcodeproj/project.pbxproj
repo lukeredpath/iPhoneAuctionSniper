@@ -346,11 +346,9 @@
 		A31520AC11D236CA007F2123 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				A32CA0311213637100BBE14A /* Unit Tests */,
 				A3FC60A111D93E020045F352 /* Matchers */,
 				A3FC5F3311D928D50045F352 /* Support */,
-				A3FC574E11D8D7640045F352 /* AuctionMessageTranslatorTest.m */,
-				A3FC5F3711D929040045F352 /* AuctionSniperTest.m */,
-				A3FC5FE011D935880045F352 /* XMPPAuctionTest.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -372,6 +370,16 @@
 				A3FC54B811D8286B0045F352 /* XMPPFramework */,
 			);
 			name = External;
+			sourceTree = "<group>";
+		};
+		A32CA0311213637100BBE14A /* Unit Tests */ = {
+			isa = PBXGroup;
+			children = (
+				A3FC574E11D8D7640045F352 /* AuctionMessageTranslatorTest.m */,
+				A3FC5F3711D929040045F352 /* AuctionSniperTest.m */,
+				A3FC5FE011D935880045F352 /* XMPPAuctionTest.m */,
+			);
+			name = "Unit Tests";
 			sourceTree = "<group>";
 		};
 		A3FC548B11D825030045F352 /* Controllers */ = {

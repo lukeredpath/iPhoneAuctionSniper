@@ -1,4 +1,4 @@
-require 'icuke/simulator_driver/assertions'
+require 'simcontrol/assertions'
 
 module AuctionSniper
   class AuctionDriver
