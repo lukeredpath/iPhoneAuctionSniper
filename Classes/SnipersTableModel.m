@@ -12,6 +12,8 @@
 
 @implementation SnipersTableModel
 
+static NSArray *STATE_LABELS;
+
 @synthesize snapshot;
 
 - (void)dealloc
@@ -31,6 +33,15 @@
 {
   self.snapshot = newSnapshot;
   [self fireTableRowsUpdated:[NSIndexSet indexSetWithIndex:0]];
+}
+
+- (NSString *)labelForState:(SniperState)state
+{
+  if (STATE_LABELS == nil) {
+    STATE_LABELS = [[NSArray alloc] initWithObjects:
+      @"Joining", @"Bidding", @"Winning", @"Won", @"Lost", nil];
+  }
+  return [STATE_LABELS objectAtIndex:state];
 }
 
 @end

@@ -18,13 +18,6 @@
 @synthesize snipers;
 @synthesize cellPrototype;
 
-static NSArray *STATE_LABELS = [[NSArray alloc] initWithObjects:
-    @"Joining",
-    @"Bidding",
-    @"Winning",
-    @"Won",
-    @"Lost", nil];
-
 - (void)dealloc 
 {
   [cellPrototype release];
@@ -73,8 +66,9 @@ static NSArray *STATE_LABELS = [[NSArray alloc] initWithObjects:
 - (void)configureCell:(*)cell forObject:(id)object atIndexPath:(*)indexPath
 {
   SniperSnapshot *snapshot = object;  
+  
   [cell setAuctionID:snapshot.auctionID];
-  [cell setStatus:[STATE_LABELS objectAtIndex:snapshot.state]];
+  [cell setStatus:[self.snipers labelForState:snapshot.state]];
   [cell setPrice:self.snapshot.lastPrice andBid:snapshot.lastBid];
 }
 
