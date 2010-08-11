@@ -1,0 +1,3 @@
+[submodule "Vendor/LRTableModel"]
+	path = Vendor/LRTableModel
+	url = git://github.com/lukeredpath/LRTableModel.git

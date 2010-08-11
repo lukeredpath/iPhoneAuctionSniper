@@ -16,6 +16,18 @@
 		A31521A911D238D3007F2123 /* AuctionSniperAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AuctionSniperAppDelegate.m */; };
 		A31521AB11D238D3007F2123 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		A31521AD11D238D3007F2123 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		A32CA03C1213680000BBE14A /* LRAbstractTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A32CA0361213680000BBE14A /* LRAbstractTableModel.m */; };
+		A32CA03D1213680000BBE14A /* LRTableModelEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = A32CA03A1213680000BBE14A /* LRTableModelEvent.m */; };
+		A32CA03E1213680000BBE14A /* LRAbstractTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A32CA0361213680000BBE14A /* LRAbstractTableModel.m */; };
+		A32CA03F1213680000BBE14A /* LRTableModelEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = A32CA03A1213680000BBE14A /* LRTableModelEvent.m */; };
+		A32CA0401213680000BBE14A /* LRAbstractTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A32CA0361213680000BBE14A /* LRAbstractTableModel.m */; };
+		A32CA0411213680000BBE14A /* LRTableModelEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = A32CA03A1213680000BBE14A /* LRTableModelEvent.m */; };
+		A32CA0471213683B00BBE14A /* SnipersTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A32CA0461213683B00BBE14A /* SnipersTableModel.m */; };
+		A32CA0481213683B00BBE14A /* SnipersTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A32CA0461213683B00BBE14A /* SnipersTableModel.m */; };
+		A32CA0491213683B00BBE14A /* SnipersTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A32CA0461213683B00BBE14A /* SnipersTableModel.m */; };
+		A32CA05412136A6500BBE14A /* LRAbstractTableModel+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = A32CA05312136A6500BBE14A /* LRAbstractTableModel+Extensions.m */; };
+		A32CA05512136A6500BBE14A /* LRAbstractTableModel+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = A32CA05312136A6500BBE14A /* LRAbstractTableModel+Extensions.m */; };
+		A32CA05612136A6500BBE14A /* LRAbstractTableModel+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = A32CA05312136A6500BBE14A /* LRAbstractTableModel+Extensions.m */; };
 		A3FC540B11D7CA390045F352 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3FC540A11D7CA390045F352 /* UIKit.framework */; };
 		A3FC540E11D7CA3D0045F352 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3FC540A11D7CA390045F352 /* UIKit.framework */; };
 		A3FC547411D7CA810045F352 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
@@ -112,9 +124,6 @@
 		A3FC5F8611D92DDF0045F352 /* XMPPAuction.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC5F7F11D92DCC0045F352 /* XMPPAuction.m */; };
 		A3FC5FF311D9372D0045F352 /* XMPPAuctionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC5FE011D935880045F352 /* XMPPAuctionTest.m */; };
 		A3FC60A411D93E0D0045F352 /* ElementHasMessageBody.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FC60A311D93E0D0045F352 /* ElementHasMessageBody.m */; };
-		A3FD70F911DC132B008A44FB /* AuctionSnipersDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FD70F811DC132B008A44FB /* AuctionSnipersDataSource.m */; };
-		A3FD713211DC1731008A44FB /* AuctionSnipersDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FD70F811DC132B008A44FB /* AuctionSnipersDataSource.m */; };
-		A3FD713311DC1733008A44FB /* AuctionSnipersDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FD70F811DC132B008A44FB /* AuctionSnipersDataSource.m */; };
 		A3FD71D911DC1E76008A44FB /* AuctionSniperCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3FD71D811DC1E76008A44FB /* AuctionSniperCell.xib */; };
 		A3FD71DE11DC1FAC008A44FB /* AuctionSniperCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FD71DD11DC1FAC008A44FB /* AuctionSniperCell.m */; };
 		A3FD71FC11DC21AD008A44FB /* AuctionSniperCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3FD71D811DC1E76008A44FB /* AuctionSniperCell.xib */; };
@@ -137,6 +146,17 @@
 		8D1107310486CEB800E47090 /* AuctionSniper-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AuctionSniper-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		A31520D011D237FE007F2123 /* Acceptance-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Acceptance-Info.plist"; sourceTree = "<group>"; };
 		A31521B111D238D3007F2123 /* AuctionSniper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuctionSniper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A32CA0351213680000BBE14A /* LRAbstractTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LRAbstractTableModel.h; path = Vendor/LRTableModel/Classes/LRTableModel/LRAbstractTableModel.h; sourceTree = "<group>"; };
+		A32CA0361213680000BBE14A /* LRAbstractTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LRAbstractTableModel.m; path = Vendor/LRTableModel/Classes/LRTableModel/LRAbstractTableModel.m; sourceTree = "<group>"; };
+		A32CA0371213680000BBE14A /* LRTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LRTableModel.h; path = Vendor/LRTableModel/Classes/LRTableModel/LRTableModel.h; sourceTree = "<group>"; };
+		A32CA0381213680000BBE14A /* LRTableModelCellProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LRTableModelCellProvider.h; path = Vendor/LRTableModel/Classes/LRTableModel/LRTableModelCellProvider.h; sourceTree = "<group>"; };
+		A32CA0391213680000BBE14A /* LRTableModelEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LRTableModelEvent.h; path = Vendor/LRTableModel/Classes/LRTableModel/LRTableModelEvent.h; sourceTree = "<group>"; };
+		A32CA03A1213680000BBE14A /* LRTableModelEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LRTableModelEvent.m; path = Vendor/LRTableModel/Classes/LRTableModel/LRTableModelEvent.m; sourceTree = "<group>"; };
+		A32CA03B1213680000BBE14A /* LRTableModelEventListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LRTableModelEventListener.h; path = Vendor/LRTableModel/Classes/LRTableModel/LRTableModelEventListener.h; sourceTree = "<group>"; };
+		A32CA0451213683B00BBE14A /* SnipersTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnipersTableModel.h; sourceTree = "<group>"; };
+		A32CA0461213683B00BBE14A /* SnipersTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnipersTableModel.m; sourceTree = "<group>"; };
+		A32CA05212136A6500BBE14A /* LRAbstractTableModel+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LRAbstractTableModel+Extensions.h"; sourceTree = "<group>"; };
+		A32CA05312136A6500BBE14A /* LRAbstractTableModel+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LRAbstractTableModel+Extensions.m"; sourceTree = "<group>"; };
 		A3FC540A11D7CA390045F352 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A3FC548C11D825170045F352 /* AuctionSniperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuctionSniperViewController.h; sourceTree = "<group>"; };
 		A3FC548D11D825170045F352 /* AuctionSniperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuctionSniperViewController.m; sourceTree = "<group>"; };
@@ -216,8 +236,6 @@
 		A3FC5FE011D935880045F352 /* XMPPAuctionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMPPAuctionTest.m; sourceTree = "<group>"; };
 		A3FC60A211D93E0D0045F352 /* ElementHasMessageBody.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElementHasMessageBody.h; sourceTree = "<group>"; };
 		A3FC60A311D93E0D0045F352 /* ElementHasMessageBody.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElementHasMessageBody.m; sourceTree = "<group>"; };
-		A3FD70F711DC132B008A44FB /* AuctionSnipersDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuctionSnipersDataSource.h; sourceTree = "<group>"; };
-		A3FD70F811DC132B008A44FB /* AuctionSnipersDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuctionSnipersDataSource.m; sourceTree = "<group>"; };
 		A3FD71D811DC1E76008A44FB /* AuctionSniperCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuctionSniperCell.xib; sourceTree = "<group>"; };
 		A3FD71DC11DC1FAC008A44FB /* AuctionSniperCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuctionSniperCell.h; sourceTree = "<group>"; };
 		A3FD71DD11DC1FAC008A44FB /* AuctionSniperCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuctionSniperCell.m; sourceTree = "<group>"; };
@@ -366,8 +384,11 @@
 		A315223311D23CD6007F2123 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				A32CA034121367E100BBE14A /* LRTableModel */,
 				A3FC5F0611D926520045F352 /* OCMock */,
 				A3FC54B811D8286B0045F352 /* XMPPFramework */,
+				A32CA05212136A6500BBE14A /* LRAbstractTableModel+Extensions.h */,
+				A32CA05312136A6500BBE14A /* LRAbstractTableModel+Extensions.m */,
 			);
 			name = External;
 			sourceTree = "<group>";
@@ -382,10 +403,32 @@
 			name = "Unit Tests";
 			sourceTree = "<group>";
 		};
+		A32CA034121367E100BBE14A /* LRTableModel */ = {
+			isa = PBXGroup;
+			children = (
+				A32CA0351213680000BBE14A /* LRAbstractTableModel.h */,
+				A32CA0361213680000BBE14A /* LRAbstractTableModel.m */,
+				A32CA0371213680000BBE14A /* LRTableModel.h */,
+				A32CA0381213680000BBE14A /* LRTableModelCellProvider.h */,
+				A32CA0391213680000BBE14A /* LRTableModelEvent.h */,
+				A32CA03A1213680000BBE14A /* LRTableModelEvent.m */,
+				A32CA03B1213680000BBE14A /* LRTableModelEventListener.h */,
+			);
+			name = LRTableModel;
+			sourceTree = "<group>";
+		};
+		A32CA0441213680E00BBE14A /* XMPP */ = {
+			isa = PBXGroup;
+			children = (
+				A3FC5F7E11D92DCC0045F352 /* XMPPAuction.h */,
+				A3FC5F7F11D92DCC0045F352 /* XMPPAuction.m */,
+			);
+			name = XMPP;
+			sourceTree = "<group>";
+		};
 		A3FC548B11D825030045F352 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A3FD70F511DC1305008A44FB /* Data Sources */,
 				A3FC548C11D825170045F352 /* AuctionSniperViewController.h */,
 				A3FC548D11D825170045F352 /* AuctionSniperViewController.m */,
 			);
@@ -456,25 +499,18 @@
 		A3FC5BD911D909FF0045F352 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A3FC5D7711D913270045F352 /* Protocols */,
+				A32CA0441213680E00BBE14A /* XMPP */,
 				A3FC5BDA11D90A390045F352 /* AuctionMessageTranslator.h */,
 				A3FC5BDB11D90A390045F352 /* AuctionMessageTranslator.m */,
 				A3FC5F4311D929440045F352 /* AuctionSniper.h */,
 				A3FC5F4411D929440045F352 /* AuctionSniper.m */,
-				A3FC5F7E11D92DCC0045F352 /* XMPPAuction.h */,
-				A3FC5F7F11D92DCC0045F352 /* XMPPAuction.m */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		A3FC5D7711D913270045F352 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
 				A3FC5D7611D913240045F352 /* AuctionEventListener.h */,
 				A3FC5F4811D9298D0045F352 /* AuctionSniperListener.h */,
 				A3FC5FD211D9350D0045F352 /* Auction.h */,
+				A32CA0451213683B00BBE14A /* SnipersTableModel.h */,
+				A32CA0461213683B00BBE14A /* SnipersTableModel.m */,
 			);
-			name = Protocols;
+			name = Model;
 			sourceTree = "<group>";
 		};
 		A3FC5F0611D926520045F352 /* OCMock */ = {
@@ -509,15 +545,6 @@
 				A3FD73BF11DCB96A008A44FB /* SnapshotWithState.m */,
 			);
 			name = Matchers;
-			sourceTree = "<group>";
-		};
-		A3FD70F511DC1305008A44FB /* Data Sources */ = {
-			isa = PBXGroup;
-			children = (
-				A3FD70F711DC132B008A44FB /* AuctionSnipersDataSource.h */,
-				A3FD70F811DC132B008A44FB /* AuctionSnipersDataSource.m */,
-			);
-			name = "Data Sources";
 			sourceTree = "<group>";
 		};
 		A3FD71DB11DC1F8F008A44FB /* Cells */ = {
@@ -680,8 +707,11 @@
 				A3FC5BDD11D90A4B0045F352 /* AuctionMessageTranslator.m in Sources */,
 				A3FC5F6911D92C170045F352 /* AuctionSniper.m in Sources */,
 				A3FC5F8611D92DDF0045F352 /* XMPPAuction.m in Sources */,
-				A3FD713311DC1733008A44FB /* AuctionSnipersDataSource.m in Sources */,
 				A3FD720511DC21C4008A44FB /* AuctionSniperCell.m in Sources */,
+				A32CA0401213680000BBE14A /* LRAbstractTableModel.m in Sources */,
+				A32CA0411213680000BBE14A /* LRTableModelEvent.m in Sources */,
+				A32CA0491213683B00BBE14A /* SnipersTableModel.m in Sources */,
+				A32CA05512136A6500BBE14A /* LRAbstractTableModel+Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -714,8 +744,11 @@
 				A3FC5BDE11D90A4B0045F352 /* AuctionMessageTranslator.m in Sources */,
 				A3FC5F6811D92C160045F352 /* AuctionSniper.m in Sources */,
 				A3FC5F8511D92DDE0045F352 /* XMPPAuction.m in Sources */,
-				A3FD713211DC1731008A44FB /* AuctionSnipersDataSource.m in Sources */,
 				A3FD720611DC21C4008A44FB /* AuctionSniperCell.m in Sources */,
+				A32CA03C1213680000BBE14A /* LRAbstractTableModel.m in Sources */,
+				A32CA03D1213680000BBE14A /* LRTableModelEvent.m in Sources */,
+				A32CA0481213683B00BBE14A /* SnipersTableModel.m in Sources */,
+				A32CA05612136A6500BBE14A /* LRAbstractTableModel+Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -753,9 +786,12 @@
 				A3FC5F8011D92DCC0045F352 /* XMPPAuction.m in Sources */,
 				A3FC5FF311D9372D0045F352 /* XMPPAuctionTest.m in Sources */,
 				A3FC60A411D93E0D0045F352 /* ElementHasMessageBody.m in Sources */,
-				A3FD70F911DC132B008A44FB /* AuctionSnipersDataSource.m in Sources */,
 				A3FD71DE11DC1FAC008A44FB /* AuctionSniperCell.m in Sources */,
 				A3FD73C011DCB96A008A44FB /* SnapshotWithState.m in Sources */,
+				A32CA03E1213680000BBE14A /* LRAbstractTableModel.m in Sources */,
+				A32CA03F1213680000BBE14A /* LRTableModelEvent.m in Sources */,
+				A32CA0471213683B00BBE14A /* SnipersTableModel.m in Sources */,
+				A32CA05412136A6500BBE14A /* LRAbstractTableModel+Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,33 +9,38 @@
 #import "AuctionSniperViewController.h"
 #import "AuctionSniper.h"
 #import "AuctionSnipersDataSource.h"
+#import "SnipersTableModel.h"
 
 #pragma mark -
 
 @implementation AuctionSniperViewController
 
-@synthesize dataSource;
+@synthesize snipers;
+@synthesize cellPrototype;
+
+static NSArray *STATE_LABELS = [[NSArray alloc] initWithObjects:
+    @"Joining",
+    @"Bidding",
+    @"Winning",
+    @"Won",
+    @"Lost", nil];
 
 - (void)dealloc 
 {
-  [dataSource release];
+  [cellPrototype release];
+  [snipers release];
   [super dealloc];
 }
 
 - (void)awakeFromNib;
 {
-  self.dataSource = [[[AuctionSnipersDataSource alloc] init] autorelease];
-  self.tableView.dataSource = self.dataSource;
+  snipers = [[SnipersTableModel alloc] initWithCellProvider:self];
+  self.tableView.dataSource = self.snipers;
 }
 
 - (void)setAuctionSniper:(AuctionSniper *)sniper;
 {
-  [self auctionSniperChanged:sniper.currentSnapshot];
-  
-  NSIndexPath *sniperIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-  [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:sniperIndexPath] withRowAnimation:UITableViewRowAnimationFade];
-  
-  sniper.delegate = self;
+  [snipers setSniper:sniper];
 }
 
 - (void)viewDidLoad 
@@ -50,11 +55,27 @@
   [super viewDidUnload];
 }
 
-- (void)auctionSniperChanged:(SniperSnapshot *)snapshot;
+- (void)tableModelChanged:(LRTableModelEvent *)changeEvent
 {
-  [self.dataSource updateSniper:snapshot];
-  NSIndexPath *sniperIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-  [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:sniperIndexPath] withRowAnimation:UITableViewRowAnimationNone];
+  [self.tableView reloadRowsAtIndexPaths:changeEvent.indexPaths withRowAnimation:UITableViewRowAnimationNone];
+}
+
+- (void)cellForObjectAtIndexPath:(*)indexPath reuseIdentifier:(*)reuseIdentifier
+{
+  if (self.cellPrototype) {
+    self.cellPrototype = nil;
+  }
+  [[UINib nibWithNibName:@"AuctionSniperCell" bundle:nil] instantiateWithOwner:self options:nil];
+
+  return self.cellPrototype;
+}
+
+- (void)configureCell:(*)cell forObject:(id)object atIndexPath:(*)indexPath
+{
+  SniperSnapshot *snapshot = object;  
+  [cell setAuctionID:snapshot.auctionID];
+  [cell setStatus:[STATE_LABELS objectAtIndex:snapshot.state]];
+  [cell setPrice:self.snapshot.lastPrice andBid:snapshot.lastBid];
 }
 
 @end

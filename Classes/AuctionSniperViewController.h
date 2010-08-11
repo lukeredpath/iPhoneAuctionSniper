@@ -11,11 +11,13 @@
 
 @class AuctionSniper;
 @class AuctionSnipersDataSource;
+@class SnipersTableModel;
 
-@interface AuctionSniperViewController : UITableViewController <AuctionSniperListener> {
-
+@interface AuctionSniperViewController : UITableViewController <LRTableModelCellProvider, LRTableModelEventListener> {
+  SnipersTableModel *snipers;
 }
-@property (nonatomic, retain) IBOutlet AuctionSnipersDataSource *dataSource;
+@property (nonatomic, readonly) SnipersTableModel *snipers;
+@property (nonatomic, assign) IBOutlet AuctionSniperCell *cellPrototype;
 
 - (void)setAuctionSniper:(AuctionSniper *)sniper;
 @end
