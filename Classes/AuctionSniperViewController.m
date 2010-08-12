@@ -10,6 +10,7 @@
 #import "AuctionSniper.h"
 #import "AuctionSnipersDataSource.h"
 #import "SnipersTableModel.h"
+#import "AuctionSniperCell.h"
 
 #pragma mark -
 
@@ -28,10 +29,12 @@
 - (void)awakeFromNib;
 {
   snipers = [[SnipersTableModel alloc] initWithCellProvider:self];
+  [snipers addTableModelListener:self];
+  
   self.tableView.dataSource = self.snipers;
 }
 
-- (void)setAuctionSniper:(AuctionSniper *)sniper;
+- (void)addSniper:(AuctionSniper *)sniper;
 {
   [snipers setSniper:sniper];
 }
@@ -50,26 +53,28 @@
 
 - (void)tableModelChanged:(LRTableModelEvent *)changeEvent
 {
-  [self.tableView reloadRowsAtIndexPaths:changeEvent.indexPaths withRowAnimation:UITableViewRowAnimationNone];
+  //[self.tableView reloadRowsAtIndexPaths:changeEvent.indexPaths withRowAnimation:UITableViewRowAnimationNone];
+  [self.tableView reloadData];
 }
 
-- (void)cellForObjectAtIndexPath:(*)indexPath reuseIdentifier:(*)reuseIdentifier
+- (UITableViewCell *)cellForObjectAtIndexPath:(NSIndexPath *)indexPath reuseIdentifier:(NSString *)reuseIdentifier
 {
   if (self.cellPrototype) {
     self.cellPrototype = nil;
   }
   [[UINib nibWithNibName:@"AuctionSniperCell" bundle:nil] instantiateWithOwner:self options:nil];
 
-  return self.cellPrototype;
+  return (UITableViewCell *)self.cellPrototype;
 }
 
-- (void)configureCell:(*)cell forObject:(id)object atIndexPath:(*)indexPath
+- (void)configureCell:(UITableViewCell *)cell forObject:(id)object atIndexPath:(NSIndexPath *)indexPath
 {
   SniperSnapshot *snapshot = object;  
+  AuctionSniperCell *sniperCell = (AuctionSniperCell *)cell;
   
-  [cell setAuctionID:snapshot.auctionID];
-  [cell setStatus:[self.snipers labelForState:snapshot.state]];
-  [cell setPrice:self.snapshot.lastPrice andBid:snapshot.lastBid];
+  [sniperCell setAuctionID:snapshot.auctionID];
+  [sniperCell setStatus:[self.snipers labelForState:snapshot.state]];
+  [sniperCell setPrice:snapshot.lastPrice andBid:snapshot.lastBid];
 }
 
 @end

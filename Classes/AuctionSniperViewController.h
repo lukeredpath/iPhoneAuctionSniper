@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "AuctionSniperListener.h"
+#import "LRTableModelCellProvider.h"
+#import "LRTableModelEventListener.h"
 
 @class AuctionSniper;
-@class AuctionSnipersDataSource;
 @class SnipersTableModel;
+@class AuctionSniperCell;
 
 @interface AuctionSniperViewController : UITableViewController <LRTableModelCellProvider, LRTableModelEventListener> {
   SnipersTableModel *snipers;
@@ -19,5 +21,5 @@
 @property (nonatomic, readonly) SnipersTableModel *snipers;
 @property (nonatomic, assign) IBOutlet AuctionSniperCell *cellPrototype;
 
-- (void)setAuctionSniper:(AuctionSniper *)sniper;
+- (void)addSniper:(AuctionSniper *)sniper;
 @end

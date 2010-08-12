@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "LRAbstractTableModel.h"
 #import "AuctionSniperListener.h"
+#import "AuctionSniper.h"
 
 @class SniperSnapshot;
-@class AuctionSniper;
 
 @interface SnipersTableModel : LRAbstractTableModel <AuctionSniperListener> {
   SniperSnapshot *snapshot;
@@ -19,4 +19,5 @@
 @property (nonatomic, retain) SniperSnapshot *snapshot;
 
 - (void)setSniper:(AuctionSniper *)sniper;
+- (NSString *)labelForState:(SniperState)state;
 @end
