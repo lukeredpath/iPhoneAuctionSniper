@@ -18,9 +18,12 @@
   AuctionSniperViewController *auctionSniperController;
   NSMutableArray *auctions;
   NSMutableArray *translators;
-  XMPPStream *xmppStream;
+  XMPPStream *XMPPStreamForAuctionServer;
 }
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet AuctionSniperViewController *auctionSniperController;
+@property (nonatomic, readonly) XMPPStream *XMPPStreamForAuctionServer;
+
+- (void)joinAuctionForItem:(NSString *)itemID;
 @end
 

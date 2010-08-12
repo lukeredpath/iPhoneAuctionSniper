@@ -25,35 +25,38 @@
 
 @synthesize window;
 @synthesize auctionSniperController;
+@synthesize XMPPStreamForAuctionServer;
 
 - (void)dealloc 
 {
-  [xmppStream release];
+  [XMPPStreamForAuctionServer release];
   [translators release];
   [window release];
   [super dealloc];
 }
 
-XMPPStream *newXMPPStream(NSString *hostName, NSString *user, id delegate) 
+- (XMPPStream *)XMPPStreamForAuctionServer
 {
-  XMPPStream *stream = [[XMPPStream alloc] init];
-  stream.hostName = hostName;
-  stream.myJID = [XMPPJID jidWithUser:user domain:hostName resource:nil];
-  [stream addDelegate:delegate];
-  return stream;
+  if (XMPPStreamForAuctionServer == nil) {
+    XMPPStreamForAuctionServer = [[XMPPStream alloc] init];
+    XMPPStreamForAuctionServer.hostName = kXMPP_HOSTNAME;
+    XMPPStreamForAuctionServer.myJID = [XMPPJID jidWithUser:kSNIPER_XMPP_USERNAME domain:kXMPP_HOSTNAME resource:nil];
+    [XMPPStreamForAuctionServer addDelegate:self];
+  }
+  return XMPPStreamForAuctionServer;
 }
 
-- (void)joinAuctionForItem:(NSString *)itemID stream:(XMPPStream *)stream
+- (void)joinAuctionForItem:(NSString *)itemID;
 {
-  XMPPAuction *auction = [[XMPPAuction alloc] initWithStream:xmppStream itemID:itemID];
+  XMPPAuction *auction = [[XMPPAuction alloc] initWithStream:self.XMPPStreamForAuctionServer itemID:itemID];
   [auctions addObject:auction];
   [auction release];
   
   AuctionSniper *auctionSniper = [[AuctionSniper alloc] initWithAuction:auction auctionID:itemID];
   [self.auctionSniperController addSniper:auctionSniper];
   
-  AuctionMessageTranslator *messageTranslator = [[AuctionMessageTranslator alloc] initWithSniperID:xmppStream.myJID.bare eventListener:auctionSniper];
-  [stream addDelegate:messageTranslator];
+  AuctionMessageTranslator *messageTranslator = [[AuctionMessageTranslator alloc] initWithSniperID:self.XMPPStreamForAuctionServer.myJID.bare eventListener:auctionSniper];
+  [self.XMPPStreamForAuctionServer addDelegate:messageTranslator];
   
   [auction subscribeAndJoin];
   
@@ -68,8 +71,8 @@ XMPPStream *newXMPPStream(NSString *hostName, NSString *user, id delegate)
 
 - (void)xmppStreamDidAuthenticate:(XMPPStream *)sender
 {
-  [self joinAuctionForItem:@"item-1" stream:xmppStream];
-  [self joinAuctionForItem:@"item-2" stream:xmppStream];
+  [self joinAuctionForItem:@"item-1"];
+  [self joinAuctionForItem:@"item-2"];
 }
 
 - (void)xmppStreamDidConnect:(XMPPStream *)sender
@@ -100,20 +103,17 @@ XMPPStream *newXMPPStream(NSString *hostName, NSString *user, id delegate)
   translators = [[NSMutableArray alloc] init];
   auctions = [[NSMutableArray alloc] init];
 
-  xmppStream = newXMPPStream(kXMPP_HOSTNAME, kSNIPER_XMPP_USERNAME, self);
-  
   NSError *connectionError = nil;
-  [xmppStream connect:&connectionError];
   
+  [self.XMPPStreamForAuctionServer connect:&connectionError];
   if (connectionError) {
     NSLog(@"Connection error: %@", connectionError);
     abort();
-  }  
+  }
   
   [window makeKeyAndVisible];
 	return YES;
 }
-
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     /*
@@ -144,10 +144,9 @@ XMPPStream *newXMPPStream(NSString *hostName, NSString *user, id delegate)
      */
 }
 
-
 - (void)applicationWillTerminate:(UIApplication *)application 
 {
-  [xmppStream disconnect];
+  [XMPPStreamForAuctionServer disconnect];
 }
 
 #pragma mark -
