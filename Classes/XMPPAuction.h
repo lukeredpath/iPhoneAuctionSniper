@@ -9,15 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "Auction.h"
 
-@class XMPPStream;
+@class XMPPChatSession;
 
 @interface XMPPAuction : NSObject <Auction> {
-  XMPPStream *stream;
+  XMPPChatSession *chatSession;
   NSString *itemID;
 }
 @property (nonatomic, readonly) NSString *itemID;
 
-- (id)initWithStream:(XMPPStream *)aStream itemID:(NSString *)theID;
-- (void)subscribe;
-- (void)subscribeAndJoin;
+- (id)initWithChat:(XMPPChatSession *)chat itemID:(NSString *)theID;
+- (void)join;
 @end

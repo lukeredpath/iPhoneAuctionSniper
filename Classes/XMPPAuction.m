@@ -7,27 +7,16 @@
 //
 
 #import "XMPPAuction.h"
-#import "XMPP.h"
-
-@interface XMPPAuction (Messaging)
-- (void)sendMessage:(NSString *)messageBody;
-@end
-
-XMPPJID *auctionJID(XMPPStream *stream, NSString *resource, NSString *auctionID) {
-  NSString *auctionUser = [NSString stringWithFormat:@"auction-%@", auctionID];
-  return [XMPPJID jidWithUser:auctionUser domain:stream.hostName resource:resource];
-}
-
-#define kAUCTION_RESOURCE @"auction"
+#import "XMPPChatSession.h"
 
 @implementation XMPPAuction
 
 @synthesize itemID;
 
-- (id)initWithStream:(XMPPStream *)aStream itemID:(NSString *)theID;
+- (id)initWithChat:(XMPPChatSession *)chat itemID:(NSString *)theID;
 {
   if (self = [super init]) {
-    stream = [aStream retain];
+    chatSession = [chat retain];
     itemID = [theID copy];
   }
   return self;
@@ -36,50 +25,19 @@ XMPPJID *auctionJID(XMPPStream *stream, NSString *resource, NSString *auctionID)
 - (void)dealloc;
 {
   [itemID release];
-  [stream release];
+  [chatSession release];
   [super dealloc];
 }
 
 - (void)join;
 {
-  [self sendMessage:@"SOLVersion: 1.1; Command: JOIN;"];
+  [chatSession sendMessage:@"SOLVersion: 1.1; Command: JOIN;"];
 }
 
 - (void)bid:(NSInteger)amount;
 {
-  [self sendMessage:[NSString stringWithFormat:@"SOLVersion: 1.1; Command: BID; Price: %d;", amount]];
-}
-
-- (void)subscribe;
-{
-  NSXMLElement *presence = [NSXMLElement elementWithName:@"presence"];
-  [stream sendElement:presence];
-  [presence addAttributeWithName:@"to" stringValue:auctionJID(stream, kAUCTION_RESOURCE, self.itemID).bare];
-	[presence addAttributeWithName:@"type" stringValue:@"subscribed"];
-  [stream sendElement:presence];
-}
-
-- (void)subscribeAndJoin;
-{
-  [self subscribe];
-  [self join];
+  [chatSession sendMessage:[NSString stringWithFormat:@"SOLVersion: 1.1; Command: BID; Price: %d;", amount]];
 }
 
 @end
 
-@implementation XMPPAuction (Messaging)
-
-- (void)sendMessage:(NSString *)messageBody;
-{
-  NSXMLElement *body = [NSXMLElement elementWithName:@"body"];
-  [body setStringValue:messageBody];
-  
-  NSXMLElement *message = [NSXMLElement elementWithName:@"message"];
-  [message addAttributeWithName:@"type" stringValue:@"chat"];
-  [message addAttributeWithName:@"to" stringValue:auctionJID(stream, kAUCTION_RESOURCE, self.itemID).full];
-  [message addChild:body]; 
-  
-  [stream sendElement:message];
-}
-
-@end

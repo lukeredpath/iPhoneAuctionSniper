@@ -29,7 +29,7 @@
   [super dealloc];
 }
 
-- (void)xmppStream:(XMPPStream *)sender didReceiveMessage:(XMPPMessage *)message
+- (void)XMPPChatSession:(XMPPChatSession *)chatSession didReceiveMessage:(XMPPMessage *)message
 {
   AuctionEvent *event = [AuctionEvent auctionEventFromMessage:[[message elementForName:@"body"] stringValue]];
   

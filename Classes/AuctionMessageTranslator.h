@@ -7,12 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "XMPPStream.h"
+#import "XMPPChatDelegate.h"
 #import "AuctionEventListener.h"
 
-@class XMPPMessage;
-
-@interface AuctionMessageTranslator : NSObject <XMPPStreamDelegate> {
+@interface AuctionMessageTranslator : NSObject <XMPPChatDelegate> {
   NSString *sniperID;
   id<AuctionEventListener> auctionEventListener;
 }

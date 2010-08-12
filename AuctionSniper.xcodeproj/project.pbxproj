@@ -28,6 +28,9 @@
 		A32CA05412136A6500BBE14A /* LRAbstractTableModel+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = A32CA05312136A6500BBE14A /* LRAbstractTableModel+Extensions.m */; };
 		A32CA05512136A6500BBE14A /* LRAbstractTableModel+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = A32CA05312136A6500BBE14A /* LRAbstractTableModel+Extensions.m */; };
 		A32CA05612136A6500BBE14A /* LRAbstractTableModel+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = A32CA05312136A6500BBE14A /* LRAbstractTableModel+Extensions.m */; };
+		A32CA19D12138DBD00BBE14A /* XMPPChatSession.m in Sources */ = {isa = PBXBuildFile; fileRef = A32CA19C12138DBD00BBE14A /* XMPPChatSession.m */; };
+		A32CA19E12138DBD00BBE14A /* XMPPChatSession.m in Sources */ = {isa = PBXBuildFile; fileRef = A32CA19C12138DBD00BBE14A /* XMPPChatSession.m */; };
+		A32CA19F12138DBD00BBE14A /* XMPPChatSession.m in Sources */ = {isa = PBXBuildFile; fileRef = A32CA19C12138DBD00BBE14A /* XMPPChatSession.m */; };
 		A3FC540B11D7CA390045F352 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3FC540A11D7CA390045F352 /* UIKit.framework */; };
 		A3FC540E11D7CA3D0045F352 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3FC540A11D7CA390045F352 /* UIKit.framework */; };
 		A3FC547411D7CA810045F352 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
@@ -157,6 +160,9 @@
 		A32CA0461213683B00BBE14A /* SnipersTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnipersTableModel.m; sourceTree = "<group>"; };
 		A32CA05212136A6500BBE14A /* LRAbstractTableModel+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LRAbstractTableModel+Extensions.h"; sourceTree = "<group>"; };
 		A32CA05312136A6500BBE14A /* LRAbstractTableModel+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LRAbstractTableModel+Extensions.m"; sourceTree = "<group>"; };
+		A32CA19B12138DBD00BBE14A /* XMPPChatSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMPPChatSession.h; sourceTree = "<group>"; };
+		A32CA19C12138DBD00BBE14A /* XMPPChatSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMPPChatSession.m; sourceTree = "<group>"; };
+		A32CA1A212138EA100BBE14A /* XMPPChatDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMPPChatDelegate.h; sourceTree = "<group>"; };
 		A3FC540A11D7CA390045F352 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A3FC548C11D825170045F352 /* AuctionSniperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuctionSniperViewController.h; sourceTree = "<group>"; };
 		A3FC548D11D825170045F352 /* AuctionSniperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuctionSniperViewController.m; sourceTree = "<group>"; };
@@ -422,6 +428,9 @@
 			children = (
 				A3FC5F7E11D92DCC0045F352 /* XMPPAuction.h */,
 				A3FC5F7F11D92DCC0045F352 /* XMPPAuction.m */,
+				A32CA19B12138DBD00BBE14A /* XMPPChatSession.h */,
+				A32CA19C12138DBD00BBE14A /* XMPPChatSession.m */,
+				A32CA1A212138EA100BBE14A /* XMPPChatDelegate.h */,
 			);
 			name = XMPP;
 			sourceTree = "<group>";
@@ -712,6 +721,7 @@
 				A32CA0411213680000BBE14A /* LRTableModelEvent.m in Sources */,
 				A32CA0491213683B00BBE14A /* SnipersTableModel.m in Sources */,
 				A32CA05512136A6500BBE14A /* LRAbstractTableModel+Extensions.m in Sources */,
+				A32CA19F12138DBD00BBE14A /* XMPPChatSession.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -749,6 +759,7 @@
 				A32CA03D1213680000BBE14A /* LRTableModelEvent.m in Sources */,
 				A32CA0481213683B00BBE14A /* SnipersTableModel.m in Sources */,
 				A32CA05612136A6500BBE14A /* LRAbstractTableModel+Extensions.m in Sources */,
+				A32CA19E12138DBD00BBE14A /* XMPPChatSession.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -792,6 +803,7 @@
 				A32CA03F1213680000BBE14A /* LRTableModelEvent.m in Sources */,
 				A32CA0471213683B00BBE14A /* SnipersTableModel.m in Sources */,
 				A32CA05412136A6500BBE14A /* LRAbstractTableModel+Extensions.m in Sources */,
+				A32CA19D12138DBD00BBE14A /* XMPPChatSession.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

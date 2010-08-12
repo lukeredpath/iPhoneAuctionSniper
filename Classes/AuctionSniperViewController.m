@@ -57,6 +57,11 @@
   [self.tableView reloadData];
 }
 
+- (NSString *)cellReuseIdentifierForIndexPath:(NSIndexPath *)indexPath
+{
+  return @"AuctionSniperCell";
+}
+
 - (UITableViewCell *)cellForObjectAtIndexPath:(NSIndexPath *)indexPath reuseIdentifier:(NSString *)reuseIdentifier
 {
   if (self.cellPrototype) {

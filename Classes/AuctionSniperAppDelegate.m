@@ -12,6 +12,7 @@
 #import "AuctionMessageTranslator.h"
 #import "AuctionSniper.h"
 #import "XMPPAuction.h"
+#import "XMPPChatSession.h"
 #import "XMPPJID.h"
 
 #define kSNIPER_XMPP_USERNAME @"sniper"
@@ -46,9 +47,17 @@
   return XMPPStreamForAuctionServer;
 }
 
+XMPPJID *auctionJID(NSString *itemID)
+{
+  NSString *username = [NSString stringWithFormat:@"auction-%@", itemID];
+  return [XMPPJID jidWithUser:username domain:kXMPP_HOSTNAME resource:kAUCTION_RESOURCE];
+}
+
 - (void)joinAuctionForItem:(NSString *)itemID;
 {
-  XMPPAuction *auction = [[XMPPAuction alloc] initWithStream:self.XMPPStreamForAuctionServer itemID:itemID];
+  XMPPChatSession *chat = [self.XMPPStreamForAuctionServer chatSessionWithUser:auctionJID(itemID)];
+  
+  XMPPAuction *auction = [[XMPPAuction alloc] initWithChat:chat itemID:itemID];
   [auctions addObject:auction];
   [auction release];
   
@@ -56,9 +65,9 @@
   [self.auctionSniperController addSniper:auctionSniper];
   
   AuctionMessageTranslator *messageTranslator = [[AuctionMessageTranslator alloc] initWithSniperID:self.XMPPStreamForAuctionServer.myJID.bare eventListener:auctionSniper];
-  [self.XMPPStreamForAuctionServer addDelegate:messageTranslator];
+  [chat setDelegate:messageTranslator];
   
-  [auction subscribeAndJoin];
+  [auction join];
   
   [translators addObject:messageTranslator]; // prevent it from being released
   [auctionSniper release];

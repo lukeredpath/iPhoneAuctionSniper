@@ -103,6 +103,11 @@
   [super dealloc];
 }
 
+- (NSString *)description
+{
+  return [NSString stringWithFormat:@"<SniperSnapshot forItem:%@ price:%d lastBid:%d state:%d>", auctionID, lastPrice, lastBid, state];
+}
+
 - (BOOL)isForSameAuction:(NSString *)anAuctionID;
 {
   return [anAuctionID isEqualToString:auctionID];
