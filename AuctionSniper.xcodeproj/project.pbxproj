@@ -160,9 +160,9 @@
 		A32CA0461213683B00BBE14A /* SnipersTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnipersTableModel.m; sourceTree = "<group>"; };
 		A32CA05212136A6500BBE14A /* LRAbstractTableModel+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LRAbstractTableModel+Extensions.h"; sourceTree = "<group>"; };
 		A32CA05312136A6500BBE14A /* LRAbstractTableModel+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LRAbstractTableModel+Extensions.m"; sourceTree = "<group>"; };
-		A32CA19B12138DBD00BBE14A /* XMPPChatSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMPPChatSession.h; sourceTree = "<group>"; };
-		A32CA19C12138DBD00BBE14A /* XMPPChatSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMPPChatSession.m; sourceTree = "<group>"; };
-		A32CA1A212138EA100BBE14A /* XMPPChatDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMPPChatDelegate.h; sourceTree = "<group>"; };
+		A32CA19B12138DBD00BBE14A /* XMPPChatSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMPPChatSession.h; path = Classes/XMPPChatSession.h; sourceTree = "<group>"; };
+		A32CA19C12138DBD00BBE14A /* XMPPChatSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XMPPChatSession.m; path = Classes/XMPPChatSession.m; sourceTree = "<group>"; };
+		A32CA1A212138EA100BBE14A /* XMPPChatDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMPPChatDelegate.h; path = Classes/XMPPChatDelegate.h; sourceTree = "<group>"; };
 		A3FC540A11D7CA390045F352 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A3FC548C11D825170045F352 /* AuctionSniperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuctionSniperViewController.h; sourceTree = "<group>"; };
 		A3FC548D11D825170045F352 /* AuctionSniperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuctionSniperViewController.m; sourceTree = "<group>"; };
@@ -390,6 +390,7 @@
 		A315223311D23CD6007F2123 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				A32CA1E4121393A600BBE14A /* XMPPFramework+Additions */,
 				A32CA034121367E100BBE14A /* LRTableModel */,
 				A3FC5F0611D926520045F352 /* OCMock */,
 				A3FC54B811D8286B0045F352 /* XMPPFramework */,
@@ -428,11 +429,18 @@
 			children = (
 				A3FC5F7E11D92DCC0045F352 /* XMPPAuction.h */,
 				A3FC5F7F11D92DCC0045F352 /* XMPPAuction.m */,
+			);
+			name = XMPP;
+			sourceTree = "<group>";
+		};
+		A32CA1E4121393A600BBE14A /* XMPPFramework+Additions */ = {
+			isa = PBXGroup;
+			children = (
 				A32CA19B12138DBD00BBE14A /* XMPPChatSession.h */,
 				A32CA19C12138DBD00BBE14A /* XMPPChatSession.m */,
 				A32CA1A212138EA100BBE14A /* XMPPChatDelegate.h */,
 			);
-			name = XMPP;
+			name = "XMPPFramework+Additions";
 			sourceTree = "<group>";
 		};
 		A3FC548B11D825030045F352 /* Controllers */ = {
