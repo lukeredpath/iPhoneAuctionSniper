@@ -11,6 +11,7 @@
 
 @interface LRAbstractTableModel (Extension)
 
-- (void)fireTableRowsUpdated:(NSIndexSet *)indices;
+- (void)fireTableRowsInserted:(NSIndexSet *)indices inSection:(NSInteger)sectionIndex;
+- (void)fireTableRowsUpdated:(NSIndexSet *)indices inSection:(NSInteger)sectionIndex;
 
 @end

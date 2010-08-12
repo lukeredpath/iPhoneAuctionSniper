@@ -53,8 +53,17 @@
 
 - (void)tableModelChanged:(LRTableModelEvent *)changeEvent
 {
-  //[self.tableView reloadRowsAtIndexPaths:changeEvent.indexPaths withRowAnimation:UITableViewRowAnimationNone];
-  [self.tableView reloadData];
+  switch (changeEvent.type) {
+    case LRTableModelInsertRowEvent:
+      [self.tableView insertRowsAtIndexPaths:changeEvent.indexPaths withRowAnimation:UITableViewRowAnimationTop];
+      break;
+    case LRTableModelUpdateRowEvent:
+      [self.tableView reloadRowsAtIndexPaths:changeEvent.indexPaths withRowAnimation:UITableViewRowAnimationNone];
+      break;
+    default:
+      [self.tableView reloadData];
+      break;
+  }
 }
 
 - (NSString *)cellReuseIdentifierForIndexPath:(NSIndexPath *)indexPath

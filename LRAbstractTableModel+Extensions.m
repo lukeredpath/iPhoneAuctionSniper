@@ -11,10 +11,17 @@
 
 @implementation LRAbstractTableModel (Extensions)
 
-- (void)fireTableRowsUpdated:(NSIndexSet *)indices
+- (void)fireTableRowsInserted:(NSIndexSet *)indices inSection:(NSInteger)sectionIndex;
 {
   [indices enumerateIndexesUsingBlock:^(NSUInteger index, BOOL *stop) {
-    [self notifyListeners:[LRTableModelEvent updatedRow:index section:0]];
+    [self notifyListeners:[LRTableModelEvent insertionAtRow:index section:sectionIndex]];
+  }];
+}
+
+- (void)fireTableRowsUpdated:(NSIndexSet *)indices inSection:(NSInteger)sectionIndex;
+{
+  [indices enumerateIndexesUsingBlock:^(NSUInteger index, BOOL *stop) {
+    [self notifyListeners:[LRTableModelEvent updatedRow:index section:sectionIndex]];
   }];
 }
 

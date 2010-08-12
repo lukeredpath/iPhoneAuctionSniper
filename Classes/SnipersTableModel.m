@@ -36,14 +36,14 @@ static NSArray *STATE_LABELS;
 {
   [snapshots addObject:sniper.currentSnapshot];
   [sniper setDelegate:self];
-  [self fireTableRowsUpdated:[NSIndexSet indexSetWithIndex:snapshots.count-1]];
+  [self fireTableRowsInserted:[NSIndexSet indexSetWithIndex:snapshots.count-1] inSection:0];
 }
 
 - (void)auctionSniperChanged:(SniperSnapshot *)snapshot
 {
   int rowForSnapshot = [self rowMatching:snapshot];
   [snapshots replaceObjectAtIndex:rowForSnapshot withObject:snapshot];
-  [self fireTableRowsUpdated:[NSIndexSet indexSetWithIndex:rowForSnapshot]];
+  [self fireTableRowsUpdated:[NSIndexSet indexSetWithIndex:rowForSnapshot] inSection:0];
 }
 
 - (NSString *)labelForState:(SniperState)state
