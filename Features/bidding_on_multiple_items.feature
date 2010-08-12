@@ -21,6 +21,6 @@ Feature: Bidding on multiple items
     And  the application should show the sniper is winning with a bid of 521 for item-2
     When the auction for item-1 announces it has closed
     And  the auction for item-2 announces it has closed
-    Then the application should show the sniper has won the auction for item-1
-    And  the application should show the sniper has won the auction for item-2
+    Then the application should show the sniper has won with a bid of 1098 for item-1
+    And  the application should show the sniper has won with a bid of 521 for item-2
     
