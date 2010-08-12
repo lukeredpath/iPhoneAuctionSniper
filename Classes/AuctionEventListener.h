@@ -11,7 +11,7 @@ typedef enum {
   PriceFromOtherBidder
 } AuctionPriceSource;
 
-@protocol AuctionEventListener
+@protocol AuctionEventListener <NSObject>
 - (void)auctionClosed;
 - (void)currentPriceForAuction:(NSInteger)price increment:(NSInteger)increment priceSource:(AuctionPriceSource)priceSource;
 @end

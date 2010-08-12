@@ -38,8 +38,10 @@ module AuctionSniper
   end
   
   module Actions
-    def join_auction(auction)
-      @auction_driver.assert_shows_sniper_status(auction.auction_id, 0, 0, STATUS_JOINING)
+    def start_bidding_in(*auctions)
+      auctions.each do |auction|
+        @auction_driver.assert_shows_sniper_status(auction.auction_id, 0, 0, STATUS_JOINING)
+      end
     end
   end
   

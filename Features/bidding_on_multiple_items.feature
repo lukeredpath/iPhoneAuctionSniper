@@ -8,7 +8,7 @@ Feature: Bidding on multiple items
     
   Scenario: Sniper bids on multiple items (end to end test)
     Given an auction is selling items item-1, item-2
-    When the application starts bidding in auctions for item-1, item-2
+    When the application starts bidding for item-1, item-2
     Then the auction for item-1 should have received a join request from the sniper
     And  the auction for item-2 should have received a join request from the sniper
     When the auction for item-1 reports a price of 1000 + 98 from "other bidder"

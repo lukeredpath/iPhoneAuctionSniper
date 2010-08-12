@@ -6,17 +6,14 @@ Given /the application is running/ do
   @application_runner = AuctionSniper::ApplicationRunner.new(simulator_driver)
 end
 
-Given /^the application has joined the auction for (.*)$/ do |item_id|
-  @application_runner.join_auction(Auction.for(item_id))
-  Auction.for(item_id).assert_received_join_request_from(Global.SNIPER_XMPP_ID)
+Given /^the application has started bidding for (.*)$/ do |item_id|
+  @application_runner.start_bidding_in(Auction.for(item_id))
+  Then "the auction for #{item_id} should have received a join request from the sniper"
 end
 
-When /^the application starts bidding in auctions for (.*)$/ do |item_ids|
-  item_ids.split(", ").each do |item_id|
-    auction = Auction.for(item_id)
-    @application_runner.join_auction(auction)
-    auction.assert_received_join_request_from(Global.SNIPER_XMPP_ID)
-  end
+When /^the application starts bidding for (.*)$/ do |item_ids|
+  auctions = item_ids.split(", ").map { |item_id| Auction.for(item_id) }
+  @application_runner.start_bidding_in(*auctions)
 end
 
 # WHENS

@@ -13,6 +13,7 @@
 
 @interface XMPPAuction : NSObject <Auction> {
   XMPPStream *stream;
+  NSString *auctionID;
 }
 @property (nonatomic, readonly) NSString *auctionID;
 
