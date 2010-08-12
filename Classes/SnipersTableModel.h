@@ -11,13 +11,9 @@
 #import "AuctionSniperListener.h"
 #import "AuctionSniper.h"
 
-@class SniperSnapshot;
-
 @interface SnipersTableModel : LRAbstractTableModel <AuctionSniperListener> {
-  SniperSnapshot *snapshot;
+  NSMutableArray *snapshots;
 }
-@property (nonatomic, retain) SniperSnapshot *snapshot;
-
-- (void)setSniper:(AuctionSniper *)sniper;
+- (void)addSniper:(AuctionSniper *)sniper;
 - (NSString *)labelForState:(SniperState)state;
 @end

@@ -50,4 +50,5 @@ typedef enum {
 - (id)initWithAuctionID:(NSString *)auctionID lastPrice:(NSInteger)price lastBid:(NSInteger)bid state:(SniperState)sniperState;
 - (BOOL)isEqualToSnapshot:(SniperSnapshot *)snapshot;
 - (BOOL)isForSameAuction:(NSString *)anAuctionID;
+- (BOOL)isForSameItemAs:(SniperSnapshot *)snapshot;
 @end

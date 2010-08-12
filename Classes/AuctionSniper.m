@@ -108,6 +108,11 @@
   return [anAuctionID isEqualToString:auctionID];
 }
 
+- (BOOL)isForSameItemAs:(SniperSnapshot *)snapshot;
+{
+  return [auctionID isEqual:snapshot.auctionID];
+}
+
 - (BOOL)isEqual:(id)object;
 {
   if (![object isKindOfClass:[SniperSnapshot class]]) {

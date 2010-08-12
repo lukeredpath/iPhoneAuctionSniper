@@ -10,29 +10,40 @@
 #import "LRAbstractTableModel+Extensions.h"
 #import "AuctionSniper.h"
 
+@interface SnipersTableModel ()
+- (int)rowMatching:(SniperSnapshot *)snapshot;
+@end
+
 @implementation SnipersTableModel
 
 static NSArray *STATE_LABELS;
 
-@synthesize snapshot;
-
 - (void)dealloc
 {
-  [snapshot release];
+  [snapshots release];
   [super dealloc];
 }
 
-- (void)setSniper:(AuctionSniper *)sniper;
+- (id)initWithCellProvider:(id <LRTableModelCellProvider>)theCellProvider
 {
-  self.snapshot = [sniper currentSnapshot];
-  [self fireTableRowsUpdated:[NSIndexSet indexSetWithIndex:0]];
-  sniper.delegate = self;
+  if (self = [super initWithCellProvider:theCellProvider]) {
+    snapshots = [[NSMutableArray alloc] init];
+  }
+  return self;
 }
 
-- (void)auctionSniperChanged:(SniperSnapshot *)newSnapshot
+- (void)addSniper:(AuctionSniper *)sniper;
 {
-  self.snapshot = newSnapshot;
-  [self fireTableRowsUpdated:[NSIndexSet indexSetWithIndex:0]];
+  [snapshots addObject:sniper.currentSnapshot];
+  [sniper setDelegate:self];
+  [self fireTableRowsUpdated:[NSIndexSet indexSetWithIndex:snapshots.count-1]];
+}
+
+- (void)auctionSniperChanged:(SniperSnapshot *)snapshot
+{
+  int rowForSnapshot = [self rowMatching:snapshot];
+  [snapshots replaceObjectAtIndex:rowForSnapshot withObject:snapshot];
+  [self fireTableRowsUpdated:[NSIndexSet indexSetWithIndex:rowForSnapshot]];
 }
 
 - (NSString *)labelForState:(SniperState)state
@@ -51,12 +62,22 @@ static NSArray *STATE_LABELS;
 
 - (NSInteger)numberOfRowsInSection:(NSInteger)sectionIndex
 {
-  return 1;
+  return snapshots.count;
 }
 
 - (id)objectAtIndexPath:(NSIndexPath *)indexPath
 {
-  return self.snapshot;
+  return [snapshots objectAtIndex:indexPath.row];
+}
+
+- (int)rowMatching:(SniperSnapshot *)snapshot;
+{
+  for (int i = 0; i < snapshots.count; i++) {
+    if ([snapshot isForSameItemAs:[snapshots objectAtIndex:i]]) {
+      return i;
+    }
+  }
+  @throw NSInternalInconsistencyException;
 }
 
 @end

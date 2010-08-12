@@ -36,7 +36,7 @@
 
 - (void)addSniper:(AuctionSniper *)sniper;
 {
-  [snipers setSniper:sniper];
+  [snipers addSniper:sniper];
 }
 
 - (void)viewDidLoad 
