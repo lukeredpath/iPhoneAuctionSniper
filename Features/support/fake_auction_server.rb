@@ -98,6 +98,8 @@ module AuctionSniper
     def stop
       @listener.kill if @listener
       @connection.disconnect if @connection
+    rescue StandardError
+      # just continue
     end
     
     class MessageListener
