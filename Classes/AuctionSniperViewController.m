@@ -12,8 +12,6 @@
 #import "SnipersTableModel.h"
 #import "AuctionSniperCell.h"
 
-#pragma mark -
-
 @implementation AuctionSniperViewController
 
 @synthesize snipers;
@@ -42,7 +40,6 @@
 - (void)viewDidLoad 
 {
   [super viewDidLoad];
-  
   self.tableView.rowHeight = 60;
 }
 
