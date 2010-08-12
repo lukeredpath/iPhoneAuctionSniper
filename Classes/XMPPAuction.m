@@ -22,16 +22,20 @@ XMPPJID *auctionJID(XMPPStream *stream, NSString *resource, NSString *auctionID)
 
 @implementation XMPPAuction
 
-- (id)initWithStream:(XMPPStream *)aStream auctionID:(NSString *)auctionID;
+@synthesize itemID;
+
+- (id)initWithStream:(XMPPStream *)aStream itemID:(NSString *)theID;
 {
   if (self = [super init]) {
     stream = [aStream retain];
+    itemID = [theID copy];
   }
   return self;
 }
 
 - (void)dealloc;
 {
+  [itemID release];
   [stream release];
   [super dealloc];
 }
@@ -50,7 +54,7 @@ XMPPJID *auctionJID(XMPPStream *stream, NSString *resource, NSString *auctionID)
 {
   NSXMLElement *presence = [NSXMLElement elementWithName:@"presence"];
   [stream sendElement:presence];
-  [presence addAttributeWithName:@"to" stringValue:auctionJID(stream, kAUCTION_RESOURCE, self.auctionID).bare];
+  [presence addAttributeWithName:@"to" stringValue:auctionJID(stream, kAUCTION_RESOURCE, self.itemID).bare];
 	[presence addAttributeWithName:@"type" stringValue:@"subscribed"];
   [stream sendElement:presence];
 }
@@ -72,7 +76,7 @@ XMPPJID *auctionJID(XMPPStream *stream, NSString *resource, NSString *auctionID)
   
   NSXMLElement *message = [NSXMLElement elementWithName:@"message"];
   [message addAttributeWithName:@"type" stringValue:@"chat"];
-  [message addAttributeWithName:@"to" stringValue:auctionJID(stream, kAUCTION_RESOURCE, self.auctionID).full];
+  [message addAttributeWithName:@"to" stringValue:auctionJID(stream, kAUCTION_RESOURCE, self.itemID).full];
   [message addChild:body]; 
   
   [stream sendElement:message];

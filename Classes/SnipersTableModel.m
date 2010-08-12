@@ -44,4 +44,19 @@ static NSArray *STATE_LABELS;
   return [STATE_LABELS objectAtIndex:state];
 }
 
+- (NSInteger)numberOfSections
+{
+  return 1;
+}
+
+- (NSInteger)numberOfRowsInSection:(NSInteger)sectionIndex
+{
+  return 1;
+}
+
+- (id)objectAtIndexPath:(NSIndexPath *)indexPath
+{
+  return self.snapshot;
+}
+
 @end

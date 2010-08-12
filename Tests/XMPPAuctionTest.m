@@ -28,7 +28,7 @@
 - (void)setUp;
 {
   self.stream  = [OCMockObject mockForClass:[XMPPStream class]];
-  self.auction = [[[XMPPAuction alloc] initWithStream:stream] autorelease];
+  self.auction = [[[XMPPAuction alloc] initWithStream:stream itemID:nil] autorelease];
   
   [[[self.stream stub] andReturn:@"localhost"] hostName];
 }

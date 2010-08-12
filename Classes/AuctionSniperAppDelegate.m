@@ -28,15 +28,49 @@
 
 - (void)dealloc 
 {
-  [auction release];
   [xmppStream release];
-  [messageTranslator release];
+  [translators release];
   [window release];
   [super dealloc];
 }
 
+XMPPStream *newXMPPStream(NSString *hostName, NSString *user, id delegate) 
+{
+  XMPPStream *stream = [[XMPPStream alloc] init];
+  stream.hostName = hostName;
+  stream.myJID = [XMPPJID jidWithUser:user domain:hostName resource:nil];
+  [stream addDelegate:delegate];
+  return stream;
+}
+
+- (void)joinAuctionForItem:(NSString *)itemID stream:(XMPPStream *)stream
+{
+  XMPPAuction *auction = [[XMPPAuction alloc] initWithStream:xmppStream itemID:itemID];
+  [auctions addObject:auction];
+  [auction release];
+  
+  AuctionSniper *auctionSniper = [[AuctionSniper alloc] initWithAuction:auction auctionID:itemID];
+  [self.auctionSniperController addSniper:auctionSniper];
+  
+  AuctionMessageTranslator *messageTranslator = [[AuctionMessageTranslator alloc] initWithSniperID:xmppStream.myJID.bare eventListener:auctionSniper];
+  [stream addDelegate:messageTranslator];
+  
+  [auction subscribeAndJoin];
+  
+  [translators addObject:messageTranslator]; // prevent it from being released
+  [auctionSniper release];
+  [messageTranslator release];
+  [auction release];
+}
+
 #pragma mark -
-#pragma mark XMPPStreamDelegate methods
+#pragma mark XMPP connection delegate
+
+- (void)xmppStreamDidAuthenticate:(XMPPStream *)sender
+{
+  [self joinAuctionForItem:@"item-1" stream:xmppStream];
+  [self joinAuctionForItem:@"item-2" stream:xmppStream];
+}
 
 - (void)xmppStreamDidConnect:(XMPPStream *)sender
 {
@@ -51,22 +85,9 @@
   NSLog(@"Failed to connect, %@", error);
 }
 
-- (void)xmppStreamDidAuthenticate:(XMPPStream *)sender
-{
-  [auction subscribeAndJoin];
-}
-
 - (void)xmppStream:(XMPPStream *)sender didNotAuthenticate:(NSXMLElement *)error;
 {
   NSLog(@"Failed to authenticate, %@", error);
-}
-
-XMPPStream *newXMPPStream(NSString *hostName, NSString *user) 
-{
-  XMPPStream *stream = [[XMPPStream alloc] init];
-  stream.hostName = hostName;
-  stream.myJID = [XMPPJID jidWithUser:user domain:hostName resource:nil];
-  return stream;
 }
 
 #pragma mark -
@@ -74,22 +95,20 @@ XMPPStream *newXMPPStream(NSString *hostName, NSString *user)
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions 
 {    
-  xmppStream = newXMPPStream(kXMPP_HOSTNAME, kSNIPER_XMPP_USERNAME);
-  auction = [[XMPPAuction alloc] initWithStream:xmppStream];
-  
-  AuctionSniper *auctionSniper = [[AuctionSniper alloc] initWithAuction:auction auctionID:kAUCTION_ID];
-  messageTranslator = [[AuctionMessageTranslator alloc] initWithSniperID:xmppStream.myJID.bare eventListener:auctionSniper];
-  
-  [xmppStream addDelegate:self];
-  [xmppStream addDelegate:messageTranslator];
-  
-  [self.auctionSniperController setAuctionSniper:auctionSniper];
-  [auctionSniper release];
+  // Translators are not retained by the XMPPStream so we need to keep a reference to them around for now
+  // to stop them from being released prematurely. We also need to keep hold of auctions.
+  translators = [[NSMutableArray alloc] init];
+  auctions = [[NSMutableArray alloc] init];
+
+  xmppStream = newXMPPStream(kXMPP_HOSTNAME, kSNIPER_XMPP_USERNAME, self);
   
   NSError *connectionError = nil;
-  if (![xmppStream connect:&connectionError]) {
+  [xmppStream connect:&connectionError];
+  
+  if (connectionError) {
     NSLog(@"Connection error: %@", connectionError);
-  }
+    abort();
+  }  
   
   [window makeKeyAndVisible];
 	return YES;

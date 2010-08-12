@@ -16,8 +16,8 @@
 @interface AuctionSniperAppDelegate : NSObject <UIApplicationDelegate, XMPPStreamDelegate> {
   UIWindow *window;
   AuctionSniperViewController *auctionSniperController;
-  AuctionMessageTranslator *messageTranslator;
-  XMPPAuction *auction;
+  NSMutableArray *auctions;
+  NSMutableArray *translators;
   XMPPStream *xmppStream;
 }
 @property (nonatomic, retain) IBOutlet UIWindow *window;

@@ -13,11 +13,11 @@
 
 @interface XMPPAuction : NSObject <Auction> {
   XMPPStream *stream;
-  NSString *auctionID;
+  NSString *itemID;
 }
-@property (nonatomic, readonly) NSString *auctionID;
+@property (nonatomic, readonly) NSString *itemID;
 
-- (id)initWithStream:(XMPPStream *)aStream;
+- (id)initWithStream:(XMPPStream *)aStream itemID:(NSString *)theID;
 - (void)subscribe;
 - (void)subscribeAndJoin;
 @end
