@@ -69,6 +69,12 @@ AfterConfiguration do
   end
 end
 
+if ENV['SLOWMO']
+  AfterStep do
+    sleep ENV['SLOWMO'].to_i
+  end
+end
+
 at_exit do
   $openfire.stop
 end
